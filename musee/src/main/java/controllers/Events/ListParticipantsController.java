@@ -43,11 +43,7 @@ public class ListParticipantsController implements Initializable {
         populateParticipants();
       //  setupSearchListener();
     }
-
-
-
     private void populateParticipants() {
-
         List<Participant> participants = service.afficher();
         allParticipants.addAll(participants);
         participantsTableView.setItems(allParticipants);

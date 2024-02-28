@@ -116,7 +116,7 @@ public class ServiceEvenement implements ServiceCrud<Evenement> {
         return null;
     }
 
-    public List<Evenement> afficherback() {
+   /* public List<Evenement> afficherback() {
         List<Evenement> listEvenement = new ArrayList<>();
         String req = "SELECT *, (SELECT COUNT(*) FROM participants WHERE event_id = evenements.id) AS nombreParticipants FROM evenements";
         try {
@@ -144,7 +144,65 @@ public class ServiceEvenement implements ServiceCrud<Evenement> {
             System.out.println(ex.getMessage());
         }
         return listEvenement;
-    }
+    }*/
+
+ /*   public List<Evenement> afficherback() {
+        List<Evenement> listEvenement = new ArrayList<>();
+        String req = "SELECT * FROM evenements";
+        try {
+            PreparedStatement st = cnx.prepareStatement(req);
+            ResultSet result = st.executeQuery();
+            while (result.next()) {
+                LocalDate datedebut = result.getDate("datedebut") != null ? result.getDate("datedebut").toLocalDate() : null;
+                LocalDate datefin = result.getDate("datefin") != null ? result.getDate("datefin").toLocalDate() : null;
+                Evenement e = new Evenement(
+                        result.getInt("id"),
+                        result.getString("nom"),
+                        datedebut,
+                        datefin,
+                        result.getString("lieu"),
+                        result.getString("type"),
+                        result.getString("description"),
+                        result.getInt("nombrePlaces"),
+                        result.getString("posterUrl"),
+                        result.getInt("nombreParticipants")); // Get the poster URL
+                listEvenement.add(e);
+            }
+            System.out.println("Events retrieved successfully!");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return listEvenement;
+    }*/
+ /*public List<Evenement> afficherback() {
+     List<Evenement> listEvenement = new ArrayList<>();
+     // Updated SQL query to include the count of participants
+     String req = "SELECT e.*, (SELECT COUNT(*) FROM participants WHERE event_id = e.id) AS nombreParticipants FROM evenements e";
+     try {
+         PreparedStatement st = cnx.prepareStatement(req);
+         ResultSet result = st.executeQuery();
+         while (result.next()) {
+             LocalDate datedebut = result.getDate("datedebut") != null ? result.getDate("datedebut").toLocalDate() : null;
+             LocalDate datefin = result.getDate("datefin") != null ? result.getDate("datefin").toLocalDate() : null;
+             Evenement e = new Evenement(
+                     result.getInt("id"),
+                     result.getString("nom"),
+                     datedebut,
+                     datefin,
+                     result.getString("lieu"),
+                     result.getString("type"),
+                     result.getString("description"),
+                     result.getInt("nombrePlaces"),
+                     result.getString("posterUrl"),
+                     result.getInt("nombreParticipants")); // Now dynamically updated
+             listEvenement.add(e);
+         }
+         System.out.println("Events retrieved successfully!");
+     } catch (SQLException ex) {
+         System.out.println(ex.getMessage());
+     }
+     return listEvenement;
+ }*/
 
     public List<Evenement> afficherfront() {
         List<Evenement> listEvenement = new ArrayList<>();
@@ -211,8 +269,6 @@ public class ServiceEvenement implements ServiceCrud<Evenement> {
             }
         }
     }
-
-
 
     public int getParticipantCount(int eventId) {
         String query = "SELECT nombreParticipants FROM evenements WHERE id = ?";

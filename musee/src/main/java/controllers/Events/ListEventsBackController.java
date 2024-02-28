@@ -38,30 +38,27 @@ public class ListEventsBackController {
     @FXML
     private ImageView postereventimage;
     private final ServiceEvenement serviceEvenement = new ServiceEvenement();
-    private EditInterfaceController editInterfaceController;
-
 
     @FXML
     void initialize() {
-       eventsVBox = new VBox();
-        afficherEvenements();
+        eventsVBox = new VBox();
+        afficherEvenementsBack();
         // Initially hide the event details VBox
         eventDetailsVBox.setVisible(false);
         // Add listener to the searchTextField
         searchTextField.textProperty().addListener((observable, oldValue, newValue) ->filterEventCards(newValue));
     }
-    private void filterEventCards(String searchText) {
-        List<Evenement> filteredEvents = serviceEvenement.afficherfront().stream()
-                .filter(e -> e.getNom().toLowerCase().contains(searchText.toLowerCase()))
-                .collect(Collectors.toList());
-        refreshEventList(filteredEvents);
-    }
+    private void afficherEvenementsBack() {
+        List<Evenement> evenements = serviceEvenement.afficherfront(); // Get basic event info
+        evenements.forEach(event -> {
+            int participantCount = serviceEvenement.getParticipantCount(event.getId()); // Get updated participant count for each event
+            event.setNombreParticipants(participantCount); // Update the event with this count
+        });
+        refreshEventList(evenements); // Refresh the UI with the updated list
+        //hedhi for reference so you remember your mistakes in the future ya bhim
+    /*private void afficherEvenements() {
 
-    private void afficherEvenements() {
-        List<Evenement> evenements = serviceEvenement.afficherback();
-        refreshEventList(evenements);
-
-      /*  eventsTilePane.getChildren().clear(); // Clear existing event cards
+        eventsTilePane.getChildren().clear(); // Clear existing event cards
         eventsTilePane.setVisible(true); // Show the tile pane
         eventDetailsVBox.setVisible(false); // Hide the editing details initially
 
@@ -70,38 +67,24 @@ public class ListEventsBackController {
         for (Evenement evenement : evenements) {
             VBox card = createEventCard(evenement);
             eventsTilePane.getChildren().add(card);
-        }*/
-
-       /* List<Evenement> evenements = serviceEvenement.afficher();
-        for (Evenement evenement : evenements) {
-            VBox card = createEventCard(evenement);
-            eventsTilePane.getChildren().add(card);
-        }*/
+        }
+    }*/
+    }
+    private void filterEventCards(String searchText) {
+        List<Evenement> filteredEvents = serviceEvenement.afficherfront().stream()
+                .filter(e -> e.getNom().toLowerCase().contains(searchText.toLowerCase()))
+                .collect(Collectors.toList());
+        refreshEventList(filteredEvents);
     }
     public void refreshEventList(List<Evenement> events) {
         eventsTilePane.getChildren().clear(); // Clear existing content
-        for (Evenement evenement : events) {
+        for (Evenement evenement : events) { // Evenement hia lclass, evenement variable fl loop representing a single instance of Evenement class,events represents a collection of Evenement objects
+
             VBox card = createEventCard(evenement); // Rebuild each card
             eventsTilePane.getChildren().add(card);
         }
-            /*eventsTilePane.getChildren().clear(); // Clear existing content
-            for (Evenement evenement : events) {
-                VBox card = createEventCard(evenement); // Rebuild each card
-                eventsTilePane.getChildren().add(card);
-            }*/
         }
-
-
-    // Method to create the idle animation
-    private void applyIdleAnimation(VBox card) {
-        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(1.5), card);
-        translateTransition.setByY(-8); // Adjust the distance for the animation
-        //  translateTransition.setByY(10); // Adjust the distance for the animation
-        translateTransition.setCycleCount(TranslateTransition.INDEFINITE);
-        translateTransition.setAutoReverse(true);
-        translateTransition.play();
-    }
-    private Image getImageForEvent(Evenement evenement) {
+        private Image getImageForEvent(Evenement evenement) {
         String imageURL = evenement.getPosterUrl();
         if (imageURL != null && !imageURL.isEmpty()) {
             try {
@@ -124,7 +107,6 @@ public class ListEventsBackController {
         // Fetch and set the image for the event
         Image eventImage = getImageForEvent(evenement);
         imageView.setImage(eventImage); // Set the fetched image to the ImageView
-       //imageView.setImage(getImageForEvent(evenement));
         imageView.getStyleClass().add("image-view");
 
         Label nameLabel = new Label("Nom: " + evenement.getNom());
@@ -161,10 +143,7 @@ public class ListEventsBackController {
         buttonsBox.setAlignment(Pos.CENTER);
         // Add buttonsBox to the card
         card.getChildren().addAll(imageView, nameLabel, dateLabel, locationLabel, participantsLabel, buttonsBox);
-        // Apply idle animation to the card
-        //applyIdleAnimation(card);
         return card;
-
     }
 
     @FXML
@@ -193,12 +172,6 @@ public class ListEventsBackController {
         }
 
     }
-    // Method to update the event details and image URL
-    public void updateEvent(Evenement event, String imageURL) {
-        // Update the image URL of the Evenement object
-        event.setPosterUrl(imageURL);
-
-    }
     private void openEditInterface(Evenement evenement) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiEvent/EditInterface.fxml"));
@@ -224,69 +197,6 @@ public class ListEventsBackController {
             e.printStackTrace();
         }
 
-           /* try {
-                // Load the editinterface.fxml file
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/EditInterface.fxml"));
-                Parent editInterface = loader.load();
-
-                // Get the controller instance
-                EditInterfaceController editInterfaceController = loader.getController();
-
-                // Initialize the controller with the selected event's data using initData
-                editInterfaceController.initData(evenement);
-
-                // Replace the content of eventsVBox with the edit interface
-                eventsVBox.getChildren().clear();
-                eventsVBox.getChildren().add(editInterface);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }*/
-
-
-      /*  try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/EditInterface.fxml"));
-            Parent editInterface = loader.load();
-            EditInterfaceController editInterfaceController = loader.getController();
-            FieldPopulator.populateFields(evenement, editInterfaceController.getNomTF(), editInterfaceController.getTypeTF(),
-                    editInterfaceController.getDatedebutPicker(), editInterfaceController.getDatefinPicker(),
-                    editInterfaceController.getLieuTF(), editInterfaceController.getNombrePlacesTF(),
-                    editInterfaceController.getDescriptionTF());
-            eventsVBox.getChildren().clear();
-            eventsVBox.getChildren().add(editInterface);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-
-
-     /*// Ensure only the relevant details are visible
-        eventDetailsVBox.setVisible(true); // Show the details box for editing
-
-        // Populate fields for the selected event
-        populateFields(evenement);
-
-        // Optionally, hide other UI elements that should not be visible during editing
-        eventsTilePane.setVisible(false); // Hide the tile pane listing events
-
-        selectedEvent = evenement;*/
-
-      /*  // Clear existing content in the eventsVBox
-        eventsVBox.getChildren().clear();
-
-        // Generate the event details VBox
-        VBox eventDetailsVBox = generateEventDetailsVBox(evenement);
-
-        // Add the generated event details VBox to the eventsVBox
-        eventsVBox.getChildren().add(eventDetailsVBox);
-
-        // Make the eventDetailsVBox visible
-        eventDetailsVBox.setVisible(true);
-
-        // Hide the TilePane containing the displayed events
-        eventsTilePane.setVisible(false);
-
-        // Initialize data for editing
-        initData(evenement);*/
-
     }
     public void retourner(MouseEvent mouseEvent) {
     }
@@ -294,15 +204,11 @@ public class ListEventsBackController {
     public void loadparticipantslist(ActionEvent actionEvent) {
 
         try {
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiEvent/ListParticipantsBack.fxml"));
             Parent participantsinterface = loader.load();
 
             // Get the controller instance
             ListParticipantsController listpartiController = loader.getController();
-
-            // Optionally, set the modifierEvenementController in the ajoutController
-           // listpartiController.setModifierEvenementController(this);
 
             // Replace the content of eventDetailsVBox with the ListParticipantsBack.fxml interface
             eventDetailsVBox.getChildren().clear();
@@ -316,69 +222,6 @@ public class ListEventsBackController {
             e.printStackTrace();
         }
 
-
     }
-
-    /*  @FXML
-    private void modifierEvent(ActionEvent event) {
-        if (selectedEvent != null) {
-            // Call the method to populate the event details VBox with the selected event's details
-            populateEventDetails(selectedEvent);
-        } else {
-            error1.setText("Veuillez sélectionner un événement à modifier.");
-            error1.setStyle("-fx-text-fill: red;");
-        }
-    }*/
-  /*  @FXML
-    void modifierEvent(ActionEvent event) {
-        if (selectedEvent != null) {
-            try {
-                LocalDate dateDebut = datedebutPicker1.getValue();
-                LocalDate dateFin = datefinPicker1.getValue();
-                String lieuText = lieu1.getText();
-                String nomText = nom1.getText();
-                String nombrePlacesText = nombrePlaces1.getText();
-                String typeText = type1.getText();
-                String descriptionText = description1.getText();
-
-                if (!nombrePlacesText.matches("\\d+")) {
-                    throw new NumberFormatException("Nombre de places must be a number.");
-                }
-                int nombrePlacesInt = Integer.parseInt(nombrePlacesText);
-
-                if (dateDebut == null || dateFin == null || dateFin.isBefore(dateDebut)) {
-                    throw new IllegalArgumentException("Date de fin must be after Date de debut.");
-                }
-
-                // Update the selected event with modified attributes
-                selectedEvent.setNom(nomText);
-                selectedEvent.setType(typeText);
-                selectedEvent.setDatedebut(dateDebut);
-                selectedEvent.setDatefin(dateFin);
-                selectedEvent.setLieu(lieuText);
-                selectedEvent.setNombrePlaces(nombrePlacesInt);
-                selectedEvent.setDescription(descriptionText);
-
-                // Update the image URL
-                imageURL = selectedEvent.getPosterUrl();
-
-                // Update the event in the service
-                serviceEvenement.modifier(selectedEvent);
-
-                error1.setText("Événement modifié avec succès!");
-                error1.setStyle("-fx-text-fill: green;");
-            } catch (NumberFormatException e1) {
-                error1.setText("Erreur: Nombre de places must be a number.");
-                error1.setStyle("-fx-text-fill: red;");
-            } catch (IllegalArgumentException e2) {
-                error1.setText("Erreur: " + e2.getMessage());
-                error1.setStyle("-fx-text-fill: red;");
-            }
-        } else {
-            error1.setText("Veuillez sélectionner un événement à modifier.");
-            error1.setStyle("-fx-text-fill: red;");
-        }
-    }*/
-
 
 }

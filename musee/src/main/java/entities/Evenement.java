@@ -12,8 +12,7 @@ public class Evenement {
     private String type;
     private String description;
     private int nombrePlaces;
-    private String posterUrl; // New attribute for storing image URL
-
+    private String posterUrl;
     private int nombreParticipants;
 
 

@@ -24,12 +24,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ListEventsFrontController {
-
     @FXML
     public TilePane eventsTilePane;
-
     private final ServiceEvenement serviceEvenement = new ServiceEvenement();
-
     private final IntegerProperty participantCount = new SimpleIntegerProperty();
     private final ServiceParticipant serviceParticipant = new ServiceParticipant(); // Ensure you have this instance
 
@@ -41,7 +38,6 @@ public class ListEventsFrontController {
             // Update participant count directly
             participantCount.set(newValue.intValue());
         });
-
 
     }
     private void filterEventCards(String searchText) {
@@ -60,17 +56,7 @@ public class ListEventsFrontController {
                 VBox card = createEventCard(evenement); // Rebuild each card
                 eventsTilePane.getChildren().add(card);
             }
-            /* eventsTilePane.getChildren().clear();
-        for (Evenement evenement : events) {
-            VBox card = createEventCard(evenement);
-            Label participantsLabel = (Label) card.getChildren().get(card.getChildren().size() - 2);
-            participantsLabel.setText("Participants: " + evenement.getNombreParticipants());
-            eventsTilePane.getChildren().add(card);
-        }*/
-        }
-
-
-
+    }
     private Image getImageForEvent(Evenement evenement) {
         String imageURL = evenement.getPosterUrl();
         if (imageURL != null && !imageURL.isEmpty()) {
@@ -83,7 +69,6 @@ public class ListEventsFrontController {
         }
         return null;
     }
-
     private void applyIdleAnimation(VBox card) {
         TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(1.5), card);
         translateTransition.setByY(-8); // Adjust the distance for the animation
@@ -92,50 +77,6 @@ public class ListEventsFrontController {
         translateTransition.setAutoReverse(true);
         translateTransition.play();
     }
-
-  /*  private VBox createEventCard(Evenement evenement) {
-        VBox card = new VBox();
-        card.getStyleClass().add("card");
-
-        ImageView imageView = new ImageView();
-        imageView.setFitHeight(150);
-        imageView.setFitWidth(250);
-        Image eventImage = getImageForEvent(evenement);
-        imageView.setImage(eventImage);
-        imageView.getStyleClass().add("image-view");
-
-        Label nameLabel = new Label("Nom: " + evenement.getNom());
-        nameLabel.getStyleClass().add("label");
-
-        Label dateLabel = new Label("Date: " + evenement.getDatedebut().toString());
-        dateLabel.getStyleClass().add("label");
-
-        Label locationLabel = new Label("Lieu: " + evenement.getLieu());
-        locationLabel.getStyleClass().add("label");
-
-        Label participantsLabel = new Label("Participants: " + serviceEvenement.getParticipantCount(evenement.getId()));
-        participantsLabel.getStyleClass().add("label");
-
-        Button participateButton = new Button("Participate");
-        participateButton.setOnAction(actionEvent -> handleParticipateButtonAction(evenement, participateButton));
-        // Apply idle animation to the card
-        applyIdleAnimation(card);
-        card.getChildren().addAll(imageView, nameLabel, dateLabel, locationLabel, participantsLabel, participateButton);
-        return card;
-    }  old */
-
-   /*old one private void handleParticipateButtonAction(Evenement evenement, Button participateButton) {
-        boolean success = serviceEvenement.participer(evenement.getId());
-        if (success) {
-            // Update the event with the new number of participants
-            evenement.setNombreParticipants(serviceEvenement.getParticipantCount(evenement.getId()));
-            afficherEvenements(); // This will call refreshEventList internally
-            participateButton.setText("Participated");
-        } else {
-            participateButton.setText("Full");
-            participateButton.setDisable(true);
-        }
-    }*/
 
     private VBox createEventCard(Evenement evenement) {
         VBox card = new VBox();
@@ -199,11 +140,6 @@ public class ListEventsFrontController {
             }
         }
     }
-
-
-
-
-
 
 }
 
