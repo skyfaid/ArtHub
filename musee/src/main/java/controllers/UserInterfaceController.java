@@ -1,5 +1,7 @@
 package controllers;
 
+import controllers.Activities.UserActivity;
+import controllers.Activities.WelcomeActivityController;
 import controllers.Articles.ArticlesController;
 import controllers.Users.UpdateAccountController;
 import entities.Utilisateur;
@@ -142,19 +144,19 @@ public class UserInterfaceController implements UserUpdateListener {
     }
     @FXML
     protected void onEventsButtonClick(ActionEvent event) {
-
+        showView(eventsView);
         try {
             // Load ListEventsBack.fxml
-            Pane listEventsPane = FXMLLoader.load(getClass().getResource("/guiEvent/ListEventsFront.fxml"));
+            AnchorPane listEventsPane = FXMLLoader.load(getClass().getResource("/guiEvent/ListEventsFront.fxml"));
 
             // Clear existing content in the target view (optional, based on your needs)
-            eventsView.getChildren().clear();
+            //eventsView.getChildren().clear();
 
             // Add the loaded pane to the eventsView VBox
-            eventsView.getChildren().add(listEventsPane);
+            contentPane.getChildren().setAll(listEventsPane);
             // Make sure the eventsView is visible and set as the content to be displayed
 
-            showView(eventsView); // Assuming showView method makes the view visible within the contentPane.
+            // Assuming showView method makes the view visible within the contentPane.
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -163,6 +165,17 @@ public class UserInterfaceController implements UserUpdateListener {
     @FXML
     protected void onActivitiesButtonClick(ActionEvent event) {
         showView(activitesView);
+        try {
+            //Pane pane_event = FXMLLoader.load(getClass().getResource("/guiActivite/UserActivity.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiActivite/UserActivity.fxml"));
+            AnchorPane pane_event = loader.load();
+            UserActivity controller = loader.getController();
+            controller.setActivityUser(utilisateurConnecte);
+            contentPane.getChildren().setAll(pane_event);
+             // Assuming showView method makes the view visible within the contentPane.
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

@@ -150,19 +150,12 @@ public class AdminInterfaceController implements UserUpdateListener{
     }
     @FXML
     protected void onEventsButtonClick(ActionEvent event) {
+        showView(eventsView);
 
         try {
             // Load ListEventsBack.fxml
-            Pane listEventsPane = FXMLLoader.load(getClass().getResource("/guiEvent/ListEventsBack.fxml"));
-
-            // Clear existing content in the target view (optional, based on your needs)
-            eventsView.getChildren().clear();
-
-            // Add the loaded pane to the eventsView VBox
-            eventsView.getChildren().add(listEventsPane);
-            // Make sure the eventsView is visible and set as the content to be displayed
-
-            showView(eventsView); // Assuming showView method makes the view visible within the contentPane.
+            AnchorPane listEventsPane = FXMLLoader.load(getClass().getResource("/guiEvent/ListEventsBack.fxml"));
+            contentPane.getChildren().setAll(listEventsPane);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -183,6 +176,12 @@ public class AdminInterfaceController implements UserUpdateListener{
     @FXML
     protected void onActivitiesButtonClick(ActionEvent event) {
         showView(activitesView);
+        try {
+            AnchorPane pane_event = FXMLLoader.load(getClass().getResource("/guiActivite/AjouterActivite.fxml"));
+           contentPane.getChildren().setAll(pane_event);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

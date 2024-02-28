@@ -1,0 +1,22 @@
+
+.window-buttons {
+    -fx-background-radius: 15;
+    -fx-min-width: 14px;
+    -fx-min-height: 14px;
+    -fx-max-width: 15px;
+    -fx-max-height: 15px;
+}
+
+.window-buttons:hover {
+    -fx-background-color: #444; /* Darken button on hover */
+}
+#close:hover{
+    -fx-background-color: red;
+}
+
+.window-buttons:pressed {
+    -fx-background-color: #666; /* Further darken button on press */
+}
+.footer{
+
+}

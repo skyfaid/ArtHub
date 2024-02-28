@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Label?>
+<AnchorPane prefHeight="626.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Activities.AfficherActivite" stylesheets="@/css/csskolchay.css">
+   <children>
+      <VBox fx:id="Test" >
+
+      </VBox>
+      <VBox fx:id="Ton" >
+      <TableView fx:id="participationTableView" layoutX="54.0" layoutY="27.0" prefHeight="346.0" prefWidth="493.0"  styleClass="table-view">
+         <columns>
+            <TableColumn fx:id="Id_participationColumn" prefWidth="47.0" text="Id_participation" />
+            <TableColumn fx:id="id_activiteColumn" prefWidth="79.0" text="id_activite" />
+            <TableColumn fx:id="utilisateur_idColumn" prefWidth="50.0" text="utilisateur_id" />
+            <TableColumn fx:id="ScoreColumn" prefWidth="119.0" text="Score" />
+            <TableColumn fx:id="Participation_dateColumn" prefWidth="156.0" text="Participation_date" />
+         </columns>
+      </TableView>
+      <Button fx:id="topScoresButton" layoutX="54.0" layoutY="400.0" onAction="#handleTopScoresButtonClick" stylesheets="@/css/csskolchay.css" text="Top 3 Scores" />
+      <Button fx:id="resetButton" layoutX="200.0" layoutY="400.0" onAction="#handleResetButtonClick" text="Reset Table" />
+      <Button fx:id="backButton" text="Back" onAction="#handleBackButtonAction"/>
+      </VBox>
+
+   </children>
+</AnchorPane>
