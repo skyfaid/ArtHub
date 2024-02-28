@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="1091" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 20; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Articles.ArticlesController">
+   <children>
+      <VBox prefHeight="530.0" prefWidth="400.0" spacing="5.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="270.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0" style="-fx-border-color: D7D7D7; -fx-border-radius: 15;">
+                     <children>
+                        <TextField prefHeight="31.0" prefWidth="159.0" style="-fx-background-color: white;" />
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/search-2-16.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Button fx:id="buttonadd" mnemonicParsing="false" onAction="#add" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: white; -fx-border-radius: 30;">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/add-16.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="152.0" text="Latest Articles">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="50.0" prefWidth="169.0" />
+                  <Label prefHeight="25.0" prefWidth="22.0" text="All">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/check-mark-3-16.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="2.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <ScrollPane prefHeight="410.0" prefWidth="400.0">
+               <content>
+                  <VBox fx:id="articlesContainer" prefHeight="410.0" prefWidth="387.0" spacing="10">
+                     <children>
+
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <VBox fx:id="onearticle" layoutX="429.0" layoutY="27.0" prefHeight="487.0" prefWidth="547.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="547.0" spacing="15.0">
+               <children>
+                  <ImageView fx:id="picuprof" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/nopic.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="mail" text="&lt;wajdi.bouallegui@gmail.com&gt;">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+           <HBox prefHeight="50.0" prefWidth="547.0">
+               <TextField fx:id="titre" prefHeight="38.0" prefWidth="421.0" text="Title Here">
+                  <font>
+                     <Font name="System Bold" size="16.0" />
+                  </font>
+               </TextField>
+               <HBox alignment="TOP_CENTER" prefHeight="32.0" prefWidth="118.0">
+                  <children>
+                     <Button fx:id="buttonsave" mnemonicParsing="false" onAction="#saveArticle" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: white; -fx-border-radius: 30;">
+                        <graphic>
+                           <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/save-16.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                     <Button fx:id="buttonedit" mnemonicParsing="false" onAction="#editArticle" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: white; -fx-border-radius: 30;">
+                        <graphic>
+                           <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/edit-16.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                     <Button fx:id="buttondelete" mnemonicParsing="false" onAction="#deleteArticle" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: white; -fx-border-radius: 30;">
+                        <graphic>
+                           <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../images/delete-16.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                  </children>
+               </HBox>
+           </HBox>
+            <TextArea fx:id="contenu" prefHeight="335.0" prefWidth="547.0" text="Contenu here">
+
+            </TextArea>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
