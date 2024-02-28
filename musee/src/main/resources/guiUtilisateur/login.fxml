@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Users.LoginController">
+   <stylesheets>
+      <URL value="@/style.css" />
+   </stylesheets>
+   <children>
+      <HBox fx:id="titleBar" alignment="CENTER" prefHeight="20.0" prefWidth="800.0" styleClass="title-bar">
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+         <children>
+            <Label styleClass="label-white" text="Art Hub" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="minimizeButton" styleClass="window-buttons" text="--" />
+            <Button fx:id="closeButton" styleClass="window-buttons" text="X" />
+         </children>
+      </HBox>
+      <AnchorPane layoutY="25.0" prefHeight="480.0" prefWidth="400.0" style="-fx-background-color: #2C3E50;">
+         <children>
+            <ImageView fx:id="imagelogo" fitHeight="250.0" fitWidth="200.0" layoutX="100.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@/assets/login1.jpg" />
+            </ImageView>
+         </children>
+         <Label layoutX="100.0" layoutY="363.0" prefHeight="55.0" prefWidth="214.0" style="-fx-text-color: white" text="Art Hub Where Art Comes to Life!" textAlignment="JUSTIFY" textFill="#f7f7f7">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Label>
+      </AnchorPane>
+      <AnchorPane layoutX="400.0" layoutY="20.0" prefHeight="480.0" prefWidth="400.0">
+         <children>
+            <VBox alignment="CENTER" layoutX="86.0" layoutY="204.0" spacing="10.0" style="-fx-border-radius: 20;">
+               <children>
+                  <HBox spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <Image url="@/assets/userIcon.png" />
+                        </ImageView>
+                        <TextField fx:id="pseudoField" prefHeight="26.0" prefWidth="174.0" promptText="Pseudo" />
+                     </children>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <Image url="@/assets/mpIcon.png" />
+                        </ImageView>
+                        <PasswordField fx:id="mpField" prefHeight="26.0" prefWidth="174.0" promptText="Password" />
+                     </children>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+                  <Hyperlink text="Forgot your password?">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Button mnemonicParsing="false" onAction="#connecter" prefHeight="30.0" prefWidth="64.0" style="-fx-background-color:#2C3E50;-fx-cursor: hand;" text="Login" textFill="#fcfcfc">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <Label layoutX="84.0" layoutY="119.0" style="-fx-text-fill: #2C3E50;" text="Access your account">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="70.0" style="-fx-text-fill: #2C3E50;" text="Welcome">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" layoutX="90.29289245605469" layoutY="354.0">
+               <children>
+                  <Line endX="-6.4000244140625" endY="3.0517578125E-5" startX="-100.0" />
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="28.0" text="OR" textAlignment="CENTER" />
+                  <Line endX="-6.4000244140625" endY="3.0517578125E-5" startX="-100.0" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="90.0" layoutY="376.0" prefHeight="30.0" prefWidth="234.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: blue; -fx-cursor: hand;" text="Facebook" textFill="#fcfcfc">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-facebook-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: red; -fx-cursor: hand;" text="Google" textFill="#fcfcfc">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-google-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="25.0" layoutY="429.0" prefHeight="30.0" prefWidth="362.0">
+               <children>
+                  <Hyperlink fx:id="signuplink" alignment="BOTTOM_LEFT" onAction="#opensignup" prefHeight="19.0" prefWidth="146.0" text="Don't have an account ?">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Hyperlink>
+               </children>
+            </HBox>
+            <Button alignment="CENTER" layoutX="325.0" layoutY="34.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2C3E50; -fx-cursor: hand;" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="330.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-facial-recognition-30.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

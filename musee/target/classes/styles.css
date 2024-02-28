@@ -1,0 +1,128 @@
+
+.window-buttons {
+    -fx-background-radius: 15;
+    -fx-min-width: 14px;
+    -fx-min-height: 14px;
+    -fx-max-width: 15px;
+    -fx-max-height: 15px;
+    -fx-background-color: white;
+}
+
+.window-buttons:hover {
+    -fx-background-color: #444;
+}
+#close:hover{
+    -fx-background-color: red;
+}
+
+.window-buttons:pressed {
+    -fx-background-color: #666;
+}
+
+.scroll-pane {
+    -fx-background: #34495e;
+}
+
+.tile-pane {
+    -fx-background-color: transparent;
+}
+
+.card {
+    -fx-background-color: #2c3e50;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 10);
+    -fx-padding: 15;
+    -fx-alignment: top-center;
+    -fx-spacing: 5; /* Spacing between elements in the card */
+    -fx-max-width: 200px;
+    -fx-max-height: 300px;
+}
+
+#eventDetailsVBox {
+    -fx-background-color: #2c3e50; /* Set background color */
+    -fx-background-radius: 15; /* Apply rounded corners */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 10); /* Add drop shadow */
+    -fx-padding: 15; /* Add padding */
+    -fx-alignment: top-center; /* Align content to the top-center */
+    -fx-spacing: 10; /* Spacing between elements */
+    -fx-max-height: 587.0; /* Set maximum height */
+    -fx-max-width: 467.0; /* Set maximum width */
+}
+
+.image-view {
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+}
+
+.label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Style for buttons */
+.button {
+    -fx-padding: 8px 15px; /* Adjust padding to your preference */
+    -fx-background-radius: 5; /* Rounded corners */
+    -fx-font-size: 14px; /* Set the font size to a normal readable size */
+    -fx-background-color: #3498db; /* Button color, change as needed */
+    -fx-text-fill: white; /* Text color for the button */
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.3), 3, 0, 0, 1);
+}
+
+/* Adjust the text field size */
+.text-field {
+    -fx-min-width: 150px !important; /* Minimum width of text field */
+    -fx-pref-width: 200px !important; /* Preferred width of text field */
+    -fx-max-width: 250px !important; /* Maximum width of text field to prevent it from stretching */
+    -fx-min-height: 25px !important; /* Increase minimum height of text field */
+    -fx-pref-height: 30px !important; /* Increase preferred height of text field */
+    -fx-max-height: 35px !important; /* Increase maximum height of text field */
+    -fx-padding: 4px 6px; /* Internal padding within the text field, slightly increased */
+    -fx-font-size: 12px; /* Font size */
+    -fx-background-color: white; /* Background color */
+    -fx-border-color: #ccc; /* Border color */
+    -fx-border-radius: 4; /* Rounded borders */
+}
+
+/* Hover effect for buttons */
+.button:hover {
+    -fx-background-color: #2980b9; /* Change color on hover */
+}
+.table-view {
+    -fx-background-color: #f4f4f4; /* Set background color */
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #e0e0e0; /* Set column header background color */
+}
+
+.table-view .column-header, .table-view .column-header-background {
+    -fx-padding: 5 10; /* Add padding to column headers */
+}
+
+.table-row-cell {
+    -fx-background-color: #ffffff; /* Set background color for table rows */
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f8f8f8; /* Alternate row background color */
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: black; /* Set text color for column headers */
+}
+
+
+.table-view .column-header-background {
+    -fx-background-color: #e0e0e0; /* Set column header background color */
+}
+.table-row-cell:selected {
+    -fx-background-color: #007bff; /* Set selected row background color */
+    -fx-text-fill: white; /* Set text color for selected rows */
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-background-color: #007bff; /* Set background color for cell content */
+}
+

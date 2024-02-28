@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<AnchorPane id="AnchorPane" prefHeight="596.0" prefWidth="971.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Events.ListEventsFrontController">
+   <children>
+      <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <TilePane fx:id="eventsTilePane" alignment="CENTER" hgap="10" orientation="HORIZONTAL" vgap="10">
+               <!-- Event cards will be added here dynamically -->
+            </TilePane>
+         </content>
+         <padding>
+            <Insets left="10" right="10" top="20" />
+         </padding>
+      </ScrollPane>
+   </children>
+   <stylesheets>
+      <URL value="@/assets/styles.css" />
+   </stylesheets>
+
+</AnchorPane>

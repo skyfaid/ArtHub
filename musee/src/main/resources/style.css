@@ -1,0 +1,41 @@
+/* styles AjoutUtiliateur gui*/
+.title-bar {
+    -fx-background-color: #333;
+}
+
+.window-buttons {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+}
+
+.form-vbox {
+   /* -fx-background-color: #333333;*/
+    -fx-background-color: #2C3E50;
+    -fx-padding: 20;
+    -fx-background-radius: 5;
+    -fx-border-color: #222222;
+    -fx-border-width: 2;
+}
+
+.text-field, .password-field {
+    -fx-background-color: white;
+    -fx-cursor: hand;
+}
+
+.button-signup {
+    -fx-background-color: #a0522d;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.label-white {
+    -fx-text-fill: white;
+}
+
+.text-field-invalid {
+    -fx-border-color: red;
+    -fx-border-width: 2px;
+}
+
+
