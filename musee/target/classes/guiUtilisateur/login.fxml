@@ -145,7 +145,7 @@
                   </Hyperlink>
                </children>
             </HBox>
-            <Button alignment="CENTER" layoutX="325.0" layoutY="34.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2C3E50; -fx-cursor: hand;" />
+            <Button fx:id="facialRecButton" alignment="CENTER" layoutX="325.0" layoutY="34.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #2C3E50; -fx-cursor: hand;" onAction="#startFacialRecognition"/>
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="330.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/icons8-facial-recognition-30.png" />

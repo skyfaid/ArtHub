@@ -39,9 +39,11 @@ controllers\AdminInterfaceController.class
 controllers\Activities\AfficherActivite$1.class
 controllers\Articles\ArticlesController.class
 controllers\Activities\ModifyActivite.class
+controllers\Users\WebcamViewController.class
 services\ServiceCrud.class
 services\ServiceParticipation.class
 controllers\Events\ListParticipantsController.class
 utils\UserUpdateListener.class
+utils\Utils.class
 controllers\Activities\AjouterActivite.class
 services\ServiceArticle.class

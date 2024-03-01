@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.opencv.core.Core;
 
 
 public class MainFX extends Application {
@@ -15,6 +16,8 @@ public class MainFX extends Application {
     }
     @Override
     public void start(Stage stage) throws Exception {
+       // System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+
         stage.initStyle(StageStyle.UNDECORATED);
         Image icon = new Image("/images/logo.png");
         stage.getIcons().add(icon);

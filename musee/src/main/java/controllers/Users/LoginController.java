@@ -187,4 +187,7 @@ public class LoginController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
+    public void startFacialRecognition(ActionEvent actionEvent) {
+    }
 }

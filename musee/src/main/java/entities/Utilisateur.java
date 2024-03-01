@@ -37,6 +37,7 @@ public class Utilisateur {
         this.nom = nom;
         this.email = email;
         this.motDePasseHash = motDePasseHash;
+        this.gender=gender;
     }
 
     public String getGender() {

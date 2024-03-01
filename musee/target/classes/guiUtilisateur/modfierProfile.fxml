@@ -96,7 +96,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="51.0" style="-fx-border-radius: 30;" styleClass="button-signup">
+                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="51.0" style="-fx-border-radius: 30;" onAction="#handleFacialRecognition" styleClass="button-signup">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

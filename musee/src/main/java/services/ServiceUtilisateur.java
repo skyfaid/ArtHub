@@ -4,6 +4,9 @@ import entities.Evenement;
 import entities.Utilisateur;
 import utils.MotDePasseUtilitaire;
 import utils.MyDataBase;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +81,7 @@ public class ServiceUtilisateur implements ServiceCrud<Utilisateur> {
 
     @Override
     public void ajouter(Utilisateur utilisateur) throws SQLException {
-        String sql = "INSERT INTO Utilisateurs (pseudo, prenom, nom, email, mot_de_passe_hash, gender, role) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Utilisateurs (pseudo, prenom, nom, email, mot_de_passe_hash, gender) VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1, utilisateur.getPseudo());
         preparedStatement.setString(2, utilisateur.getPrenom());
@@ -86,7 +89,6 @@ public class ServiceUtilisateur implements ServiceCrud<Utilisateur> {
         preparedStatement.setString(4, utilisateur.getEmail());
         preparedStatement.setString(5, motDePasseUtilitaire.hacherMotDePasse(utilisateur.getMotDePasseHash()));
         preparedStatement.setString(6, utilisateur.getGender());
-        preparedStatement.setString(7, utilisateur.getRole());
         preparedStatement.executeUpdate();
     }
     @Override
@@ -174,5 +176,31 @@ public class ServiceUtilisateur implements ServiceCrud<Utilisateur> {
         }
         return -1; // Retourne -1 si l'utilisateur n'est pas trouvé
     }
+
+
+
+
+    public String generateFacialIdentifier(byte[] facialData) throws NoSuchAlgorithmException {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        byte[] hash = digest.digest(facialData);
+        StringBuilder hexString = new StringBuilder();
+        for (byte b : hash) {
+            String hex = Integer.toHexString(0xff & b);
+            if(hex.length() == 1) hexString.append('0');
+            hexString.append(hex);
+        }
+        return hexString.toString(); // This is a simplified way to generate a unique string based on facial data
+    }
+
+    public void updateFacialData(int userId, String facialIdentifier) throws SQLException {
+        String sql = "UPDATE Utilisateurs SET facial_data_hash = ? WHERE utilisateur_id = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, facialIdentifier);
+            preparedStatement.setInt(2, userId);
+            preparedStatement.executeUpdate();
+        }
+    }
+
+
 
 }
