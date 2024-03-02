@@ -70,7 +70,7 @@
                         <Insets right="20.0" />
                      </padding>
                   </HBox>
-                  <Hyperlink text="Forgot your password?">
+                  <Hyperlink text="Forgot your password?" onAction="#resetPassword">
                      <padding>
                         <Insets left="10.0" />
                      </padding>

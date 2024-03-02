@@ -2,6 +2,7 @@ utils\DuplicateEventException.class
 services\ServiceActivite.class
 controllers\Events\ListEventsFrontController.class
 controllers\Articles\ArticleItemController.class
+controllers\Users\SignupController$1.class
 utils\SessionManager.class
 controllers\Activities\DeleteActivite.class
 test\MainFX.class
@@ -9,7 +10,6 @@ entities\Utilisateur.class
 services\ServiceUtilisateur.class
 utils\MotDePasseUtilitaire.class
 controllers\Activities\AfficherActivite.class
-entities\Admin.class
 controllers\Users\UserItemController.class
 entities\Activite.class
 entities\Participant.class
@@ -27,7 +27,6 @@ utils\Validation.class
 controllers\Activities\Enigme.class
 controllers\Users\HomeAdminController.class
 controllers\UserInterfaceController.class
-controllers\Users\afficherUsers.class
 controllers\Activities\PuzzlePiece.class
 utils\MyDataBase.class
 controllers\Users\LoginController.class

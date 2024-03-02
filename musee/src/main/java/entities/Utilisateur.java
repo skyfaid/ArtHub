@@ -28,16 +28,25 @@ public class Utilisateur {
     private boolean estActif;
 
     private String gender;
+    private String phoneNumber;
     public Utilisateur() {
     }
 
-    public Utilisateur(String pseudo, String prenom, String nom, String email, String motDePasseHash,String gender) {
+    public Utilisateur(String pseudo, String prenom, String nom, String email, String motDePasseHash,String gender,String phone) {
         this.pseudo = pseudo;
         this.prenom = prenom;
         this.nom = nom;
         this.email = email;
         this.motDePasseHash = motDePasseHash;
         this.gender=gender;
+        this.phoneNumber=phone;
+    }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getGender() {

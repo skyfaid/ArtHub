@@ -86,7 +86,7 @@ public class ServiceUtilisateur implements ServiceCrud<Utilisateur> {
 
     @Override
     public void ajouter(Utilisateur utilisateur) throws SQLException {
-        String sql = "INSERT INTO Utilisateurs (pseudo, prenom, nom, email, mot_de_passe_hash, gender) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Utilisateurs (pseudo, prenom, nom, email, mot_de_passe_hash, gender, phone_number) VALUES (?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1, utilisateur.getPseudo());
         preparedStatement.setString(2, utilisateur.getPrenom());
@@ -94,6 +94,7 @@ public class ServiceUtilisateur implements ServiceCrud<Utilisateur> {
         preparedStatement.setString(4, utilisateur.getEmail());
         preparedStatement.setString(5, motDePasseUtilitaire.hacherMotDePasse(utilisateur.getMotDePasseHash()));
         preparedStatement.setString(6, utilisateur.getGender());
+        preparedStatement.setString(7, utilisateur.getPhoneNumber());
         preparedStatement.executeUpdate();
     }
     @Override

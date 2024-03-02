@@ -169,7 +169,7 @@
       </VBox>
       <Pane fx:id="contentPane" layoutX="200.0" layoutY="100.0" prefHeight="600.0" prefWidth="1000" style="-fx-background-color: #2C3E50 ">
          <VBox fx:id="homeView" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
-            <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="Welcome to Home" />
+
          </VBox>
          <VBox fx:id="usersView" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
 

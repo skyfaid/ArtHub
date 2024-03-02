@@ -13,9 +13,9 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
-<AnchorPane  layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 20; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Users.afficherUsers">
+<AnchorPane  layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 20; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Users.afficherUsersController">
 <HBox layoutX="14.0" layoutY="69.0" spacing="500">
-        <Label  prefHeight="100.0" prefWidth="200.0" style="-fx-text-fill: Black; -fx-font-weight: bold;" text="Liste Utilisateurs">
+        <Label  prefHeight="100.0" prefWidth="200.0" style="-fx-text-fill: Black; -fx-font-weight: bold;" text="Users List">
             <font>
                <Font name="Corbel Bold" size="23.0" />
             </font>
