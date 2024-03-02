@@ -21,7 +21,6 @@ import javafx.stage.Stage;
 import services.ServiceActivite;
 import services.ServiceParticipation;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -88,12 +87,12 @@ public class UserActivity{
         }
     }*/
 @FXML
-private void handleParticipation() {
+private void handleParticipation(Activite activite) {
     // Check the value of nom_act
-    if (nom_act.equals("Puzzle")) {
+    if (activite.getNom_act().equals("Puzzle")) {
         // Load the Puzzle.fxml file
         loadPuzzleInterface();
-    } else if (nom_act.equals("enigme")) {
+    } else if (activite.getNom_act().equals("enigme")) {
         // Load the interface for enigme activity
         loadEnigmeInterface();
     } else {
@@ -101,17 +100,25 @@ private void handleParticipation() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
         alert.setHeaderText(null);
-        alert.setContentText("Invalid activity: " + nom_act);
+        alert.setContentText("Invalid activity: " + activite.getNom_act());
         alert.showAndWait();
     }
 }
     private void loadEnigmeInterface() {
-        // Implement loading of enigme interface
-        // Replace this with your code to load the interface for the enigme activity
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiActivite/enigme.fxml"));
+            Parent puzzleRoot = loader.load();
+            Stage puzzleStage = new Stage();
+            puzzleStage.setTitle("Enigme Game");
+            puzzleStage.setScene(new Scene(puzzleRoot));
+            puzzleStage.show();
+        } catch (Exception e) {
+            e.printStackTrace(); // Handle any exceptions gracefully
+        }
     }
     private void loadPuzzleInterface() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Puzzle.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiActivite/Puzzle.fxml"));
             Parent puzzleRoot = loader.load();
             Stage puzzleStage = new Stage();
             puzzleStage.setTitle("Puzzle Game");

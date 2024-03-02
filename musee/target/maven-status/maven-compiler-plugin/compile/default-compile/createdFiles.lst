@@ -24,8 +24,11 @@ controllers\Events\ListEventsBackController.class
 utils\ValidationUtils.class
 controllers\Users\SignupController.class
 utils\Validation.class
+controllers\Activities\Enigme.class
+controllers\Users\HomeAdminController.class
 controllers\UserInterfaceController.class
 controllers\Users\afficherUsers.class
+controllers\Activities\PuzzlePiece.class
 utils\MyDataBase.class
 controllers\Users\LoginController.class
 utils\FieldPopulator.class
@@ -37,9 +40,9 @@ controllers\Activities\WelcomeActivityController.class
 controllers\Events\EditParticipantController.class
 controllers\AdminInterfaceController.class
 controllers\Activities\AfficherActivite$1.class
+controllers\Activities\PuzzleController.class
 controllers\Articles\ArticlesController.class
 controllers\Activities\ModifyActivite.class
-controllers\Users\WebcamViewController.class
 services\ServiceCrud.class
 services\ServiceParticipation.class
 controllers\Events\ListParticipantsController.class
