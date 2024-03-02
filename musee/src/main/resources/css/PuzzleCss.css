@@ -1,0 +1,29 @@
+/* Apply to the root AnchorPane */
+#root {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #ddf2f3, #88a2ac); /* Cool gradient background */
+}
+
+/* Style for the puzzle area with drop shadow */
+#puzzleArea {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #333333;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+
+/* Style for buttons with artistic touches */
+.button {
+    -fx-background-color: linear-gradient(#feffff, #bddbfa);
+    -fx-text-fill: #333333;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 5, 0, 0, 0);
+}
+
+/* Style for text */
+.text, .text * {
+    -fx-fill: #5a5a5a;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}

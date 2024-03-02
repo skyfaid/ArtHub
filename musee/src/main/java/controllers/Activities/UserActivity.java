@@ -9,6 +9,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -71,7 +72,7 @@ public class UserActivity{
         card.getChildren().addAll(stackPane, nameLabel, dateLabel, locationLabel);
         return card;
     }
-
+/*
     private void handleParticipation(Activite activite) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiActivite/WelcomeActivity.fxml"));
@@ -85,8 +86,41 @@ public class UserActivity{
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }*/
+@FXML
+private void handleParticipation() {
+    // Check the value of nom_act
+    if (nom_act.equals("Puzzle")) {
+        // Load the Puzzle.fxml file
+        loadPuzzleInterface();
+    } else if (nom_act.equals("enigme")) {
+        // Load the interface for enigme activity
+        loadEnigmeInterface();
+    } else {
+        // Handle other activities or display an error message
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText("Invalid activity: " + nom_act);
+        alert.showAndWait();
     }
-
+}
+    private void loadEnigmeInterface() {
+        // Implement loading of enigme interface
+        // Replace this with your code to load the interface for the enigme activity
+    }
+    private void loadPuzzleInterface() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Puzzle.fxml"));
+            Parent puzzleRoot = loader.load();
+            Stage puzzleStage = new Stage();
+            puzzleStage.setTitle("Puzzle Game");
+            puzzleStage.setScene(new Scene(puzzleRoot));
+            puzzleStage.show();
+        } catch (Exception e) {
+            e.printStackTrace(); // Handle any exceptions gracefully
+        }
+    }
     public void setActivityDetails(Activite activite) throws SQLException {
         displayTopParticipants(activite);
     }
