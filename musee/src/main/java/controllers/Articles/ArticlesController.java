@@ -22,6 +22,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 public class ArticlesController implements Initializable {
 
@@ -33,6 +34,12 @@ public class ArticlesController implements Initializable {
     public Button buttonsave;
     public Button buttondelete;
     public Button buttonedit;
+    public TextField seachfield;
+    public Button latestButton;
+    public Button oldestButton;
+    public Button myArticlesButton;
+
+
     @FXML
     private VBox articlesContainer;
     private Article selectedArticle=new Article();
@@ -53,6 +60,9 @@ public class ArticlesController implements Initializable {
         onearticle.setVisible(false);
         loadArticles();
         contenu.setWrapText(true);
+        seachfield.textProperty().addListener((observable, oldValue, newValue) -> {
+            loadArticles(); // This will reload the articles based on the new search text
+        });
     }
 
     private void updateProfileImage() {
@@ -66,29 +76,32 @@ public class ArticlesController implements Initializable {
     private void loadArticles() {
         articlesContainer.getChildren().clear(); // Clear previous articles
         try {
+            String searchText = seachfield.getText().toLowerCase();
             List<Article> articles = articleService.recuperer();
             for (Article article : articles) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiArticle/ArticleItem.fxml"));
-                HBox articleBox = loader.load();
-                ArticleItemController controller = loader.getController();
-                controller.setData(article);
+                if (article.getTitre().toLowerCase().startsWith(searchText)) {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiArticle/ArticleItem.fxml"));
+                    HBox articleBox = loader.load();
+                    ArticleItemController controller = loader.getController();
+                    controller.setData(article);
+                    articleBox.setOnMouseEntered(event -> articleBox.setCursor(Cursor.HAND));
+                    // Change cursor back to default when not hovering
+                    articleBox.setOnMouseExited(event -> articleBox.setCursor(Cursor.DEFAULT));
 
-                articleBox.setOnMouseEntered(event -> articleBox.setCursor(Cursor.HAND));
-                // Change cursor back to default when not hovering
-                articleBox.setOnMouseExited(event -> articleBox.setCursor(Cursor.DEFAULT));
-
-                articleBox.setOnMouseClicked(event -> {
-                    // This line sets the selected article and displays its details
-                    displayArticleDetails(article);
-                });
-                articlesContainer.getChildren().add(articleBox);
+                    articleBox.setOnMouseClicked(event -> {
+                        // This line sets the selected article and displays its details
+                        displayArticleDetails(article);
+                    });
+                    articlesContainer.getChildren().add(articleBox);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace(); // Or handle error appropriately
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace(); // Handle SQL Exception
         }
     }
+
     private void displayArticleDetails(Article article) {
         selectedArticle.setArticleId(article.getArticleId());
         titre.setText(article.getTitre());
@@ -214,5 +227,64 @@ public class ArticlesController implements Initializable {
             }
         });
     }
+
+    @FXML
+    private void loadLatestArticles() {
+        articlesContainer.getChildren().clear(); // Clear previous articles
+        try {
+            List<Article> articles = articleService.recuperer(); // Assuming this method exists and fetches all articles
+            articles.sort((a1, a2) -> a2.getDateCreation().compareTo(a1.getDateCreation())); // Sort by creation date descending
+
+            for (Article article : articles) {
+                addArticleToContainer(article);
+            }
+        } catch (Exception e) {
+            e.printStackTrace(); // Handle exceptions
+        }
+    }
+
+    @FXML
+    private void loadOldestArticles() {
+        articlesContainer.getChildren().clear(); // Clear previous articles
+        try {
+            List<Article> articles = articleService.recuperer(); // Assuming this method exists and fetches all articles
+            articles.sort((a1, a2) -> a1.getDateCreation().compareTo(a2.getDateCreation())); // Sort by creation date ascending
+
+            for (Article article : articles) {
+                addArticleToContainer(article);
+            }
+        } catch (Exception e) {
+            e.printStackTrace(); // Handle exceptions
+        }
+    }
+
+    private void addArticleToContainer(Article article) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiArticle/ArticleItem.fxml"));
+        HBox articleBox = loader.load();
+        ArticleItemController controller = loader.getController();
+        controller.setData(article);
+        articleBox.setOnMouseEntered(event -> articleBox.setCursor(Cursor.HAND));
+        articleBox.setOnMouseExited(event -> articleBox.setCursor(Cursor.DEFAULT));
+        articleBox.setOnMouseClicked(event -> displayArticleDetails(article));
+        articlesContainer.getChildren().add(articleBox);
+    }
+
+    @FXML
+    private void loadMyArticles() {
+        articlesContainer.getChildren().clear(); // Clear previous articles
+        try {
+            List<Article> articles = articleService.recuperer(); // Assuming this method exists and fetches all articles
+            articles = articles.stream()
+                    .filter(article -> article.getUtilisateurId() == utilisateurConnecte.getUtilisateurId())
+                    .collect(Collectors.toList());
+
+            for (Article article : articles) {
+                addArticleToContainer(article);
+            }
+        } catch (Exception e) {
+            e.printStackTrace(); // Handle exceptions
+        }
+    }
+
 
 }
