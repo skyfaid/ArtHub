@@ -102,7 +102,8 @@ public class AdminInterfaceController implements UserUpdateListener{
         makeStageDraggable();
         closeButton.setOnAction(event -> closeStage());
         minimizeButton.setOnAction(event -> minimizeStage());
-        showView(homeView);
+        onHomeButtonClick(null);
+
     }
     private void showView(VBox view) {
         contentPane.getChildren().forEach(child -> child.setVisible(false));
@@ -147,6 +148,12 @@ public class AdminInterfaceController implements UserUpdateListener{
     @FXML
     protected void onHomeButtonClick(ActionEvent event) {
         showView(homeView);
+        try {
+            AnchorPane homePane = FXMLLoader.load(getClass().getResource("/guiUtilisateur/HomeAdmin.fxml"));
+            contentPane.getChildren().setAll(homePane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     @FXML
     protected void onEventsButtonClick(ActionEvent event) {

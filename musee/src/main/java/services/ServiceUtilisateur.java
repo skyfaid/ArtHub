@@ -8,8 +8,12 @@ import utils.MyDataBase;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ServiceUtilisateur implements ServiceCrud<Utilisateur> {
     private final Connection connection;
@@ -27,6 +31,8 @@ public class ServiceUtilisateur implements ServiceCrud<Utilisateur> {
         utilisateur.setEmail(resultSet.getString("email"));
         utilisateur.setMotDePasseHash(resultSet.getString("mot_de_passe_hash"));
         utilisateur.setRole(resultSet.getString("role"));
+        utilisateur.setGender(resultSet.getString("gender"));
+
         utilisateur.setDateInscription(resultSet.getTimestamp("date_inscription"));
         utilisateur.setDerniereConnexion(resultSet.getTimestamp("derniere_connexion"));
         utilisateur.setUrlImageProfil(resultSet.getString("url_image_profil"));
@@ -199,6 +205,33 @@ public class ServiceUtilisateur implements ServiceCrud<Utilisateur> {
             preparedStatement.setInt(2, userId);
             preparedStatement.executeUpdate();
         }
+    }
+
+
+    public Map<String, Integer> getUserRegistrationsPerMonth() throws SQLException {
+        Map<String, Integer> registrations = new LinkedHashMap<>();
+        String sql = "SELECT YEAR(date_inscription) as year, MONTH(date_inscription) as month, COUNT(*) as count FROM Utilisateurs GROUP BY YEAR(date_inscription), MONTH(date_inscription) ORDER BY year, month";
+        try (Statement statement = connection.createStatement(); ResultSet resultSet = statement.executeQuery(sql)) {
+            while (resultSet.next()) {
+                String monthYear = resultSet.getInt("month") + "/" + resultSet.getInt("year");
+                registrations.put(monthYear, resultSet.getInt("count"));
+            }
+        }
+        return registrations;
+    }
+
+    public Map<String, Long> getLastConnectionDays() throws SQLException {
+        Map<String, Long> lastConnections = new LinkedHashMap<>();
+        String sql = "SELECT pseudo, derniere_connexion FROM Utilisateurs";
+        try (Statement statement = connection.createStatement(); ResultSet resultSet = statement.executeQuery(sql)) {
+            while (resultSet.next()) {
+                String user = resultSet.getString("pseudo");
+                Timestamp lastLogin = resultSet.getTimestamp("derniere_connexion");
+                long daysSinceLastLogin = lastLogin != null ? ChronoUnit.DAYS.between(lastLogin.toLocalDateTime(), LocalDateTime.now()) : -1; // Use -1 or other logic to handle nulls appropriately
+                lastConnections.put(user, daysSinceLastLogin);
+            }
+        }
+        return lastConnections;
     }
 
 
