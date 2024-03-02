@@ -66,6 +66,7 @@
 
             </children>
          </HBox>
+
             <VBox prefHeight="110.0" prefWidth="335.0" spacing="5">
                 <Label styleClass="label-white" text="Email Address" />
                 <TextField fx:id="emailField" promptText="Email Address" styleClass="text-field" />

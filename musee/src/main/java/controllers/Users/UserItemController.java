@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
 import services.ServiceUtilisateur;
+import utils.UserConnected;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -39,6 +40,7 @@ public class UserItemController implements Initializable {
     @FXML
     private Button mailbutton;
     private Utilisateur utilisateur;
+
     public void setData(Utilisateur u){
         this.utilisateur = u;
         String imagePath = (u.getUrlImageProfil() != null && !u.getUrlImageProfil().isEmpty()) ?
@@ -54,6 +56,8 @@ public class UserItemController implements Initializable {
             lastlogin.setText("N/A"); // Or any other placeholder text
         }
         datesingup.setText(new SimpleDateFormat("yyyy-MM-dd").format(u.getDateInscription()));
+        int usr=UserConnected.getUser().getUtilisateurId();
+        blockButton.setVisible( usr != u.getUtilisateurId());
         updateBlockButtonState(u.isEstActif());
     }
 

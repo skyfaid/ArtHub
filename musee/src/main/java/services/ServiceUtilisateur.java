@@ -32,7 +32,6 @@ public class ServiceUtilisateur implements ServiceCrud<Utilisateur> {
         utilisateur.setMotDePasseHash(resultSet.getString("mot_de_passe_hash"));
         utilisateur.setRole(resultSet.getString("role"));
         utilisateur.setGender(resultSet.getString("gender"));
-
         utilisateur.setDateInscription(resultSet.getTimestamp("date_inscription"));
         utilisateur.setDerniereConnexion(resultSet.getTimestamp("derniere_connexion"));
         utilisateur.setUrlImageProfil(resultSet.getString("url_image_profil"));
@@ -171,6 +170,14 @@ public class ServiceUtilisateur implements ServiceCrud<Utilisateur> {
         }
         return false;
     }
+    public void updateResetCode(String email, String resetCode) throws SQLException {
+        String sql = "UPDATE Utilisateurs SET reset_code = ? WHERE email = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, resetCode);
+            preparedStatement.setString(2, email);
+            preparedStatement.executeUpdate();
+        }
+    }
     public int getCurrentUserId(String identifiant) throws SQLException {
         String sql = "SELECT utilisateur_id FROM Utilisateurs WHERE pseudo = ? OR email = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -233,7 +240,43 @@ public class ServiceUtilisateur implements ServiceCrud<Utilisateur> {
         }
         return lastConnections;
     }
+    public boolean verifyResetCode(String email, String resetCode) throws SQLException {
+        System.out.println("hi");
+        String sql = "SELECT reset_code FROM Utilisateurs WHERE email = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, email);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    String storedCode = resultSet.getString("reset_code");
+                    System.out.println(storedCode+" "+resetCode);
+                    return resetCode.equals(storedCode);
+                }
+            }
+        }
+        return false;
+    }
+    public void updatePasswordByEmail(String email, String newPassword) throws SQLException {
+        String hashedPassword = motDePasseUtilitaire.hacherMotDePasse(newPassword);
+        String sql = "UPDATE Utilisateurs SET mot_de_passe_hash = ?, reset_code = null WHERE email = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, hashedPassword);
+            preparedStatement.setString(2, email);
+            preparedStatement.executeUpdate();
+        }
+    }
 
+    public String getPhoneNumberByEmail(String email) throws SQLException {
+        String sql = "SELECT phone_number FROM Utilisateurs WHERE email = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, email.trim());
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getString("phone_number");
+                }
+            }
+        }
+        return null;
+    }
 
 
 }

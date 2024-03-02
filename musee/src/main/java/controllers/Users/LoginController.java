@@ -24,6 +24,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import services.ServiceUtilisateur;
 import utils.SessionManager; // Add the import for SessionManager
+import utils.UserConnected;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -125,7 +126,7 @@ public class LoginController {
             if (utilisateur != null && utilisateur.isEstActif()) {
                 // Setting the current user ID in SessionManager
                 SessionManager.getInstance().setCurrentUserId(utilisateur.getUtilisateurId());
-
+                UserConnected.setUser(utilisateur);
                 Stage currentStage = (Stage) mpField.getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader();
                 String fxmlPath = "/AdminInterface.fxml"; // Default path
@@ -189,5 +190,21 @@ public class LoginController {
     }
 
     public void startFacialRecognition(ActionEvent actionEvent) {
+    }
+
+    public void resetPassword(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiUtilisateur/forgotPassword.fxml"));
+            Parent root = loader.load();
+            Stage forgotPasswordStage = new Stage();
+            Image icon = new Image("/images/logo.png");
+            forgotPasswordStage.getIcons().add(icon);
+            forgotPasswordStage.initStyle(StageStyle.UNDECORATED);
+            forgotPasswordStage.setScene(new Scene(root));
+            forgotPasswordStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Error", "Could not open the forgot password form: " + e.getMessage(), Alert.AlertType.ERROR);
+        }
     }
 }
