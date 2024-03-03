@@ -11,6 +11,7 @@ services\ServiceUtilisateur.class
 utils\MotDePasseUtilitaire.class
 controllers\Activities\AfficherActivite.class
 controllers\Users\UserItemController.class
+controllers\Users\ActivateAccountController.class
 entities\Activite.class
 entities\Participant.class
 test\Main.class
@@ -37,12 +38,14 @@ entities\Participation.class
 entities\Evenement.class
 controllers\Activities\WelcomeActivityController.class
 controllers\Events\EditParticipantController.class
+utils\EmailService.class
 controllers\AdminInterfaceController.class
 controllers\Activities\AfficherActivite$1.class
 controllers\Activities\PuzzleController.class
 controllers\Articles\ArticlesController.class
 controllers\Activities\ModifyActivite.class
 services\ServiceCrud.class
+utils\EmailService$1.class
 services\ServiceParticipation.class
 controllers\Events\ListParticipantsController.class
 utils\UserUpdateListener.class

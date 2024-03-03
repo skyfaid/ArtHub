@@ -1,8 +1,12 @@
 package controllers.Users;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Callback;
+import utils.EmailService;
 import utils.ValidationUtils;
 import entities.Utilisateur;
 import javafx.fxml.FXML;
@@ -16,6 +20,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.event.EventHandler;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class SignupController {
@@ -219,11 +224,41 @@ public class SignupController {
                 showAlert("Validation Error", errormesg);
                 return;
             }
-            ser.ajouter(new Utilisateur(pseudoField.getText(),prenomField.getText(),nomField.getText(),emailField.getText(),passwordField.getText(),gender,countryCode+phoneNumber));
+            String verificationCode = String.valueOf((int) (Math.random() * 9000) + 1000);
+
+            // Send the verification code to the user's email
+            EmailService.sendEmail("smtp.office365.com", "wajdi.bouallegui@esprit.tn", "W@JDATAskills123",
+                    "wajdi.bouallegui@esprit.tn", email.trim(), "Email Verification Code", "Your verification code is: " + verificationCode);
+
+            // Open the code verification stage
+            Utilisateur usr=new Utilisateur(pseudoField.getText(),prenomField.getText(),nomField.getText(),emailField.getText(),passwordField.getText(),gender,countryCode+phoneNumber);
+            ser.ajouter(usr);
+            ser.updateResetCode(usr.getEmail(),verificationCode);
             showAlert("Success", "Account Created :)");
+            openCodeVerificationStage(usr);
             closeStage();
         }catch (SQLException e){
             showAlert("Eroor", e.getMessage());
         }
     }
+    private void openCodeVerificationStage(Utilisateur u) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiUtilisateur/ActivateAcount.fxml"));
+            Parent codeVerificationParent = loader.load();
+
+            // Set the controller for CodeVerificationScene
+            ActivateAccountController act = loader.getController();
+            act.setPrimaryStage(new Stage());
+            act.setUser(u);
+
+            // Set the scene on the new stage
+            Scene codeVerificationScene = new Scene(codeVerificationParent);
+            Stage codeVerificationStage = new Stage();
+            codeVerificationStage.setScene(codeVerificationScene);
+            codeVerificationStage.show(); // Show the stage
+        } catch (IOException e) {
+            showAlert("Error", "An error occurred: " + e.getMessage());
+        }
+    }
+
 }

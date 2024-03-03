@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.opencv.core.Core;
+import utils.EmailService;
 
 
 public class MainFX extends Application {
@@ -17,8 +18,8 @@ public class MainFX extends Application {
     @Override
     public void start(Stage stage) throws Exception {
        // System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-
-        stage.initStyle(StageStyle.UNDECORATED);
+      //  EmailService.sendEmail("smtp.office365.com","wajdi.bouallegui@esprit.tn","W@JDATAskills123","wajdi.bouallegui@esprit.tn","wajdi.bouallegui@gmail.com","hello","hi");
+       stage.initStyle(StageStyle.UNDECORATED);
         Image icon = new Image("/images/logo.png");
         stage.getIcons().add(icon);
         FXMLLoader loader=new FXMLLoader(getClass().getResource("/guiUtilisateur/login.fxml"));

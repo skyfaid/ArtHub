@@ -150,14 +150,14 @@ public class ServiceUtilisateur implements ServiceCrud<Utilisateur> {
             preparedStatement.executeUpdate();
         }
     }
-    public void updateProfileImage(int utilisateurId, String imagePath) throws SQLException {
-        String sql = "UPDATE Utilisateurs SET url_image_profil = ? WHERE utilisateur_id = ?";
+    public void activateUserByEmail(String email) throws SQLException {
+        String sql = "UPDATE Utilisateurs SET estActif = true WHERE email = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setString(1, imagePath);
-            preparedStatement.setInt(2, utilisateurId);
+            preparedStatement.setString(1, email);
             preparedStatement.executeUpdate();
         }
     }
+
     public boolean verifyPassword(int userId, String password) throws SQLException {
         String sql = "SELECT mot_de_passe_hash FROM Utilisateurs WHERE utilisateur_id = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
