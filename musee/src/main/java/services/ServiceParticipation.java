@@ -6,6 +6,7 @@ import entities.Participation;
 import utils.MyDataBase;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +28,17 @@ public  class ServiceParticipation implements ServiceCrud<Participation> {
             preparedStatement.executeUpdate();
         }
     }
+
+    public static void executeUpdate(String query, int activityId, int userId, int score, LocalDate participationDate) throws SQLException {
+        try (PreparedStatement preparedStatement = MyDataBase.getInstance().getConnection().prepareStatement(query)) {
+            preparedStatement.setInt(1, activityId);
+            preparedStatement.setInt(2, userId);
+            preparedStatement.setInt(3, score);
+            preparedStatement.setDate(4, Date.valueOf(participationDate));
+            preparedStatement.executeUpdate();
+        }
+    }
+
 
     @Override
     public void modifier(Participation entity) throws SQLException {

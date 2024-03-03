@@ -20,8 +20,12 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import services.ServiceActivite;
 import services.ServiceParticipation;
+import utils.MyDataBase;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class UserActivity{
@@ -88,22 +92,64 @@ public class UserActivity{
     }*/
 @FXML
 private void handleParticipation(Activite activite) {
+    int userId = user.getUtilisateurId();
+    // Get the ID of the activity
+    int activityId = activite.getId_activite();
+    // Get the current date
+    LocalDate participationDate = LocalDate.now();
     // Check the value of nom_act
-    if (activite.getNom_act().equals("Puzzle")) {
-        // Load the Puzzle.fxml file
-        loadPuzzleInterface();
-    } else if (activite.getNom_act().equals("enigme")) {
-        // Load the interface for enigme activity
-        loadEnigmeInterface();
-    } else {
-        // Handle other activities or display an error message
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setHeaderText(null);
-        alert.setContentText("Invalid activity: " + activite.getNom_act());
-        alert.showAndWait();
-    }
+   try {
+       // Check if the user has already participated in the activity
+       if (hasParticipated(userId, activityId)) {
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+           alert.setTitle("Warning");
+           alert.setHeaderText(null);
+           alert.setContentText("You have already participated in this activity.");
+           alert.showAndWait();
+           return; // Exit the method if the user has already participated
+       }
+       // You may need to adjust this SQL query based on your database schema
+       if (activite.getNom_act().equals("Puzzle")) {
+           String insertQuery = "INSERT INTO Participation (id_activite, utilisateur_id, score, participation_date) VALUES (?, ?, ?, ?)";
+           // Assuming you have a method to execute SQL queries in your ServiceParticipation class
+           ServiceParticipation.executeUpdate(insertQuery, activityId, userId, 0, participationDate);
+           // Load the Puzzle.fxml file
+           loadPuzzleInterface();
+       } else if (activite.getNom_act().equals("enigme")) {
+           String insertQuery = "INSERT INTO Participation (id_activite, utilisateur_id, score, participation_date) VALUES (?, ?, ?, ?)";
+           // Assuming you have a method to execute SQL queries in your ServiceParticipation class
+           ServiceParticipation.executeUpdate(insertQuery, activityId, userId, 0, participationDate);
+           // Load the interface for enigme activity
+           loadEnigmeInterface();
+       } else {
+           // Handle other activities or display an error message
+           Alert alert = new Alert(Alert.AlertType.ERROR);
+           alert.setTitle("Error");
+           alert.setHeaderText(null);
+           alert.setContentText("Invalid activity: " + activite.getNom_act());
+           alert.showAndWait();
+       }
+   }catch (SQLException e)
+   {e.printStackTrace();}
 }
+
+
+    private boolean hasParticipated(int userId, int activityId) throws SQLException {
+        // Query to check if the user has participated in the activity
+        String query = "SELECT COUNT(*) FROM Participation WHERE utilisateur_id = ? AND id_activite = ?";
+        try (PreparedStatement preparedStatement = MyDataBase.getInstance().getConnection().prepareStatement(query)) {
+            preparedStatement.setInt(1, userId);
+            preparedStatement.setInt(2, activityId);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    int count = resultSet.getInt(1);
+                    return count > 0; // Return true if the user has participated, false otherwise
+                }
+            }
+        }
+        return false;
+    }
+
     private void loadEnigmeInterface() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiActivite/enigme.fxml"));
