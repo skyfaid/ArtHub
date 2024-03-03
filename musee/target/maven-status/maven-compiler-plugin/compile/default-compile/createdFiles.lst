@@ -44,6 +44,7 @@ controllers\Activities\PuzzleController.class
 controllers\Articles\ArticlesController.class
 controllers\Activities\ModifyActivite.class
 services\ServiceCrud.class
+controllers\Activities\ResultEnigme.class
 services\ServiceParticipation.class
 controllers\Events\ListParticipantsController.class
 utils\UserUpdateListener.class

@@ -12,7 +12,11 @@ import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
+import services.ServiceParticipation;
+import entities.Activite;
+import entities.Participation;
+import entities.Utilisateur;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -163,11 +167,19 @@ public class PuzzleController {
         }
         if (isComplete) {
             statusText.setText("Congratulations! Puzzle completed!");
+           // handlePuzzleCompletion( userId, activityId);
+
         } else {
             statusText.setText("The puzzle is incomplete.");
         }
     }
 
+    private void handlePuzzleCompletion(int userId, int activityId) throws SQLException {
+        // Update the user's score when puzzle is completed
+        // String updateQuery = "UPDATE Participation SET score = 2500 WHERE utilisateur_id = ? AND id_activite = ?";
+        // Assuming you have a method to execute SQL queries in your ServiceParticipation class
+        ServiceParticipation.updateUserScoreInParticipation(userId, 2500);
+    }
 /*
     @FXML
     private void handle9() {

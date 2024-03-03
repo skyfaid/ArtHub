@@ -28,6 +28,14 @@ public  class ServiceParticipation implements ServiceCrud<Participation> {
             preparedStatement.executeUpdate();
         }
     }
+    public static void updateUserScoreInParticipation(int userId, int scoreToAdd) throws SQLException {
+        String query = "UPDATE Participation SET score = score + ? WHERE utilisateur_id = ?";
+        try (PreparedStatement preparedStatement = MyDataBase.getInstance().getConnection().prepareStatement(query)) {
+            preparedStatement.setInt(1, scoreToAdd);
+            preparedStatement.setInt(2, userId);
+            preparedStatement.executeUpdate();
+        }
+    }
 
     public static void executeUpdate(String query, int activityId, int userId, int score, LocalDate participationDate) throws SQLException {
         try (PreparedStatement preparedStatement = MyDataBase.getInstance().getConnection().prepareStatement(query)) {
@@ -114,15 +122,6 @@ public  class ServiceParticipation implements ServiceCrud<Participation> {
         }
         return top3participations;
     }
-
-
-
-
-
-
-
-
-
 
 
     public  List<Participation> getTopParticipantsForActivity(int activityId, int limit) throws SQLException {

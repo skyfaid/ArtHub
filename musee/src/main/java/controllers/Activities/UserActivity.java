@@ -90,6 +90,7 @@ public class UserActivity{
             e.printStackTrace();
         }
     }*/
+
 @FXML
 private void handleParticipation(Activite activite) {
     int userId = user.getUtilisateurId();
@@ -113,6 +114,7 @@ private void handleParticipation(Activite activite) {
            String insertQuery = "INSERT INTO Participation (id_activite, utilisateur_id, score, participation_date) VALUES (?, ?, ?, ?)";
            // Assuming you have a method to execute SQL queries in your ServiceParticipation class
            ServiceParticipation.executeUpdate(insertQuery, activityId, userId, 0, participationDate);
+           handlePuzzleCompletion(userId , activityId);
            // Load the Puzzle.fxml file
            loadPuzzleInterface();
        } else if (activite.getNom_act().equals("enigme")) {
@@ -174,6 +176,14 @@ private void handleParticipation(Activite activite) {
             e.printStackTrace(); // Handle any exceptions gracefully
         }
     }
+    private void handlePuzzleCompletion(int userId, int activityId) throws SQLException {
+        // Update the user's score when puzzle is completed
+       // String updateQuery = "UPDATE Participation SET score = 2500 WHERE utilisateur_id = ? AND id_activite = ?";
+        // Assuming you have a method to execute SQL queries in your ServiceParticipation class
+        ServiceParticipation.updateUserScoreInParticipation(userId, 2500);
+    }
+
+
     public void setActivityDetails(Activite activite) throws SQLException {
         displayTopParticipants(activite);
     }
