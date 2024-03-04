@@ -1,3 +1,4 @@
+controllers\Formations\UserFormDisplay.class
 utils\DuplicateEventException.class
 services\ServiceActivite.class
 controllers\Articles\ArticleItemController.class
@@ -10,6 +11,7 @@ entities\Utilisateur.class
 controllers\Events\ListParticipantsController$1.class
 services\ServiceUtilisateur.class
 utils\MotDePasseUtilitaire.class
+controllers\Formations\HboxForm.class
 controllers\Reclamations\Client.class
 controllers\Users\UserItemController.class
 controllers\Users\ActivateAccountController.class
@@ -18,22 +20,29 @@ utils\GeocodingService.class
 controllers\Events\AjouterEvenementController.class
 services\ServiceEvenement.class
 controllers\Reclamations\AfficherSolution.class
+entities\Formations.class
 controllers\Events\ListEventsBackController.class
 utils\UserConnected.class
 controllers\Users\SignupController.class
 utils\Validation.class
+controllers\Formations\QuizController.class
 controllers\Reclamations\Server$2.class
+controllers\Formations\FormationHbox.class
 controllers\Events\Notification.class
 entities\Participation.class
 entities\Evenement.class
 entities\Reclamation.class
+controllers\Formations\UserForm.class
 controllers\Articles\ArticlesController.class
 entities\Serverclass.class
 controllers\Activities\ResultEnigme.class
 utils\EmailService$1.class
 services\ServiceParticipation.class
+controllers\Formations\AjouterFormation.class
 controllers\Reclamations\Server$1.class
+controllers\Formations\AjouterParticipantsUser.class
 controllers\Activities\AjouterActivite.class
+entities\Participants.class
 services\ServiceReclamation.class
 controllers\Reclamations\AfficherSolutionUser.class
 controllers\Reclamations\Client$3.class
@@ -41,6 +50,7 @@ controllers\Users\CodeVerificationController.class
 controllers\Events\ListEventsFrontController.class
 utils\SessionManager.class
 test\MainFX.class
+controllers\Formations\AjouterParticipants.class
 controllers\Reclamations\Server$3.class
 controllers\Activities\AfficherActivite.class
 controllers\Reclamations\AfficherReclamation.class
@@ -68,6 +78,7 @@ utils\FieldPopulator.class
 controllers\Users\NewPasswordController.class
 controllers\Activities\UserActivity.class
 controllers\Activities\WelcomeActivityController.class
+services\ParticipantService.class
 controllers\Events\EditParticipantController.class
 controllers\Users\ForgotPasswordController.class
 utils\EmailService.class
@@ -77,6 +88,7 @@ controllers\Activities\PuzzleController.class
 controllers\Activities\ModifyActivite.class
 controllers\Users\WebcamViewController.class
 services\ServiceCrud.class
+services\FormationService.class
 controllers\Reclamations\AjouterReclamation.class
 controllers\Events\ListParticipantsController.class
 utils\UserUpdateListener.class
@@ -84,4 +96,5 @@ controllers\Reclamations\Client$1.class
 entities\Clientclass$1.class
 utils\Utils.class
 services\ServiceArticle.class
+controllers\Formations\QuizController$SpecialCharacterHandler.class
 controllers\Reclamations\Client$2.class

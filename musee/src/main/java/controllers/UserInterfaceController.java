@@ -181,6 +181,13 @@ public class UserInterfaceController implements UserUpdateListener {
     @FXML
     protected void onFormationsButtonClick(ActionEvent event) {
         showView(formationsView);
+        try {
+            // Load ListEventsBack.fxml
+            AnchorPane listforsPane = FXMLLoader.load(getClass().getResource("/guiFormation/userFormDisplay.fxml"));
+            contentPane.getChildren().setAll(listforsPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

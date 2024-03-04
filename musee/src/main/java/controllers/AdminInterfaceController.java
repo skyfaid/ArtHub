@@ -195,6 +195,12 @@ public class AdminInterfaceController implements UserUpdateListener{
     @FXML
     protected void onFormationsButtonClick(ActionEvent event) {
         showView(formationsView);
+        try {
+            AnchorPane pane_event = FXMLLoader.load(getClass().getResource("/guiFormation/Formation_Item.fxml"));
+            contentPane.getChildren().setAll(pane_event);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
