@@ -1,12 +1,20 @@
 package controllers.Users;
 
 import entities.Article;
+import entities.Evenement;
+import entities.Participant;
 import entities.Utilisateur;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.*;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 import services.ServiceArticle;
+import services.ServiceEvenement;
+import services.ServiceParticipant;
 import services.ServiceUtilisateur;
 
 import java.sql.SQLException;
@@ -17,6 +25,7 @@ import java.util.stream.Collectors;
 
 public class HomeAdminController {
 
+    public LineChart eventParticipantLineChart;
     @FXML
     private BarChart<String, Integer> userActivityChart;
 
@@ -32,9 +41,20 @@ public class HomeAdminController {
     private ServiceUtilisateur serviceUtilisateur = new ServiceUtilisateur();
 
     private ServiceArticle serviceArticle = new ServiceArticle();
+    @FXML
+    private PieChart eventGenderChart;
+
+    private final ServiceParticipant serviceParticipant = new ServiceParticipant();
+    private final ServiceEvenement serviceEvenement = new ServiceEvenement();
+
+
+
+
 
     @FXML
     public void initialize() {
+        loadParticipantGenderData();
+        loadEventParticipantData();
         loadUserRolesData();
         loadUserRegistrationsData();
         loadUserLastConnectionData();
@@ -72,10 +92,8 @@ public class HomeAdminController {
             e.printStackTrace();
             // Handle errors appropriately
         }
+
     }
-
-
-
 
     private void loadUserRolesData() {
         try {
@@ -125,6 +143,66 @@ public class HomeAdminController {
             e.printStackTrace();
         }
     }
+
+
+    private void loadParticipantGenderData() {
+        try {
+            List<Participant> participants = serviceParticipant.afficher(); // Fetch participants data
+            if (participants != null && !participants.isEmpty()) {
+                // Initialize counts for male, female, and unknown genders
+                long maleCount = participants.stream()
+                        .filter(participant -> "Male".equals(participant.getGender()))
+                        .count();
+                long femaleCount = participants.stream()
+                        .filter(participant -> "Female".equals(participant.getGender()))
+                        .count();
+                long unknownCount = participants.size() - (maleCount + femaleCount);
+
+                // Prepare the data for the pie chart
+                ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+                        new PieChart.Data("Male: " + maleCount, maleCount),
+                        new PieChart.Data("Female: " + femaleCount, femaleCount)
+                );
+
+                // Only add 'Unknown' segment if there are any
+                if (unknownCount > 0) {
+                    pieChartData.add(new PieChart.Data("Unknown: " + unknownCount, unknownCount));
+                }
+
+                eventGenderChart.getData().clear(); // Clear existing data
+                eventGenderChart.setData(pieChartData);
+                eventGenderChart.setTitle("Participant Gender Distribution");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Handle errors appropriately
+        }
+    }
+
+    private void loadEventParticipantData() {
+        try {
+            // Fetch events and their participant counts
+            List<Evenement> events = serviceEvenement.afficherback();
+
+            // Create a series to hold event names and participant counts
+            XYChart.Series<String, Number> series = new XYChart.Series<>();
+            series.setName("Event Participants");
+
+            // Add event names and participant counts to the series
+            for (Evenement event : events) {
+                series.getData().add(new XYChart.Data<>(event.getNom(), event.getNombreParticipants()));
+            }
+
+            // Clear existing data and add the new series to the line chart
+            eventParticipantLineChart.getData().clear();
+            eventParticipantLineChart.getData().add(series);
+            eventParticipantLineChart.setTitle("Event Participants");
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Handle errors appropriately
+        }
+    }
+
 
 
 }
