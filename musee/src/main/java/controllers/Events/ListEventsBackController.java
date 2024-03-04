@@ -1,20 +1,32 @@
 package controllers.Events;
 
 import entities.Evenement;
-import javafx.animation.TranslateTransition;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 import services.ServiceEvenement;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.application.Platform;
+
+import java.awt.image.BufferedImage;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,6 +39,8 @@ public class ListEventsBackController {
     public TextField searchTextField;
     public Button searchButton;
     public Button participantsbutton;
+    public Button showChartButton;
+    public Button showMapViewButton;
     @FXML
     private VBox eventDetailsVBox;
     @FXML
@@ -198,8 +212,6 @@ public class ListEventsBackController {
         }
 
     }
-    public void retourner(MouseEvent mouseEvent) {
-    }
 
     public void loadparticipantslist(ActionEvent actionEvent) {
 
@@ -221,7 +233,61 @@ public class ListEventsBackController {
             error1.setText("Erreur lors du chargement de l'interface d'ajout.");
             e.printStackTrace();
         }
-
     }
+    public void displayEventChart(ActionEvent actionEvent) {
+        // Data for the chart
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        // Fetch events and their participant counts
+        List<Evenement> events = serviceEvenement.afficherback();
+        for (Evenement event : events) {
+            dataset.addValue(event.getNombreParticipants(), "Participants", event.getNom());
+        }
+        // Create the chart
+        JFreeChart chart = ChartFactory.createBarChart(
+                "Event Participants", // Chart title
+                "Event Names", // Domain axis label
+                "Number of Participants", // Range axis label
+                dataset,
+                PlotOrientation.VERTICAL,
+                false, true, false);
+
+        // Increase the chart size
+        BufferedImage chartImage = chart.createBufferedImage(800, 600); // Adjusted size
+        WritableImage fxImage = new WritableImage(800, 600); // Adjusted size
+        SwingFXUtils.toFXImage(chartImage, fxImage);
+
+        // Display the chart in a new stage with increased size
+        ImageView chartImageView = new ImageView(fxImage);
+        StackPane pane = new StackPane(chartImageView);
+        Scene scene = new Scene(pane, 800, 600); // Adjusted scene size
+        Stage chartStage = new Stage();
+        chartStage.setScene(scene);
+        chartStage.setTitle("Event Participation Chart");
+        chartStage.show();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void retourner(MouseEvent mouseEvent) {
+    }
+
+
+
+
+
+
+
 
 }

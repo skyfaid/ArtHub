@@ -21,6 +21,7 @@ public class EditInterfaceController {
     public Button confirmermodif;
     public Button chargerposter;
     public VBox notificationContainer;
+    public Button chargervideo;
     @FXML
     private TextField nomEditTF;
     @FXML
@@ -72,43 +73,6 @@ public class EditInterfaceController {
             postereventimage.setImage(null);
         }
     }
-
-    /*@FXML
-    void confirmermodif(ActionEvent event) {
-        // Check if an event is selected
-        if (selectedEvent != null) {
-            // Update the event details with values from text fields
-            selectedEvent.setNom(nomEditTF.getText());
-            selectedEvent.setType(typeEditTF.getText());
-            selectedEvent.setDatedebut(datedebutEditPicker.getValue());
-            selectedEvent.setDatefin(datefinEditPicker.getValue());
-            selectedEvent.setLieu(lieuEditTF.getText());
-            selectedEvent.setNombrePlaces(Integer.parseInt(nbrePlacesEditTF.getText()));
-            selectedEvent.setDescription(descriptionEditTF.getText());
-
-            // Update the event in the database or wherever you store the events
-            serviceEvenement.modifier(selectedEvent);
-
-            // If the ModifierEvenementController reference is set, refresh the event list
-            if (modifierEvenementController != null) {
-                modifierEvenementController.refreshEventList();
-            }
-            // Get the image URL from the selected event
-            String imageURL = selectedEvent.getPosterUrl();
-
-            // Pass the updated event back to the ModifierEvenementController
-            listEventsBackController.updateEvent(selectedEvent, imageURL);
-
-            // Show success message or perform any other action
-            error1.setText("Event modified successfully!");
-            error1.setStyle("-fx-text-fill: green;");
-        } else {
-            // Show error message if no event is selected
-            error1.setText("Please select an event to modify.");
-            error1.setStyle("-fx-text-fill: red;");
-        }
-    }*/
-
 
     @FXML
     void confirmermodif(ActionEvent event) {
@@ -198,7 +162,25 @@ public class EditInterfaceController {
             postereventimage.setImage(image);
         }
         }
+    public void chargervideo(ActionEvent actionEvent) {
+        FileChooser fileChooser = new FileChooser();
+        // Set extension filters for video files
+        FileChooser.ExtensionFilter videoFilter = new FileChooser.ExtensionFilter("Video Files", "*.mp4", "*.avi", "*.mkv");
+        fileChooser.getExtensionFilters().add(videoFilter);
 
+        // Show open file dialog to select a video
+        File file = fileChooser.showOpenDialog(null);
+
+        if (file != null) {
+            // Use absolute path instead of URI
+            String videoPath = file.getAbsolutePath();
+            selectedEvent.setVideoUrl(videoPath); // Update the event object with the new video path
+            // You can add logic here to handle the video, such as displaying a thumbnail or preview
+        }
+
+
+
+    }
 
     @FXML
     private void cancelEdit() {
@@ -238,4 +220,6 @@ public class EditInterfaceController {
     public TextField getNombrePlacesTF() {
         return nbrePlacesEditTF;
     }
+
+
 }

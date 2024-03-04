@@ -20,6 +20,7 @@ import java.util.List;
 public class AjouterEvenementController {
 
     public Pane ajouterevent;
+    public Button chargerVideo;
     @FXML
     private TextField nom;
 
@@ -54,6 +55,7 @@ public class AjouterEvenementController {
     private VBox notificationContainer;
 
     private String imageURL = "";
+    private String trailerURL = "";
 
     private Notification notification;
 
@@ -93,6 +95,12 @@ public class AjouterEvenementController {
             notification.show();
             return;
         }
+        // Check if the image URL is empty
+        if (imageURL.isEmpty()) {
+            Notification notification = new Notification("Poster image is not added", notificationContainer);
+            notification.show();
+            return;
+        }
         try {
             if (!nombrePlacesText.matches("\\d+")) {
                 throw new NumberFormatException("Nombre de places doit être un nombre.");
@@ -119,7 +127,9 @@ public class AjouterEvenementController {
                 return;
             }
 
-            Evenement newEvent = new Evenement(nomText, dateDebut, dateFin, lieuText, typeText, descriptionText, nombrePlacesInt, imageURL);
+           //Evenement newEvent = new Evenement(nomText, dateDebut, dateFin, lieuText, typeText, descriptionText, nombrePlacesInt, imageURL);
+
+            Evenement newEvent = new Evenement(nomText, dateDebut, dateFin, lieuText, typeText, descriptionText, nombrePlacesInt, imageURL, trailerURL);
 
             // Add the new event to the list
             evenements.add(newEvent);
@@ -136,7 +146,7 @@ public class AjouterEvenementController {
             Notification notification = new Notification("Nombre de places doit être un nombre.", notificationContainer);
             notification.show();
         } catch (IllegalArgumentException e) {
-            Notification notification = new Notification("Erreur", notificationContainer);
+            Notification notification = new Notification("Date debut doit être avant la date fin", notificationContainer);
             notification.show();
         }
     }
@@ -144,9 +154,10 @@ public class AjouterEvenementController {
     @FXML
     void retourtolistevents(ActionEvent event) throws IOException {
 
+
     }
 
-    @FXML
+   @FXML
     void chargerImage(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choisir une image");
@@ -157,4 +168,21 @@ public class AjouterEvenementController {
             imageURL = selectedFile.getAbsolutePath();
         }
     }
+    @FXML
+    void chargerVideo(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Choisir un fichier vidéo");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Video Files", "*.mp4", "*.avi", "*.mkv")); // Add video file extensions here
+        File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null) {
+            trailerURL = selectedFile.getAbsolutePath();
+        }
+    }
+
+
+
+
 }
+
+

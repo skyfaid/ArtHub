@@ -91,46 +91,6 @@ public class ListParticipantsController implements Initializable {
           System.out.println("Please select a participant to delete.");
       }
   }
-    @FXML
-    void editparticipant(ActionEvent event) {
-        // Get the selected participant from the TableView
-        Participant selectedParticipant = participantsTableView.getSelectionModel().getSelectedItem();
 
-        if (selectedParticipant != null) {
-            // Open the EditParticipant window and pass the selected participant
-            openEditParticipantWindow(selectedParticipant);
-        } else {
-            showAlert("Edit Participant", "Please select a participant to edit.");
-        }
 
-    }
-    private void openEditParticipantWindow(Participant participant) {
-        try {
-            // Load the FXML file for the EditParticipant window
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/EditParticipant.fxml"));
-            Parent root = loader.load();
-
-            // Get the controller for the EditParticipant window
-            EditParticipantController controller = loader.getController();
-            // Pass the selected participant to the controller
-            controller.setParticipant(participant);
-
-            // Create a new stage (window) for the EditParticipant scene
-            Stage stage = new Stage();
-            stage.setTitle("Edit Participant");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-            showAlert("Error", "An error occurred while opening the edit window.");
-        }
-    }
-    // Utility method to show an alert
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
 }

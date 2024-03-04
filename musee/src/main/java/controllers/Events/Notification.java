@@ -12,7 +12,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 public class Notification extends StackPane {
-    private static final int NOTIFICATION_WIDTH = 300;
+    private static final int NOTIFICATION_WIDTH = 350;
     private static final int NOTIFICATION_HEIGHT = 40;
     private static final Duration NOTIFICATION_DURATION = Duration.seconds(1);
 
@@ -35,6 +35,8 @@ public class Notification extends StackPane {
 
         setAlignment(Pos.CENTER);
         getChildren().addAll(background, messageLabel);
+        // Apply CSS class to the notification
+        getStyleClass().add("notification");
     }
 
     public void show() {
