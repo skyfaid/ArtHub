@@ -23,7 +23,7 @@
       <Button fx:id="minimizeButton" style="-fx-background-color: #262626;-fx-text-fill: white;" text="--" />
       <Button fx:id="closeButton" style="-fx-background-color: #262626;-fx-text-fill: white;" text="X" />
    </HBox>
-   <VBox layoutY="20" prefHeight="680.0" prefWidth="100.0" spacing="50.0" style="-fx-background-color: #2C3E50;">
+   <VBox layoutY="20" prefHeight="680.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: #2C3E50;">
       <children>
          <ImageView fitHeight="86.0" fitWidth="100" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -80,6 +80,16 @@
                   <graphic>
                      <ImageView fitHeight="20" fitWidth="20">
                         <Image url="@/images/idea-16.png" />
+                     </ImageView>
+                  </graphic>
+                  <VBox.margin>
+                     <Insets left="22.0" />
+                  </VBox.margin>
+               </Button>
+               <Button mnemonicParsing="false" onAction="#onchatButtonClick" prefHeight="46.0" prefWidth="46.0" styleClass="button-menu2">
+                  <graphic>
+                     <ImageView fitHeight="20" fitWidth="20">
+                        <Image url="@/images/chat-4-16.png" />
                      </ImageView>
                   </graphic>
                   <VBox.margin>
@@ -178,6 +188,9 @@
 
       <VBox fx:id="oeuvresView" layoutX="5.0" layoutY="5.0" prefHeight="570.0" prefWidth="1091" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 20; -fx-background-radius: 20;">
          <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="welcome to oeuvres" />
+      </VBox>
+      <VBox fx:id="MessangerView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="1091" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 20; -fx-background-radius: 20;">
+
       </VBox>
 
       <VBox fx:id="articlesView" layoutX="5.0" layoutY="5.0" prefHeight="540.0" prefWidth="1091" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 20; -fx-background-radius: 20;">

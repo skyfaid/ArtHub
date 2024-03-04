@@ -29,6 +29,7 @@ public class AdminInterfaceController implements UserUpdateListener{
     public Label pseudouser;
 
     public Button imageButton;
+    public VBox messengerView;
 
     @FXML
     private Button eventsButton;
@@ -208,6 +209,12 @@ public class AdminInterfaceController implements UserUpdateListener{
     @FXML
     protected void onReclamationButtonClick(ActionEvent event) {
         showView(reclamationsView);
+        try {
+            AnchorPane pane_event = FXMLLoader.load(getClass().getResource("/guiReclamation/ajoutersolution.fxml"));
+            contentPane.getChildren().setAll(pane_event);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void onlogoutButtonClick(ActionEvent actionEvent) {
@@ -252,5 +259,16 @@ public class AdminInterfaceController implements UserUpdateListener{
         this.utilisateurConnecte = updatedUser;
         // Now update the UI with new user details
         setUtilisateur(updatedUser);
+    }
+
+    public void onMessengerButtonClick(ActionEvent event) {
+        showView(messengerView);
+        try {
+            AnchorPane pane_event = FXMLLoader.load(getClass().getResource("/guiReclamation/server.fxml"));
+            contentPane.getChildren().setAll(pane_event);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }

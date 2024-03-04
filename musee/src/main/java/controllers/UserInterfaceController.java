@@ -75,7 +75,7 @@ public class UserInterfaceController implements UserUpdateListener {
     private HBox titleBar;
 
     @FXML
-    private VBox homeView,eventsView,articlesView,oeuvresView,activitesView,reclamationsView,formationsView;
+    private VBox homeView,eventsView,articlesView,oeuvresView,activitesView,reclamationsView,formationsView,MessangerView;
 
     private Utilisateur utilisateurConnecte;
 
@@ -204,6 +204,12 @@ public class UserInterfaceController implements UserUpdateListener {
     @FXML
     protected void onReclamationButtonClick(ActionEvent event) {
         showView(reclamationsView);
+        try {
+            AnchorPane pane_event = FXMLLoader.load(getClass().getResource("/guiReclamation/ajouterreclamation.fxml"));
+            contentPane.getChildren().setAll(pane_event);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void onlogoutButtonClick(ActionEvent actionEvent) {
@@ -245,5 +251,16 @@ public class UserInterfaceController implements UserUpdateListener {
         this.utilisateurConnecte = updatedUser;
         // Now update the UI with new user details
         setUtilisateur(updatedUser);
+    }
+
+    public void onchatButtonClick(ActionEvent event) {
+
+        showView(MessangerView);
+        try {
+            AnchorPane pane_event = FXMLLoader.load(getClass().getResource("/guiReclamation/client.fxml"));
+            contentPane.getChildren().setAll(pane_event);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

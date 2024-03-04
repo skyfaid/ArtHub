@@ -152,6 +152,19 @@
                   <Font size="18.0" />
                </font>
             </Button>
+            <Button fx:id="MessengerButton" mnemonicParsing="false" onAction="#onMessengerButtonClick" prefHeight="30" prefWidth="160.0" styleClass="button-menu" text="Messenger" textFill="#f2f1f1" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="20" fitWidth="20">
+                     <Image url="@/images/chat-4-16.png" />
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
             <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onlogoutButtonClick" prefHeight="30" prefWidth="160.0" styleClass="button-menu" text="Log Out" textFill="#f2f1f1" VBox.vgrow="ALWAYS">
                <graphic>
                   <ImageView fitHeight="20" fitWidth="20">
@@ -172,6 +185,9 @@
 
          </VBox>
          <VBox fx:id="usersView" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
+
+         </VBox>
+         <VBox fx:id="messengerView" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
 
          </VBox>
 
