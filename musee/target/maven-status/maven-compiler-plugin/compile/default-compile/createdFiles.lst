@@ -7,6 +7,7 @@ controllers\Reclamations\AjouterSolution.class
 controllers\Activities\DeleteActivite.class
 entities\Serverclass$1.class
 entities\Utilisateur.class
+controllers\Events\ListParticipantsController$1.class
 services\ServiceUtilisateur.class
 utils\MotDePasseUtilitaire.class
 controllers\Reclamations\Client.class
@@ -18,6 +19,7 @@ controllers\Events\AjouterEvenementController.class
 services\ServiceEvenement.class
 controllers\Reclamations\AfficherSolution.class
 controllers\Events\ListEventsBackController.class
+utils\UserConnected.class
 controllers\Users\SignupController.class
 utils\Validation.class
 controllers\Reclamations\Server$2.class
@@ -34,6 +36,7 @@ controllers\Activities\AjouterActivite.class
 services\ServiceReclamation.class
 controllers\Reclamations\AfficherSolutionUser.class
 controllers\Reclamations\Client$3.class
+controllers\Users\CodeVerificationController.class
 controllers\Events\ListEventsFrontController.class
 utils\SessionManager.class
 test\MainFX.class
@@ -61,14 +64,17 @@ controllers\Activities\PuzzlePiece.class
 utils\MyDataBase.class
 controllers\Users\LoginController.class
 utils\FieldPopulator.class
+controllers\Users\NewPasswordController.class
 controllers\Activities\UserActivity.class
 controllers\Activities\WelcomeActivityController.class
 controllers\Events\EditParticipantController.class
+controllers\Users\ForgotPasswordController.class
 utils\EmailService.class
 controllers\AdminInterfaceController.class
 controllers\Activities\AfficherActivite$1.class
 controllers\Activities\PuzzleController.class
 controllers\Activities\ModifyActivite.class
+controllers\Users\WebcamViewController.class
 services\ServiceCrud.class
 controllers\Reclamations\AjouterReclamation.class
 controllers\Events\ListParticipantsController.class

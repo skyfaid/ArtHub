@@ -41,7 +41,7 @@ public class ListParticipantsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         populateParticipants();
-      //  setupSearchListener();
+       setupSearchListener();
     }
     private void populateParticipants() {
         List<Participant> participants = service.afficher();
@@ -49,15 +49,15 @@ public class ListParticipantsController implements Initializable {
         participantsTableView.setItems(allParticipants);
     }
 
-  /*  private void setupSearchListener() {
+    private void setupSearchListener() {
         searchTextField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 filterParticipants(newValue);
             }
         });
-    }*/
-/*    private void filterParticipants(String searchText) {
+    }
+   private void filterParticipants(String searchText) {
         if (searchText == null || searchText.isEmpty()) {
             participantsTableView.setItems(allParticipants);
         } else {
@@ -69,7 +69,7 @@ public class ListParticipantsController implements Initializable {
             }
             participantsTableView.setItems(filteredParticipants);
         }
-    }*/
+    }
 
   @FXML
   void deleteparticipant(ActionEvent event) {
