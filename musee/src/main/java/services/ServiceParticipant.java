@@ -117,24 +117,7 @@ public class ServiceParticipant implements ServiceCrud<Participant> {
         return false;
     }
 
-    public List<Evenement> getEventsParticipatedByUser(int userId) throws SQLException {
-        List<Evenement> participatedEvents = new ArrayList<>();
-        String query = "SELECT e.* FROM evenements e " +
-                "JOIN participants p ON e.id = p.event_id " +
-                "WHERE p.utilisateur_id = ?";
-        try (PreparedStatement st = cnx.prepareStatement(query)) {
-            st.setInt(1, userId);
-            ResultSet rs = st.executeQuery();
-            while (rs.next()) {
-                Evenement event = new Evenement(); // Assuming Evenement has a constructor that takes a ResultSet
-                event.setId(rs.getInt("id"));
-                event.setNom(rs.getString("nom"));
-                // Set other fields of Evenement as needed...
-                participatedEvents.add(event);
-            }
-        }
-        return participatedEvents;
-    }
+
 
 }
 

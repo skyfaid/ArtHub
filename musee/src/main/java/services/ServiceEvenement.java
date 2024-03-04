@@ -5,7 +5,6 @@ import entities.Participant;
 import utils.DuplicateEventException;
 import utils.GeocodingService;
 import utils.MyDataBase;
-import services.ServiceParticipant;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,13 +15,7 @@ import java.util.List;
 import com.google.maps.errors.ApiException;
 import com.google.maps.model.LatLng;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class ServiceEvenement implements ServiceCrud<Evenement> {
 
@@ -232,8 +225,6 @@ public class ServiceEvenement implements ServiceCrud<Evenement> {
 
         return eventCoordinates;
     }
-
-
 
 
 

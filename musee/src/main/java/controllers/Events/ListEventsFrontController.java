@@ -361,11 +361,22 @@ public class ListEventsFrontController {
             e.printStackTrace();
         }
 
-
     }
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+    }
+
 
 
 
