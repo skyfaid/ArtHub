@@ -10,11 +10,21 @@ public class Participant {
     private String nom; // User's last name
     private String prenom; // User's first name
     private String gender;
+    private int numberOfEventsParticipated; // Add this field
+
     public Participant(int event_id, int participant_id, int utilisateur_id, String eventName) {
         this.event_id = event_id;
         this.participant_id = participant_id;
         this.utilisateur_id = utilisateur_id;
         this.eventName = eventName; // Initialize event name property
+    }
+    // Add getter and setter for numberOfEventsParticipated
+    public int getNumberOfEventsParticipated() {
+        return numberOfEventsParticipated;
+    }
+
+    public void setNumberOfEventsParticipated(int numberOfEventsParticipated) {
+        this.numberOfEventsParticipated = numberOfEventsParticipated;
     }
     // Constructor used when all attributes are known
     public Participant(int event_id, int participant_id, int utilisateur_id, String eventName, String nom, String prenom) {

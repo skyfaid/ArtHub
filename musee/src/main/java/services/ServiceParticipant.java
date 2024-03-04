@@ -118,6 +118,31 @@ public class ServiceParticipant implements ServiceCrud<Participant> {
     }
 
 
+    public void decrementEventParticipantCount(int eventId) {
+        String query = "UPDATE evenements SET nombreParticipants = nombreParticipants - 1 WHERE id = ?";
+        try {
+            PreparedStatement preparedStatement = cnx.prepareStatement(query);
+            preparedStatement.setInt(1, eventId);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    // Method to get the number of events participated by a participant
+    public int getNumberOfEventsParticipated(int participantId) {
+        String query = "SELECT COUNT(*) FROM participants WHERE participant_id = ?";
+        try (PreparedStatement statement = cnx.prepareStatement(query)) {
+            statement.setInt(1, participantId);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0; // Default value if count retrieval fails
+    }
+
 
 }
 
