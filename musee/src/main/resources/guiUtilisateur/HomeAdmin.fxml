@@ -10,10 +10,10 @@
             <Tab text="Overview">
                 <content>
                     <VBox spacing="20">
-                    <HBox spacing="20">
-                        <PieChart fx:id="userRolesChart" title="User Roles Distribution" />
-                        <PieChart fx:id="userGenderChart" title="User Gender Distribution" />
-                    </HBox>
+                        <HBox spacing="20">
+                            <PieChart fx:id="userRolesChart" title="User Roles Distribution" />
+                            <PieChart fx:id="userGenderChart" title="User Gender Distribution" />
+                        </HBox>
                         <BarChart fx:id="userActivityChart" title="User Registrations Per Month">
                             <xAxis>
                                 <CategoryAxis label="Month" />
@@ -32,7 +32,7 @@
                             <CategoryAxis label="User" />
                         </xAxis>
                         <yAxis>
-                             <NumberAxis label="Days Since Last Login" />
+                            <NumberAxis label="Days Since Last Login" />
                         </yAxis>
                     </LineChart>
                 </content>
@@ -43,14 +43,14 @@
                         <HBox prefHeight="199.0" prefWidth="955.0" spacing="20">
                             <PieChart fx:id="eventGenderChart" prefHeight="183.0" prefWidth="950.0" title="Event Participants Gender Distribution" />
                         </HBox>
-                         <LineChart fx:id="eventParticipantLineChart" prefHeight="342.0" prefWidth="950.0" title="Event Participants">
-                             <xAxis>
-                                 <CategoryAxis/>
-                             </xAxis>
-                             <yAxis>
-                                 <NumberAxis label="Number of Participants" />
-                             </yAxis>
-                         </LineChart>
+                        <LineChart fx:id="eventParticipantLineChart" prefHeight="342.0" prefWidth="950.0" title="Event Participants">
+                            <xAxis>
+                                <CategoryAxis/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis label="Number of Participants" />
+                            </yAxis>
+                        </LineChart>
                     </VBox>
                 </content>
             </Tab>
