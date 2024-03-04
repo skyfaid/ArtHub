@@ -5,8 +5,10 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -35,6 +37,13 @@ public class AfficherActivite {
     public VBox Test;
     @FXML
     private AnchorPane contentPane;
+
+    @FXML
+    private TextField searchTextField ;
+    @FXML
+    private Button searchButton ;
+
+
     // Reference to the service class
     private  ServiceParticipation serviceParticipation = new ServiceParticipation() {
     };
@@ -76,6 +85,34 @@ public class AfficherActivite {
             }
         }
  */
+
+
+
+
+    @FXML
+    void handleSearchScore(ActionEvent event) {
+        String searchText = searchTextField.getText();
+        filterParticipationsByScore(searchText);
+    }
+
+    private void filterParticipationsByScore(String searchText) {
+        try {
+            int score = Integer.parseInt(searchText);
+            List<Participation> filteredParticipations = serviceParticipation.searchByScore(score);
+            participationTableView.getItems().clear();
+            participationTableView.getItems().addAll(filteredParticipations);
+        } catch (NumberFormatException e) {
+            // Handle the case where searchText is not a valid integer
+            e.printStackTrace();
+        } catch (SQLException e) {
+            // Handle SQL exception
+            e.printStackTrace();
+        }
+    }
+
+
+
+
 public void handleTopScoresButtonClick(ActionEvent actionEvent) {
     try {
         List<Participation> top3Participations = serviceParticipation.recuperera(3);

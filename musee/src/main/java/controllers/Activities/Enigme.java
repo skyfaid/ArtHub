@@ -8,10 +8,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Enigme {
@@ -23,7 +27,14 @@ public class Enigme {
     static int correct = 0;
     static int wrong = 0;
     @FXML
+    public ImageView image;
+    @FXML
+    private Button minimizeButton , closeButton ;
+
+    @FXML
     private void initialize() {
+       // closeButton.setOnAction(event -> closeStage());
+      //  minimizeButton.setOnAction(event -> minimizeStage());
         loadQuestions();
     }
 
@@ -65,39 +76,63 @@ public class Enigme {
             opt4.setText("Hatem El Mekki");
         }
         if (counter == 5) { //Question 6
-            question.setText("6. Who discovered Pasteurisation?");
-            opt1.setText("Alexander Fleming");
-            opt2.setText("Louis Pasteur");
-            opt3.setText("Simon Pasteur");
-            opt4.setText("William Pasteur");
+            question.setText("6. In which country did Vincent van Gogh spend the majority of his painting career?");
+            opt1.setText("France");
+            opt2.setText("Spain");
+            opt3.setText("Netherlands");
+            opt4.setText("Italy");
         }
         if (counter == 6) { //Question 7
-            question.setText("7. Hydrochloric acid (HCl) is produced by -?");
-            opt1.setText("Small Intestine");
-            opt2.setText("Liver");
-            opt3.setText("Oesophagus");
-            opt4.setText("Stomach");
+            question.setText("7. What was Bob Ross's famous catchphrase that he often used during his painting demonstrations?");
+            String imagePath = "D:\\artHub\\musee\\src\\main\\resources\\images\\Bob-Ross.jpg";
+            try {
+                Image img = new Image(new FileInputStream(imagePath));
+                image.setImage(img);
+            }catch (FileNotFoundException e)
+            {e.printStackTrace();}
+            opt1.setText("Painting with passion");
+            opt2.setText("Brush with greatness");
+            opt3.setText("Let's get creative!");
+            opt4.setText("Happy little clouds");
         }
         if (counter == 7) { //Question 8
-            question.setText("8. The fastest animal in the world is -");
-            opt1.setText("Lion");
-            opt2.setText("Blackbuck");
-            opt3.setText("Cheetah");
-            opt4.setText("Quarter Horse");
+            question.setText("8. Which of Vincent van Gogh's paintings is considered one of the most valuable artworks ever sold?");
+            String imagePath = "D:\\artHub\\musee\\src\\main\\resources\\images\\portrait-of-dr-gachet-van-gogh-reproduction.jpg";
+            try {
+                Image img = new Image(new FileInputStream(imagePath));
+                image.setImage(img);
+            }catch (FileNotFoundException e)
+            {e.printStackTrace();}
+            opt1.setText("The Starry Night");
+            opt2.setText("Irises");
+            opt3.setText("Portrait of Dr. Gachet");
+            opt4.setText("Sunflowers");
         }
         if (counter == 8) { //Question 9
-            question.setText("9. Complementary colour of Red is -");
-            opt1.setText("Blue");
-            opt2.setText("Green");
-            opt3.setText("Yellow");
-            opt4.setText("Pink");
+            question.setText("9. Where is the Van Gogh Museum located?");
+            String imagePath = "D:\\artHub\\musee\\src\\main\\resources\\images\\van-gogh-museum.jpg";
+            try {
+                Image img = new Image(new FileInputStream(imagePath));
+                image.setImage(img);
+            }catch (FileNotFoundException e)
+            {e.printStackTrace();}
+            opt1.setText("Paris, France");
+            opt2.setText("Amsterdam, Netherlands");
+            opt3.setText(" Madrid, Spain");
+            opt4.setText("London, England");
         }
         if (counter == 9) { //Question 10
-            question.setText("10. World Environment Day is on -");
-            opt1.setText("5th June");
-            opt2.setText("5th July");
-            opt3.setText("15th June");
-            opt4.setText("25th June");
+            question.setText("10. Which famous museum houses Leonardo da Vinci's masterpiece, the Mona Lisa?");
+            String imagePath = "D:\\artHub\\musee\\src\\main\\resources\\images\\mona-lisa.jpg";
+            try {
+                Image img = new Image(new FileInputStream(imagePath));
+                image.setImage(img);
+            }catch (FileNotFoundException e)
+            {e.printStackTrace();}
+            opt1.setText("The Louvre");
+            opt2.setText("The Metropolitan Museum of Art");
+            opt3.setText("The British Museum");
+            opt4.setText("The Vatican Museums");
         }
 
     }
@@ -132,6 +167,16 @@ public class Enigme {
         }
 
     }
+    @FXML
+    private void minimizeStage() {
+        Stage stage = (Stage) minimizeButton.getScene().getWindow();
+        stage.setIconified(true);
+    }
+    @FXML
+    private void closeStage() {
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
+    }
 
     boolean checkAnswer(String answer) {
 
@@ -150,56 +195,56 @@ public class Enigme {
             }
         }
         if (counter == 2) {
-            if (answer.equals("Neptune")) {
+            if (answer.equals("Ali Bellagha")) {
                 return true;
             } else {
                 return false;
             }
         }
         if (counter == 3) {
-            if (answer.equals("Ganymede")) {
+            if (answer.equals("Bardo Museum")) {
                 return true;
             } else {
                 return false;
             }
         }
         if (counter == 4) {
-            if (answer.equals("Non Ductile")) {
+            if (answer.equals("Nja Mahdaoui")) {
                 return true;
             } else {
                 return false;
             }
         }
         if (counter == 5) {
-            if (answer.equals("Louis Pasteur")) {
+            if (answer.equals("France")) {
                 return true;
             } else {
                 return false;
             }
         }
         if (counter == 6) {
-            if (answer.equals("Stomach")) {
+            if (answer.equals("Happy little clouds")) {
                 return true;
             } else {
                 return false;
             }
         }
         if (counter == 7) {
-            if (answer.equals("Cheetah")) {
+            if (answer.equals("Portrait of Dr. Gachet")) {
                 return true;
             } else {
                 return false;
             }
         }
         if (counter == 8) {
-            if (answer.equals("Green")) {
+            if (answer.equals("Amsterdam, Netherlands")) {
                 return true;
             } else {
                 return false;
             }
         }
         if (counter == 9) {
-            if (answer.equals("5th June")) {
+            if (answer.equals("The Louvre")) {
                 return true;
             } else {
                 return false;
@@ -223,7 +268,7 @@ public class Enigme {
                 System.out.println(correct);
                 Stage thisstage = (Stage) ((Button) event.getSource()).getScene().getWindow();
                 thisstage.close();
-                FXMLLoader quiz = new FXMLLoader(getClass().getResource("result.fxml"));
+                FXMLLoader quiz = new FXMLLoader(getClass().getResource("/guiActivite/ResultEnigme.fxml"));
                 Scene quizscene = new Scene(quiz.load());
                 quizscene.setFill(Color.TRANSPARENT);
                 Stage quizstage = new Stage();
@@ -252,7 +297,7 @@ public class Enigme {
                 System.out.println(correct);
                 Stage thisstage = (Stage) ((Button) event.getSource()).getScene().getWindow();
                 thisstage.close();
-                FXMLLoader quiz = new FXMLLoader(getClass().getResource("result.fxml"));
+                FXMLLoader quiz = new FXMLLoader(getClass().getResource("/guiActivite/ResultEnigme.fxml"));
                 Scene quizscene = new Scene(quiz.load());
                 quizscene.setFill(Color.TRANSPARENT);
                 Stage quizstage = new Stage();
@@ -281,7 +326,7 @@ public class Enigme {
                 System.out.println(correct);
                 Stage thisstage = (Stage) ((Button) event.getSource()).getScene().getWindow();
                 thisstage.close();
-                FXMLLoader quiz = new FXMLLoader(getClass().getResource("result.fxml"));
+                FXMLLoader quiz = new FXMLLoader(getClass().getResource("/guiActivite/ResultEnigme.fxml"));
                 Scene quizscene = new Scene(quiz.load());
                 quizscene.setFill(Color.TRANSPARENT);
                 Stage quizstage = new Stage();
