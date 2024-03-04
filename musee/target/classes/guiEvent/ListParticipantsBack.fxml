@@ -75,7 +75,7 @@
          </children>
       </VBox>
       <Button fx:id="deletepart" layoutX="446.0" layoutY="462.0" mnemonicParsing="false" onAction="#deleteparticipant" prefHeight="35.0" prefWidth="80.0" text="Delete" />
-      <Button fx:id="editparticipant" layoutX="331.0" layoutY="462.0" mnemonicParsing="false" onAction="#editparticipant" prefHeight="35.0" prefWidth="60.0" text="Edit" />
+    
    </children>
    <stylesheets>
       <URL value="@/assets/stylesmootaz.css" />

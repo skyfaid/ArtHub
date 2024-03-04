@@ -7,6 +7,8 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -14,68 +16,63 @@
 
 <AnchorPane id="AnchorPane" prefHeight="596.0" prefWidth="971.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Events.ListParticipantsController">
    <children>
-      <VBox fx:id="layoutparticipants" alignment="TOP_LEFT" prefHeight="443.0" prefWidth="840.0" spacing="10">
+      <HBox layoutX="586.0" layoutY="14.0" prefHeight="26.0" prefWidth="301.0" spacing="10">
          <children>
-            <HBox prefHeight="130.0" prefWidth="824.0" spacing="10">
-               <children>
-                  <Label prefHeight="48.0" prefWidth="371.0" style="-fx-text-fill: Black; -fx-font-weight: bold;" text="Liste Participants">
-                     <font>
-                        <Font name="Corbel Bold" size="40.0" /> <!-- Increased font size to 50 -->
-                     </font>
-                  </Label>
-                  <TextField fx:id="searchTextField" alignment="CENTER" prefHeight="24.0" prefWidth="150.0" promptText="Enter Participant Name" />
-                  <Button fx:id="searchButton" mnemonicParsing="false" prefWidth="150.0" styleClass="search-button" text="Search" />
-
-               </children>
-            </HBox>
-            <TableView fx:id="participantsTableView" minHeight="25.0" minWidth="100.0" prefHeight="453.0" prefWidth="814.0">
-               <columns>
-                  <TableColumn prefWidth="60" text="Event ID">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="event_id" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="60.0" style="-fx-text-fill: black;" text="Event Name">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="eventName" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="75.0" style="-fx-text-fill: black;" text="Prenom">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="prenom" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="75.0" style="-fx-text-fill: black;" text="Nom">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="nom" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="75.0" text="Gender">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="gender" /> <!-- Make sure this exactly matches the property name in your Participant class -->
-                     </cellValueFactory>
-                  </TableColumn>
-
-
-                  <TableColumn prefWidth="60.0" style="-fx-text-fill: black;" text="Participant ID">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="participant_id" />
-                     </cellValueFactory>
-                  </TableColumn>
-                  <TableColumn prefWidth="60.0" style="-fx-text-fill: black;" text="User ID">
-                     <cellValueFactory>
-                        <PropertyValueFactory property="utilisateur_id" />
-                     </cellValueFactory>
-                  </TableColumn>
-               </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
+            <TextField fx:id="searchTextField" alignment="TOP_LEFT" prefHeight="20.0" prefWidth="143.0" promptText="Enter Participant Name" HBox.hgrow="NEVER" />
+            <Button fx:id="searchButton" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="95.0" styleClass="search-button" text="Search">
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/images/search-2-16.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               Search
+            </Button>
          </children>
+      </HBox>
+      <!-- New VBox containing the big blue text -->
+      <VBox layoutX="130.0" layoutY="51.0" prefHeight="413.0" prefWidth="719.0" spacing="10">
+         <!-- Big blue text -->
+         <Label alignment="CENTER" prefHeight="70.0" prefWidth="722.0" style="-fx-font-size: 30px; -fx-text-fill: blue;" text="Liste Participants">
+            <font>
+               <Font name="Corbel Bold" size="40.0" /> <!-- Increased font size to 50 -->
+            </font>
+         </Label>
+         <!-- Existing TableView -->
+         <VBox fx:id="layoutparticipants" alignment="CENTER" prefHeight="408.0" prefWidth="722.0">
+            <children>
+               <TableView fx:id="participantsTableView" minHeight="25.0" minWidth="100.0" prefHeight="335.0" prefWidth="693.0">
+                  <columns>
+                     <TableColumn prefWidth="60.0" style="-fx-text-fill: black;" text="Event Name">
+                        <cellValueFactory>
+                           <PropertyValueFactory property="eventName" />
+                        </cellValueFactory>
+                     </TableColumn>
+                     <TableColumn prefWidth="75.0" style="-fx-text-fill: black;" text="Prenom">
+                        <cellValueFactory>
+                           <PropertyValueFactory property="prenom" />
+                        </cellValueFactory>
+                     </TableColumn>
+                     <TableColumn prefWidth="75.0" style="-fx-text-fill: black;" text="Nom">
+                        <cellValueFactory>
+                           <PropertyValueFactory property="nom" />
+                        </cellValueFactory>
+                     </TableColumn>
+                     <TableColumn prefWidth="75.0" text="Gender">
+                        <cellValueFactory>
+                           <PropertyValueFactory property="gender" /> <!-- Make sure this exactly matches the property name in your Participant class -->
+                        </cellValueFactory>
+                     </TableColumn>
+                  </columns>
+                  <columnResizePolicy>
+                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                  </columnResizePolicy>
+               </TableView>
+            </children>
+         </VBox>
       </VBox>
-      <Button fx:id="deletepart" layoutX="446.0" layoutY="462.0" mnemonicParsing="false" onAction="#deleteparticipant" prefHeight="35.0" prefWidth="80.0" text="Delete" />
-      <Button fx:id="editparticipant" layoutX="331.0" layoutY="462.0" mnemonicParsing="false" onAction="#editparticipant" prefHeight="35.0" prefWidth="60.0" text="Edit" />
+      <Button fx:id="deletepart" layoutX="446.0" layoutY="470.0" mnemonicParsing="false" onAction="#deleteparticipant" prefHeight="35.0" prefWidth="80.0" text="Delete" />
    </children>
    <stylesheets>
       <URL value="@/assets/stylesmootaz.css" />

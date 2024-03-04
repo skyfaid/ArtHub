@@ -13,6 +13,7 @@ controllers\Reclamations\Client.class
 controllers\Users\UserItemController.class
 controllers\Users\ActivateAccountController.class
 entities\Activite.class
+utils\GeocodingService.class
 controllers\Events\AjouterEvenementController.class
 services\ServiceEvenement.class
 controllers\Reclamations\AfficherSolution.class
@@ -55,6 +56,7 @@ services\ServiceSolution.class
 controllers\Activities\Enigme.class
 controllers\Users\HomeAdminController.class
 controllers\UserInterfaceController.class
+controllers\Events\MapViewController.class
 controllers\Activities\PuzzlePiece.class
 utils\MyDataBase.class
 controllers\Users\LoginController.class
