@@ -12,7 +12,9 @@ import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import services.ServiceParticipation;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -135,12 +137,16 @@ public class PuzzleController {
         for (int i = 0; i < pieces.length; i++) {
             for (int j = 0; j < pieces[i].length; j++) {
                 PuzzlePiece piece = pieces[i][j];
-                piece.setLayoutX(i * PIECE_SIZE);
-                piece.setLayoutY(j * PIECE_SIZE);
+                int correctCol = (int) (piece.getColumn() * PIECE_SIZE);
+                int correctRow = (int) (piece.getRow() * PIECE_SIZE);
+                piece.setLayoutX(correctCol);
+                piece.setLayoutY(correctRow);
+                piece.setTranslateX(0); // Reset translate values
+                piece.setTranslateY(0);
                 piece.toBack(); // Place the piece behind others when solved
             }
         }
-        checkCompletion();
+        checkCompletion(); // Check if the puzzle is completed after solving
     }
     @FXML
     private void handleSubmitAction() {
@@ -151,6 +157,8 @@ public class PuzzleController {
 
     @FXML
     private void checkCompletion() {
+
+
         boolean isComplete = true;
         for (PuzzlePiece[] row : pieces) {
             for (PuzzlePiece piece : row) {
@@ -163,11 +171,48 @@ public class PuzzleController {
         }
         if (isComplete) {
             statusText.setText("Congratulations! Puzzle completed!");
+          //  int userId;
+          //  handlePuzzleCompletion( userId, activityId);
+           // handlePuzzleCompletion();
+         //   int userId = getUserIdFromDatabase(); // Retrieve the user's ID
+          /*  try {
+                handlePuzzleCompletion(userId); // Update the user's score
+            } catch (SQLException e) {
+                e.printStackTrace(); // Handle the exception according to your application's error handling strategy
+            }
+*/
         } else {
             statusText.setText("The puzzle is incomplete.");
         }
     }
+/*
+    private int getUserIdFromDatabase() {
+        // Initialize the UtilisateurService or UtilisateurDao object
+        ServiceUtilisateur utilisateurService = new ServiceUtilisateur(); // Assuming you have a UtilisateurService class
 
+        // Implement the logic to retrieve the user's ID from the database
+        // For example:
+        try {
+            // Call your method to retrieve the user by ID
+            Utilisateur utilisateur = utilisateurService.recupererById();
+            if (utilisateur != null) {
+                return utilisateur.getUtilisateurId(); // Return the user's ID if found
+            } else {
+                System.out.println("User not found.");
+                return -1; // Return -1 if the user is not found
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle the exception according to your application's error handling strategy
+            return -1; // Return -1 if an exception occurs
+        }
+    }
+*/
+    private void handlePuzzleCompletion(int userID) throws SQLException {
+        // Update the user's score when puzzle is completed
+        // String updateQuery = "UPDATE Participation SET score = 2500 WHERE utilisateur_id = ? AND id_activite = ?";
+        // Assuming you have a method to execute SQL queries in your ServiceParticipation class
+        ServiceParticipation.updateUserScoreInParticipation( userID , 2500);
+    }
 /*
     @FXML
     private void handle9() {

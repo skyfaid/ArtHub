@@ -1,32 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Label?>
-<AnchorPane prefHeight="626.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Activities.AfficherActivite" stylesheets="@/css/csskolchay.css">
+<AnchorPane prefHeight="626.0" prefWidth="829.0" stylesheets="@/css/csskolchay.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Activities.AfficherActivite">
    <children>
-      <VBox fx:id="Test" >
+      <VBox fx:id="Test">
 
       </VBox>
-      <VBox fx:id="Ton" >
-      <TableView fx:id="participationTableView" layoutX="54.0" layoutY="27.0" prefHeight="346.0" prefWidth="493.0"  styleClass="table-view">
+      <VBox fx:id="Ton" layoutY="14.0" prefHeight="552.0" prefWidth="837.0">
+      <TableView fx:id="participationTableView" layoutX="54.0" layoutY="27.0" prefHeight="346.0" prefWidth="700.0" styleClass="table-view">
          <columns>
-            <TableColumn fx:id="Id_participationColumn" prefWidth="47.0" text="Id_participation" />
-            <TableColumn fx:id="id_activiteColumn" prefWidth="79.0" text="id_activite" />
-            <TableColumn fx:id="utilisateur_idColumn" prefWidth="50.0" text="utilisateur_id" />
-            <TableColumn fx:id="ScoreColumn" prefWidth="119.0" text="Score" />
-            <TableColumn fx:id="Participation_dateColumn" prefWidth="156.0" text="Participation_date" />
+            <TableColumn fx:id="Id_participationColumn" prefWidth="155.0" text="Id_participation" />
+            <TableColumn fx:id="id_activiteColumn" prefWidth="124.0" text="id_activite" />
+            <TableColumn fx:id="utilisateur_idColumn" prefWidth="127.0" text="utilisateur_id" />
+            <TableColumn fx:id="ScoreColumn" prefWidth="184.0" text="Score" />
+            <TableColumn fx:id="Participation_dateColumn" prefWidth="238.0" text="Participation_date" />
          </columns>
       </TableView>
-      <Button fx:id="topScoresButton" layoutX="54.0" layoutY="400.0" onAction="#handleTopScoresButtonClick" stylesheets="@/css/csskolchay.css" text="Top 3 Scores" />
-      <Button fx:id="resetButton" layoutX="200.0" layoutY="400.0" onAction="#handleResetButtonClick" text="Reset Table" />
-      <Button fx:id="backButton" text="Back" onAction="#handleBackButtonAction"/>
+      <Button fx:id="backButton" onAction="#handleBackButtonAction" text="Back" />
+         <HBox prefHeight="160.0" prefWidth="837.0">
+            <children>
+               <VBox alignment="TOP_RIGHT" prefHeight="160.0" prefWidth="546.0">
+                  <children>
+                  <Button fx:id="topScoresButton" alignment="CENTER_RIGHT" contentDisplay="RIGHT" onAction="#handleTopScoresButtonClick" stylesheets="@/css/csskolchay.css" text="Top 3 Scores" textAlignment="CENTER" />
+                  </children></VBox>
+               <VBox prefHeight="132.0" prefWidth="212.0">
+                  <children>
+                  <Button fx:id="resetButton" alignment="CENTER_RIGHT" contentDisplay="RIGHT" onAction="#handleResetButtonClick" text="Reset Table" />
+                  </children></VBox>
+               <VBox prefHeight="160.0" prefWidth="378.0">
+                  <children>
+                     <TextField fx:id="searchTextField" alignment="CENTER" maxHeight="1.7976931348623157E308" prefHeight="41.0" prefWidth="244.0" promptText="Enter Score" VBox.vgrow="NEVER" />
+                     <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleSearchScore" prefHeight="38.0" prefWidth="279.0" styleClass="search-button" text="Search">
+                        <graphic>
+                           <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@/images/search-2-16.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                        Search
+                     </Button>
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
       </VBox>
-
    </children>
 </AnchorPane>

@@ -6,6 +6,7 @@ import entities.Participation;
 import utils.MyDataBase;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +28,25 @@ public  class ServiceParticipation implements ServiceCrud<Participation> {
             preparedStatement.executeUpdate();
         }
     }
+    public static void updateUserScoreInParticipation(int userId, int scoreToAdd) throws SQLException {
+        String query = "UPDATE Participation SET score = score + ? WHERE utilisateur_id = ?";
+        try (PreparedStatement preparedStatement = MyDataBase.getInstance().getConnection().prepareStatement(query)) {
+            preparedStatement.setInt(1, scoreToAdd);
+            preparedStatement.setInt(2, userId);
+            preparedStatement.executeUpdate();
+        }
+    }
+
+    public static void executeUpdate(String query, int activityId, int userId, int score, LocalDate participationDate) throws SQLException {
+        try (PreparedStatement preparedStatement = MyDataBase.getInstance().getConnection().prepareStatement(query)) {
+            preparedStatement.setInt(1, activityId);
+            preparedStatement.setInt(2, userId);
+            preparedStatement.setInt(3, score);
+            preparedStatement.setDate(4, Date.valueOf(participationDate));
+            preparedStatement.executeUpdate();
+        }
+    }
+
 
     @Override
     public void modifier(Participation entity) throws SQLException {
@@ -66,6 +86,31 @@ public  class ServiceParticipation implements ServiceCrud<Participation> {
         return participations;
     }
 
+
+    public List<Participation> searchByScore(int score) throws SQLException {
+        List<Participation> matchingParticipations = new ArrayList<>();
+        String sql = "SELECT * FROM participation WHERE score = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, score);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Participation participation = new Participation(
+                        resultSet.getInt("id_participation"),
+                        resultSet.getInt("id_activite"),
+                        resultSet.getInt("utilisateur_id"),
+                        resultSet.getInt("score"),
+                        resultSet.getDate("participation_date")
+                );
+                matchingParticipations.add(participation);
+            }
+        } catch (SQLException e) {
+            System.err.println("SQL Exception: " + e.getMessage());
+            throw e;
+        }
+        return matchingParticipations;
+    }
+
+
     public void modifier(String ancienNom, Activite activite) throws SQLException {
     }
 
@@ -102,15 +147,6 @@ public  class ServiceParticipation implements ServiceCrud<Participation> {
         }
         return top3participations;
     }
-
-
-
-
-
-
-
-
-
 
 
     public  List<Participation> getTopParticipantsForActivity(int activityId, int limit) throws SQLException {

@@ -24,6 +24,7 @@ import java.nio.file.StandardCopyOption;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AjouterActivite {
     public VBox ActVBox;
@@ -57,6 +58,10 @@ public class AjouterActivite {
     private Activite selectedACT;
     @FXML
     private AnchorPane contentPane;
+    @FXML
+    private  TextField searchTextField ;
+    @FXML
+    private Button searchButton ;
 
 
 
@@ -76,6 +81,33 @@ public class AjouterActivite {
         afficheracti();
 
     }
+
+
+    private void filterEventCards(String searchText) {
+        List<Activite> filteredActivites = serviceActivite.recuperer().stream()
+                .filter(a -> a.getNom_act().toLowerCase().contains(searchText.toLowerCase()))
+                .collect(Collectors.toList());
+        refreshEventList(filteredActivites);
+    }
+
+
+    public void refreshEventList(List<Activite> acts) {
+        ActTilePane.getChildren().clear(); // Clear existing content
+        for (Activite activite : acts) { // Evenement hia lclass, evenement variable fl loop representing a single instance of Evenement class,events represents a collection of Evenement objects
+
+            VBox card = createActCard(activite); // Rebuild each card
+            ActTilePane.getChildren().add(card);
+        }
+    }
+
+
+    @FXML
+    void handleSearch(ActionEvent event) {
+        String searchText = searchTextField.getText();
+        filterEventCards(searchText);
+    }
+
+
     @FXML
     void ajouter(ActionEvent event) {
         String nomAct = nomTF.getText();

@@ -27,6 +27,7 @@ entities\Evenement.class
 entities\Reclamation.class
 controllers\Articles\ArticlesController.class
 entities\Serverclass.class
+controllers\Activities\ResultEnigme.class
 utils\EmailService$1.class
 services\ServiceParticipation.class
 controllers\Reclamations\Server$1.class

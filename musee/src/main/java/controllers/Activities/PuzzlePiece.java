@@ -3,11 +3,6 @@ package controllers.Activities;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.CubicCurveTo;
-import javafx.scene.shape.LineTo;
-import javafx.scene.shape.MoveTo;
-import javafx.scene.shape.Path;
 
 public class PuzzlePiece extends ImageView {
     public static final double SIZE = 250.0; // Adjust the size according to your puzzle piece size
