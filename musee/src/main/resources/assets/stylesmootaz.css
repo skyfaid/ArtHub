@@ -104,4 +104,70 @@
 .table-row-cell:selected .table-cell {
     -fx-background-color: #007bff; /* Set background color for cell content */
 }
+.notification {
+    -fx-background-color: #3498db; /* Set background color */
+    -fx-background-radius: 5; /* Set border radius */
+    -fx-border-color: #2980b9; /* Set border color */
+    -fx-border-width: 1; /* Set border width */
+    -fx-border-radius: 5; /* Set border radius */
+}
+
+.table-view .table-cell {
+    -fx-alignment: CENTER;
+}
+.agenda {
+    -fx-background-color: white;
+}
+
+.agenda .appointment {
+    -fx-background-color: linear-gradient(to bottom, #7db9e8 0%, #1e5799 100%);
+    -fx-text-fill: white;
+}
+
+.agenda .appointment:hover {
+    -fx-background-color: linear-gradient(to bottom, #1e5799 0%, #7db9e8 100%);
+}
+
+.agenda .day-header {
+    -fx-background-color: #f0f0f0;
+    -fx-text-fill: black;
+}
+
+.agenda .week-header {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: black;
+}
+
+.agenda .header {
+    -fx-background-color: #d0d0d0;
+    -fx-text-fill: black;
+}
+
+.agenda .today {
+    -fx-background-color: #fdd017;
+}
+
+.agenda .selected {
+    -fx-background-color: #fbc02d;
+}
+
+.agenda .day-body {
+    -fx-background-color: white;
+}
+
+.agenda .time-slot {
+    -fx-border-color: transparent transparent silver transparent;
+    -fx-border-width: 0.5px;
+}
+
+.agenda .appointment .menu {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+.agenda .appointment .anchor {
+    -fx-background-color: darkred;
+    -fx-text-fill: white;
+}
+
 
