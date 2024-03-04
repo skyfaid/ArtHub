@@ -13,11 +13,10 @@ public class Evenement {
     private String description;
     private int nombrePlaces;
     private String posterUrl;
+    private String videoUrl; // New attribute for video URL
     private int nombreParticipants;
 
-
-    // Full constructor including all attributes including poster
-    public Evenement(int id, String nom, LocalDate datedebut, LocalDate datefin, String lieu, String type, String description, int nombrePlaces, String posterUrl) {
+    public Evenement(int id, String nom, LocalDate datedebut, LocalDate datefin, String lieu, String type, String description, int nombrePlaces, String posterUrl, String videoUrl) {
         this.id = id;
         this.nom = nom;
         this.datedebut = datedebut;
@@ -27,10 +26,9 @@ public class Evenement {
         this.description = description;
         this.nombrePlaces = nombrePlaces;
         this.posterUrl = posterUrl; // Initialize the posterUrl attribute
+        this.videoUrl = videoUrl;
     }
-
-    // Second constructor without id and poster
-    public Evenement(String nom, LocalDate datedebut, LocalDate datefin, String lieu, String type, String description, int nombrePlaces, String posterUrl) {
+    public Evenement( String nom, LocalDate datedebut, LocalDate datefin, String lieu, String type, String description, int nombrePlaces, String posterUrl, String videoUrl) {
         this.nom = nom;
         this.datedebut = datedebut;
         this.datefin = datefin;
@@ -39,6 +37,8 @@ public class Evenement {
         this.description = description;
         this.nombrePlaces = nombrePlaces;
         this.posterUrl = posterUrl; // Initialize the posterUrl attribute
+        this.videoUrl = videoUrl;
+
     }
 
     // Constructor with only id for deletion purposes
@@ -46,7 +46,7 @@ public class Evenement {
         this.id = id;
     }
 
-    public Evenement(int id, String nom, LocalDate datedebut, LocalDate datefin, String lieu, String type, String description, int nombrePlaces, String posterUrl, int nombreParticipants) {
+    public Evenement(String nom, LocalDate datedebut, LocalDate datefin, String lieu, String type, String description, int nombrePlaces, String posterUrl, int nombreParticipants) {
         this.nom = nom;
         this.datedebut = datedebut;
         this.datefin = datefin;
@@ -58,6 +58,31 @@ public class Evenement {
         this.nombreParticipants = nombreParticipants;
     }
 
+    public Evenement(int id, String nom, LocalDate datedebut, LocalDate datefin, String lieu, String type, String description, int nombrePlaces, int nombreParticipants) {
+        this.id = id;
+        this.nom = nom;
+        this.datedebut = datedebut;
+        this.datefin = datefin;
+        this.lieu = lieu;
+        this.type = type;
+        this.description = description;
+        this.nombrePlaces = nombrePlaces;
+        this.nombreParticipants = nombreParticipants;
+
+    }
+
+    public Evenement() {
+
+    }
+
+
+    public String getVideoUrl() {
+        return videoUrl;
+    }
+
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
+    }
     public int getNombreParticipants() {
         return nombreParticipants;
     }
@@ -159,6 +184,7 @@ public class Evenement {
                 ", description='" + description + '\'' +
                 ", nombrePlaces=" + nombrePlaces +
                 ", posterUrl='" + posterUrl + '\'' +
+                ", videoUrl='" + videoUrl + '\'' +
                 '}';
     }
 
