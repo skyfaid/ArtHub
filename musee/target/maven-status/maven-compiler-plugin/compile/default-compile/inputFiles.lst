@@ -4,11 +4,13 @@ C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Events\MapViewCont
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Events\Notification.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\utils\Validation.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Reclamations\AfficherReclamation.java
+C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Formations\AjouterParticipantsUser.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Events\AjouterEvenementController.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\utils\UserUpdateListener.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Reclamations\Server.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\utils\EmailService.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Events\ListEventsBackController.java
+C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Formations\UserFormDisplay.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\utils\ValidationUtils.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Users\LoginController.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Events\ListParticipantsController.java
@@ -18,6 +20,7 @@ C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Users\UserItemCont
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\utils\GeocodingService.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\UserInterfaceController.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\services\ServiceActivite.java
+C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Formations\AjouterFormation.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\entities\Participation.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\utils\MotDePasseUtilitaire.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Articles\ArticleItemController.java
@@ -29,9 +32,12 @@ C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\entities\Reclamation.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\utils\MyDataBase.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\entities\Utilisateur.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Users\ForgotPasswordController.java
+C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Formations\FormationHbox.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\entities\Activite.java
+C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\services\FormationService.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\utils\SessionManager.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Users\ActivateAccountController.java
+C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\services\ParticipantService.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Activities\PuzzlePiece.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Activities\AjouterActivite.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\AdminInterfaceController.java
@@ -46,7 +52,9 @@ C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\services\ServiceSolution.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\utils\FieldPopulator.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Users\NewPasswordController.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\entities\Article.java
+C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\entities\Participants.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Activities\PuzzleController.java
+C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Formations\AjouterParticipants.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Reclamations\AfficherSolution.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\utils\UserConnected.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\services\ServiceArticle.java
@@ -58,7 +66,9 @@ C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Users\afficherUser
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Activities\ResultEnigme.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Events\EditParticipantController.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Reclamations\AjouterSolution.java
+C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Formations\UserForm.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Users\SignupController.java
+C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\entities\Formations.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\entities\Clientclass.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Activities\AfficherActivite.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Users\CodeVerificationController.java
@@ -67,7 +77,9 @@ C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Events\ListEventsF
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\services\ServiceUtilisateur.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Activities\Enigme.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\test\MainFX.java
+C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Formations\QuizController.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Reclamations\AjouterReclamation.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\entities\Serverclass.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Activities\DeleteActivite.java
+C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\controllers\Formations\HboxForm.java
 C:\Users\kouth\Desktop\ArtHub\musee\src\main\java\services\ServiceReclamation.java
