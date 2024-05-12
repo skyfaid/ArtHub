@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="panier" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Oeuvres.PanierClient">
+   <children>
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="145.0" prefWidth="477.0">
+         <children>
+            <VBox>
+               <children>
+                  <ImageView fx:id="imageCard" fitHeight="175.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../Downloads/image5.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </VBox>
+            <HBox alignment="CENTER">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="122.0" prefWidth="168.0">
+                     <children>
+                        <Label fx:id="titreCard" prefHeight="17.0" text="Titre">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="descriptiobCard" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="81.0" text="Description">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="typecard" layoutX="10.0" layoutY="27.0" prefHeight="17.0" prefWidth="81.0" text="Type">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="datecard" layoutX="10.0" layoutY="44.0" prefHeight="17.0" prefWidth="114.0" text="Date Creation ">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="disponibilitecard" layoutX="10.0" layoutY="61.0" prefHeight="17.0" prefWidth="81.0" text="Disponibilite">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="prixcard" prefHeight="17.0" prefWidth="81.0" text="Prix" textAlignment="CENTER">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="32.0">
+                           <children>
+                              <Button fx:id="btnplus" alignment="CENTER" mnemonicParsing="false" onAction="#ajouterQuantite" prefHeight="18.0" prefWidth="32.0" stylesheets="@../styles.css" text="+">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets top="2.0" />
+                                 </padding>
+                              </Button>
+                              <Label fx:id="nbrquantite" alignment="CENTER" prefHeight="17.0" prefWidth="26.0" stylesheets="@../styles.css" text="1" />
+                              <Button fx:id="btnmoins" alignment="CENTER" mnemonicParsing="false" onAction="#retirerQuantite" prefHeight="18.0" prefWidth="32.0" stylesheets="@../styles.css" text="-">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="2.0" />
+                                 </padding>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="27.0" prefWidth="74.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="35.0" styleClass="label-description" stylesheets="@../styles.css" text="Total :">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="total" prefHeight="21.0" text="2">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="38.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="btnbuy" mnemonicParsing="false" onAction="#acheterProduit" prefHeight="25.0" prefWidth="40.0" styleClass="button1" stylesheets="@../styles.css">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/sac-de-courses.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#removebtn" prefHeight="25.0" prefWidth="34.0" styleClass="button1" stylesheets="@../styles.css">
+                                 <graphic>
+                                    <ImageView fitHeight="18.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/poubelle-de-recyclage.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

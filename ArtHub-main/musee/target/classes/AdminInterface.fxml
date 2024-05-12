@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminInterfaceController">
+   <children>
+      <HBox fx:id="titleBar" alignment="CENTER_LEFT" prefHeight="20.0" prefWidth="1200.0" style="-fx-background-color: #262626;">
+         <Label fx:id="titleLabel" style="-fx-text-fill: white;" text="Art Hub">
+         </Label>
+         <Region HBox.hgrow="ALWAYS" />
+         <Button fx:id="minimizeButton" style="-fx-background-color: #262626;-fx-text-fill: white;" text="--" />
+         <Button fx:id="closeButton" style="-fx-background-color: #262626;-fx-text-fill: white;" text="X" />
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="200.0" layoutY="20" prefHeight="84.0" prefWidth="1000.0" spacing="20.0" style="-fx-background-color: #2C3E50;">
+         <Label style="-fx-text-fill: white;" text="Dashboard">
+            <font>
+               <Font size="28.0" />
+            </font>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </Label>
+         <!-- Spacer to push elements to the right -->
+         <Pane prefHeight="90.0" prefWidth="633.0" HBox.hgrow="ALWAYS" />
+         <!-- Admin Label -->
+         <Button fx:id="imageButton" onAction="#handleImageButtonClick" style="-fx-text-fill: white; " styleClass="button-menu" text="Edit">
+            <font>
+               <Font size="20.0" />
+            </font>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </Button>
+
+         <!-- Profile Image -->
+         <ImageView fx:id="imageprofile" fitHeight="70" fitWidth="70" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@/images/nopic.png" />
+            </image>
+            <clip>
+               <Circle centerX="35" centerY="35" radius="35" />
+            </clip>
+            <HBox.margin>
+               <Insets right="30.0" />
+            </HBox.margin>
+         </ImageView>
+
+      </HBox>
+      <VBox layoutY="20" prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #2C3E50">
+         <children>
+            <ImageView fitHeight="150" fitWidth="200">
+               <Image url="@/images/logo.png" />
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </ImageView>
+            <Button fx:id="homeButton" contentDisplay="LEFT" mnemonicParsing="false" onAction="#onHomeButtonClick" prefHeight="30" prefWidth="160.0" styleClass="button-menu" text="Dashboard" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="20" fitWidth="20">
+                     <Image url="@/images/dashboard-2-16.png" />
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="usersButton" mnemonicParsing="false" onAction="#onUsersButtonClick" prefHeight="30" prefWidth="160.0" styleClass="button-menu" text="Users" textFill="#f2f1f1" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="20" fitWidth="20">
+                     <Image url="@/images/user-16.png" />
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="eventsButton" mnemonicParsing="false" onAction="#onEventsButtonClick" prefHeight="30" prefWidth="160.0" styleClass="button-menu" text="Events" textFill="#f2f1f1" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="20" fitWidth="20">
+                     <Image url="@/images/time-2-16.png" />
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="oeuvresButton" mnemonicParsing="false" onAction="#onOeuvresButtonClick" prefHeight="30" prefWidth="160.0" styleClass="button-menu" text="ArtWork" textFill="#f2f1f1" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="20" fitWidth="20">
+                     <Image url="@/images/website-design-16.png" />
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="GestionButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onGestionButtonClick" prefHeight="30" prefWidth="160.0" styleClass="button-menu" text="Add oeuvres" textFill="#322f2f" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="20" fitWidth="20">
+                     <Image url="@/images/website-design-16.png" />
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="venteesButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onVenteesButtonClick" prefHeight="30" prefWidth="160.0" styleClass="button-menu" text="Gestion Ventes" textFill="#322f2f" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="20" fitWidth="20">
+                     <Image url="@/images/website-design-16.png" />
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="venteButton" mnemonicParsing="false" onAction="#onVenteButtonClick" prefHeight="30" prefWidth="160.0" styleClass="button-menu" text="Sales" textFill="#f2f1f1" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="20" fitWidth="20">
+                     <Image url="@/images/graph.png" />
+                  </ImageView>
+               </graphic>
+
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="activitiesButton" mnemonicParsing="false" onAction="#onActivitiesButtonClick" prefHeight="30" prefWidth="160.0" styleClass="button-menu" text="Activities" textFill="#f2f1f1" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="20" fitWidth="20">
+                     <Image url="@/images/puzzle-piece-16.png" />
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="formationsButton" mnemonicParsing="false" onAction="#onFormationsButtonClick" prefHeight="30" prefWidth="160.0" styleClass="button-menu" text="MasterClass" textFill="#f2f1f1" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="20" fitWidth="20">
+                     <Image url="@/images/idea-16.png" />
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="reclamationButton" mnemonicParsing="false" onAction="#onReclamationButtonClick" prefHeight="30" prefWidth="160.0" styleClass="button-menu" text="FaQ" textFill="#f2f1f1" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="20" fitWidth="20">
+                     <Image url="@/images/help-16.png" />
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onlogoutButtonClick" prefHeight="30" prefWidth="160.0" styleClass="button-menu" text="Log Out" textFill="#f2f1f1" VBox.vgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="20" fitWidth="20">
+                     <Image url="@/images/account-logout-16.png" />
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="20"  />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Pane fx:id="contentPane" layoutX="200.0" layoutY="100.0" prefHeight="600.0" prefWidth="1000" style="-fx-background-color: #2C3E50 ">
+         <VBox fx:id="homeView" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
+
+         </VBox>
+         <VBox fx:id="usersView" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
+
+         </VBox>
+         <VBox fx:id="messengerView" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
+
+         </VBox>
+
+
+         <VBox fx:id="eventsView" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
+            <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="Welcome to events" />
+         </VBox>
+
+      <VBox fx:id="salesView" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
+         <Label style="-fx-text-fill: black;-fx-font-weight: bold;" text=" welcome to sales" />
+      </VBox>
+         <VBox fx:id="activitesView" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
+            <Label style="-fx-text-fill: black;-fx-font-weight: bold;" text=" welcome to activites" />
+         </VBox>
+
+         <VBox fx:id="formationsView" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
+            <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="Welcome to Formations" />
+         </VBox>
+
+         <VBox fx:id="oeuvresView" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
+            <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="welcome to oeuvres" />
+         </VBox>
+
+         <VBox fx:id="articlesView" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
+            <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="welcome to articles" />
+         </VBox>
+
+         <VBox fx:id="reclamationsView" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;">
+            <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="welcome to reclamations" />
+         </VBox>
+         <VBox fx:id="gestionView" prefHeight="590.0" prefWidth="990.0">
+            <children>
+               <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="welcome to Gestion" />
+            </children>
+         </VBox>
+         <VBox fx:id="VenteeView1" layoutX="10.0" layoutY="10.0" prefHeight="590.0" prefWidth="990.0">
+            <children>
+               <Label style="-fx-text-fill: black; -fx-font-weight: bold;" text="welcome to ventess" />
+            </children>
+         </VBox>
+      </Pane>
+   </children>
+   <stylesheets>
+      <URL value="@/images/style1.css" />
+   </stylesheets>
+</AnchorPane>

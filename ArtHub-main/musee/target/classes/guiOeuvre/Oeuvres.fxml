@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="580.0" prefWidth="1101.0" spacing="15.0" styleClass="vbox-style" stylesheets="@../stylesarij.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Oeuvres.Oeuvres">
+   <children>
+      <Label alignment="CENTER" prefHeight="65.0" prefWidth="411.0" styleClass="label-blanc" stylesheets="@../stylesarij.css" text=" Les Oeuvres">
+         <font>
+            <Font size="25.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+         <graphic>
+            <ImageView fitHeight="65.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/the_creation_of_adam.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="28.0" prefWidth="922.0" spacing="10.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="113.0" styleClass="labelarij" stylesheets="@../stylesarij.css" text="Chercher Oeuvre:">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="chercher" prefHeight="28.0" prefWidth="203.0" promptText="Oeuvre .." stylesheets="@../styles.css">
+               <HBox.margin>
+                  <Insets right="50.0" />
+               </HBox.margin></TextField>
+         </children>
+         <VBox.margin>
+            <Insets left="100.0" right="80.0" />
+         </VBox.margin>
+      </HBox>
+      <ScrollPane prefHeight="448.0" prefWidth="1101.0">
+         <content>
+            <GridPane fx:id="oeuverContainer" alignment="CENTER" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+               <!-- ImageView for displaying images -->
+               <ImageView fx:id="imageView" fitHeight="282.0" fitWidth="245.0">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </ImageView>
+               <columnConstraints>
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+               </rowConstraints>
+               <padding>
+                  <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+               </padding>
+            </GridPane>
+         </content>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ScrollPane>
+   </children>
+</VBox>

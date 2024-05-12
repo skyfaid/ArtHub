@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="mainContent" layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;" styleClass="anchor-pane" stylesheets="@../dash.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Oeuvres.HomeeAdminController">
+    <TabPane fx:id="tabPane" stylesheets="@../dash.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <tabs>
+            <Tab text="Overview">
+                <content>
+                    <VBox spacing="20" stylesheets="@../dash.css">
+                        <HBox spacing="20" stylesheets="@../dash.css">
+                            <PieChart fx:id="oeuvresTypeChart" prefHeight="223.0" prefWidth="465.0" styleClass="pie-chart" stylesheets="@../dash.css" title="Category artwork" />
+                            <PieChart fx:id="oeuvresstockchart" styleClass="pie-chart" stylesheets="@../dash.css" title="Stock artwork" />
+                        </HBox>
+                        <BarChart fx:id="ventesMonthChart" styleClass="bar-chart" stylesheets="@../dash.css" title="Sales Per Month">
+                            <xAxis>
+                                <CategoryAxis label="Month" styleClass="category-axis" stylesheets="@../dash.css" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis label="Ventes Month" styleClass="number-axis" stylesheets="@../dash.css" />
+                            </yAxis>
+                        </BarChart>
+                    </VBox>
+                </content>
+            </Tab>
+            <Tab text="Total Sale">
+                <content>
+                    <LineChart fx:id="venteChart" styleClass="line-chart" stylesheets="@../dash.css" title="Sales Artwork">
+                        <xAxis>
+                            <CategoryAxis label="Sales" styleClass="category-axis" stylesheets="@../dash.css" />
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis label="Days Since Last Sales" styleClass="number-axis" stylesheets="@../dash.css" />
+                        </yAxis>
+                    </LineChart>
+                </content>
+            </Tab>
+        </tabs>
+    </TabPane>
+</AnchorPane>

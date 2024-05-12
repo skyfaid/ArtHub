@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ap_main" layoutX="5.0" layoutY="5.0" prefHeight="570.0" prefWidth="1078.0" style="-fx-background-image: url('/images/messangerbackground.jpeg'); -fx-padding: 20; -fx-border-radius: 20; -fx-background-radius: 20; -fx-background-size: cover; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+
+    <Button fx:id="button_send" layoutX="596.0" layoutY="400.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #29B6F6;" text="Send" textFill="WHITE">
+        <font>
+            <Font name="System Bold Italic" size="13.0" />
+        </font></Button>    <TextField fx:id="tf_message" layoutX="230.0" layoutY="400.0" promptText="Hello..." style="-fx-background-color: #1A237E; -fx-prompt-text-fill: #FFFFFF; -fx-text-fill: #FFFFFF;">
+    <prefWidth>362.0</prefWidth>
+    <prefHeight>27.0</prefHeight>
+</TextField>
+    <ScrollPane fx:id="sp_main" fitToWidth="true" layoutX="230" layoutY="90.0" prefHeight="300" prefWidth="446.0" style="-fx-background-color: #29B6F6;">
+        <VBox fx:id="vbox_messages" prefHeight="298.0" prefWidth="415.0" style="-fx-background-color: #1A237E;" />
+    </ScrollPane>
+    <Label layoutX="230.0" layoutY="31.0" prefHeight="34.0" prefWidth="446.0" text="Welcome To Arthub Messanger" textFill="WHITE">
+        <font>
+            <Font size="27.0">
+                <name>Arial Rounded MT Bold</name>
+            </Font>
+        </font>
+    </Label>
+</AnchorPane>

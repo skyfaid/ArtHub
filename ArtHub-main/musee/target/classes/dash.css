@@ -1,0 +1,87 @@
+/* Define the base styles for the dashboard */
+.root {
+    -fx-font-family: "Arial";
+}
+
+.anchor-pane {
+    -fx-background-color: #f4f4f4;
+    -fx-padding: 20;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.tab-pane {
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent;
+}
+
+.tab {
+    -fx-background-color: #dddddd;
+    -fx-padding: 10px;
+}
+
+.tab:selected {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+}
+
+.chart-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.pie-chart, .bar-chart, .line-chart {
+    -fx-padding: 15;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-color: #ffffff;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+    -fx-padding: 10;
+}
+
+.category-axis, .number-axis {
+    -fx-tick-label-fill: #333333;
+}
+
+.axis-label {
+    -fx-text-fill: #666666;
+    -fx-font-weight: bold;
+}
+
+/* Specific styles for pie charts */
+.pie-chart {
+    -fx-pie-label-visible: true;
+}
+
+/* Specific styles for bar charts */
+.bar-chart .default-color0.chart-bar {
+    -fx-bar-fill: #f3622d;
+}
+
+.bar-chart .default-color1.chart-bar {
+    -fx-bar-fill: #fba71b;
+}
+
+.bar-chart .default-color2.chart-bar {
+    -fx-bar-fill: #57b757;
+}
+
+/* Specific styles for line charts */
+.line-chart .chart-series-line {
+    -fx-stroke-width: 2px;
+}
+
+.line-chart .default-color0.chart-line-symbol {
+    -fx-background-color: #3366cc, white;
+}
+
+.line-chart .default-color1.chart-line-symbol {
+    -fx-background-color: #214182, white;
+}
+
+.line-chart .default-color2.chart-line-symbol {
+    -fx-background-color: #ff9900, white;
+}

@@ -1,0 +1,320 @@
+
+.window-buttons {
+    -fx-background-radius: 15;
+    -fx-min-width: 14px;
+    -fx-min-height: 14px;
+    -fx-max-width: 15px;
+    -fx-max-height: 15px;
+}
+
+.window-buttons:hover {
+    -fx-background-color: #444; /* Darken button on hover */
+}
+#close:hover{
+    -fx-background-color: red;
+}
+
+.window-buttons:pressed {
+    -fx-background-color: #666; /* Further darken button on press */
+}
+.footer{
+
+}
+.vbox {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #c0c0c0;
+    -fx-border-radius: 15;
+    -fx-padding: 15;
+}
+
+
+
+.label-titre {
+    -fx-font-family: "Berlin Sans FB";
+    -fx-font-size: 24px;
+    -fx-text-fill: #000000;
+}
+
+.label-description {
+    -fx-font-family: "Berlin Sans FB";
+    -fx-font-size: 15px;
+    -fx-text-fill: #020202;
+}
+
+.button {
+    -fx-background-color: #86B6F6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #4cae4c;
+}
+.hbox {
+    -fx-background-color: #ffffff; /* Couleur de fond pour HBox */
+    -fx-border-color: #aaaaaa; /* Couleur de bordure */
+    -fx-border-width: 1; /* Largeur de bordure */
+    -fx-border-radius: 5; /* Arrondissement des angles de la bordure */
+    -fx-padding: 10; /* Espacement interne */
+    -fx-spacing: 10; /* Espacement entre les éléments enfants */
+}
+
+/* Style pour ImageView */
+.image-view {
+    -fx-padding: 5; /* Ajoute de l'espace autour de l'image */
+    -fx-background-color: #f0f0f0; /* Couleur de fond derrière l'image, utile si l'image est transparente */
+    -fx-border-color: #c0c0c0; /* Couleur de la bordure autour de l'image */
+    -fx-border-width: 5; /* Largeur de la bordure */
+    -fx-border-radius: 15; /* Arrondissement des angles de la bordure */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Effet d'ombre */
+}
+.text-field {
+    -fx-pref-width: 260px;
+    -fx-pref-height: 30px;
+    -fx-font-size: 14px;
+    -fx-border-color: #020202;
+    -fx-border-radius: 5px;
+    -fx-padding: 4 4 4 4;
+}
+.label1 {
+    -fx-text-fill: #333;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.hbox1 {
+    -fx-alignment: center;
+    -fx-spacing: 10;
+}
+.transparent-button {
+    background-color: transparent;
+
+}
+.button1 {
+    -fx-background-color: #E3E1D9;
+    -fx-text-fill: #2a36b7;
+    -fx-font-weight: bold;
+    -fx-border-radius: 2;
+    -fx-background-radius: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+.root9 {
+    -fx-font-family: 'Arial';
+    -fx-base: #FFFFFF;
+    -fx-background-color: #F0F0F0;
+}
+
+.label9 {
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.text9 {
+    -fx-fill: #333333;
+    -fx-font-size: 12px;
+}
+
+.text-field, .date-picker9 {
+    -fx-padding: 3px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #C0C0C0;
+    -fx-background-radius: 5px;
+    -fx-background-color: #FFFFFF;
+}
+
+.button9 {
+    -fx-background-color:
+            linear-gradient(#eecda6, #e5a583),
+            radial-gradient(center 50% -40%, radius 200%, #dcae7c 45%, rgba(255,255,255,0) 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+    -fx-font-size: 12px;
+    -fx-padding: 5px 9px;
+}
+
+.button-bar9 {
+    -fx-padding: 10px;
+}
+
+.vbox10 {
+    -fx-spacing: 8px;
+}
+
+.hbox9 {
+    -fx-spacing: 5px;
+}
+
+.date-picker9 {
+    -fx-pref-width: 200px;
+}
+
+/* Ajouter une petite ombre et un arrondi aux VBox */
+.vbox9 {
+    -fx-background-radius: 5;
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    -fx-padding: 15px;
+}
+.buttonsave {
+    -fx-background-color:
+            linear-gradient(#a8a6ee, #87a3e0),
+            radial-gradient(center 50% -40%, radius 200%, #84b2e8 45%, rgba(255,255,255,0) 50%);
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+    -fx-font-size: 12px;
+    -fx-padding: 5px 9px;
+}
+
+
+/* styles.css */
+
+
+.label3 {
+    -fx-text-fill: #3644d2;
+    -fx-font-size: 14px;
+}
+
+.button3 {
+    -fx-background-color: #067952;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px 15px;
+}
+
+.button:hover {
+    -fx-background-color: #4cae4c;
+}
+
+.button:pressed {
+    -fx-background-color: #449d44;
+}
+
+.button.delete {
+    -fx-background-color: #d9534f;
+}
+
+.button.delete:hover {
+    -fx-background-color: #c9302c;
+}
+
+.button.delete:pressed {
+    -fx-background-color: #ac2925;
+}
+
+.label-titre {
+    -fx-font-size: 20px;
+    -fx-font-family: 'Arial', sans-serif;
+    -fx-text-fill: linear-gradient(from 0% 50% to 100% 50%, #4fcffe, #042431);
+
+}
+
+.label-titre1 {
+    -fx-font-size: 30px;
+    -fx-font-family: 'Arial', sans-serif;
+    -fx-text-fill: linear-gradient(from 0% 50% to 100% 50%, #a9e2ec, #7f53cb);
+    -fx-background-color: #020202;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-border-color: #d0d0d0;
+}
+.card{
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 5);
+    -fx-padding: 20px;
+    -fx-background-radius: 10px;
+}
+.card2 { -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 5);
+    -fx-padding: 20px;
+    -fx-background-radius: 10px;}
+
+.hbox-style {
+    -fx-background-color: #F9F9F9;
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 5);
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 10px;
+    -fx-alignment: center-left;
+}
+
+.vbox-style {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D0D0D0;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 5);
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 10px;
+    -fx-spacing: 10px; /* Spacing between child components */
+}
+.label-title {
+    -fx-font-size: 25px;
+    -fx-font-family: 'Arial', sans-serif;
+    -fx-text-fill: linear-gradient(from 0% 50% to 100% 50%, #81b5e3, #235643);
+
+}
+.label-art-theme {
+    -fx-font-family: 'Times New Roman', Times, serif; /* Utilisez une police élégante */
+    -fx-font-size: 18px; /* Taille de police appropriée */
+    -fx-text-fill: #5C4B51; /* Couleur de texte douce et artistique */
+    -fx-background-color: #020202; /* Couleur de fond subtile */
+    -fx-padding: 5px 10px; /* Espacement intérieur pour ne pas coller les bords */
+    -fx-border-radius: 5px; /* Bords légèrement arrondis */
+    -fx-background-radius: 5px; /* Assurez-vous que le fond suit les bords arrondis */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 5); /* Une légère ombre pour la profondeur */
+}
+.label-blanc {
+    -fx-text-fill: #020202; /* Couleur du texte */
+    -fx-font-size: 23px; /* Taille de la police */
+    -fx-font-weight: bold; /* Épaisseur de la police */
+    -fx-background-color: transparent; /* Fond transparent */
+    -fx-padding: 5; /* Espacement intérieur */
+}
+.label-gris {
+    -fx-text-fill: #020202; /* Couleur du texte (gris) */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-font-weight: bold; /* Épaisseur de la police */
+    -fx-background-color: transparent; /* Fond transparent */
+    -fx-padding: 5; /* Espacement intérieur */
+}
+.pane {
+    -fx-background-color: #abbfe3;
+    -fx-padding: 20px;
+    -fx-border-radius: 20px;
+}
+
+.labelarij {
+    -fx-text-fill: black; /* Définit la couleur du texte des labels en noir */
+    -fx-font-size: 14px; /* Vous pouvez ajuster la taille selon vos besoins */
+}
+.pane-background {
+    -fx-background-color: #a4b2c2; /* Couleur de fond des panneaux */
+    -fx-background-radius: 20; /* Arrondissement des angles des panneaux */
+}
+.simple-text-style {
+    -fx-font-size: 16px; /* Taille de la police */
+    -fx-text-fill: black; /* Couleur du texte */
+}

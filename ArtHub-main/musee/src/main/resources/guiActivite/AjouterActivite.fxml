@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="contentPane" prefHeight="570" prefWidth="900.0" stylesheets="@/css/csskolchay.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Activities.AjouterActivite">
+    <children>
+        <VBox fx:id="Test" />
+        <VBox fx:id="participationview" prefHeight="626.0" prefWidth="900.0">
+
+            <HBox prefHeight="570" prefWidth="875.0" spacing="15">
+                <VBox fx:id="activitesView" prefHeight="570" prefWidth="368.0" spacing="10" stylesheets="@/css/csskolchay.css">
+                    <Label alignment="CENTER" prefHeight="35.0" prefWidth="344.0" text="ACTIVITE" textAlignment="CENTER" textFill="WHITE">
+                        <font>
+                            <Font name="System Bold Italic" size="24.0" />
+                        </font>
+                    </Label>
+                    <HBox spacing="10">
+                        <Label prefHeight="27.0" prefWidth="115.0" text="nom d'activite :" textFill="WHITE" />
+                        <TextField fx:id="nomTF" alignment="CENTER" prefHeight="27.0" prefWidth="219.0" promptText="Nom Activite" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label prefHeight="26.0" prefWidth="101.0" text="date debut d'activite :" textFill="WHITE" />
+                        <DatePicker fx:id="date_debFX" prefHeight="27.0" prefWidth="201.0" promptText="date debut" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label prefHeight="27.0" prefWidth="101.0" text="date fin d'activite :" textFill="WHITE" />
+                        <DatePicker fx:id="date_finFX" prefHeight="27.0" prefWidth="200.0" promptText="date fin" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label prefHeight="25.0" prefWidth="120.0" text="lieu d'activite :" textFill="WHITE" />
+                        <TextField fx:id="LieuTF" alignment="CENTER" prefHeight="27.0" prefWidth="222.0" promptText="Lieu Activite" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label prefHeight="25.0" prefWidth="103.0" text="nombre de places :" textFill="WHITE" />
+                        <TextField fx:id="nbreTF" alignment="CENTER" prefHeight="27.0" prefWidth="198.0" promptText="Nbre De Places" />
+                    </HBox>
+                    <HBox prefHeight="27.0" prefWidth="262.0" spacing="10">
+                        <Label prefHeight="27.0" prefWidth="165.0" text="type :" textFill="WHITE" />
+                        <TextField fx:id="typeFX" alignment="CENTER" prefHeight="27.0" prefWidth="265.0" promptText="type" />
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label layoutX="188.0" layoutY="441.0" prefHeight="40.0" prefWidth="45.0" text="Poster :" textFill="WHITE" />
+                        <Button fx:id="chargerImage" layoutX="267.0" layoutY="434.0" mnemonicParsing="false" onAction="#chargerImage" prefHeight="37.0" prefWidth="160.0" text="Charger Image" />
+                    </HBox>
+                    <HBox spacing="10">
+
+                        <Button fx:id="ajouterButton" onAction="#ajouter" text="ajouter" />
+                        <Button fx:id="supprimerButton" onAction="#supprimer" text="supprimer" />
+                        <Button fx:id="modifierButton" onAction="#modifier" text="modifier" />
+
+                    </HBox>
+                    <TextField fx:id="modifyFX" alignment="CENTER" layoutX="565.0" layoutY="471.0" promptText="Nom a Modifier" />
+                    <Button fx:id="afficherparticipants" onMouseClicked="#afficherparticipants" prefHeight="37.0" prefWidth="306.0" text="Afficher Participants" />
+                    <TextField fx:id="searchTextField" alignment="CENTER" prefHeight="24.0" prefWidth="150.0" promptText="Enter event name" />
+                    <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleSearch" prefHeight="38.0" prefWidth="143.0" styleClass="search-button" text="Search">
+                        <graphic>
+                            <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@/images/search-2-16.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        Search
+                    </Button>
+                    <Button fx:id="pdf" mnemonicParsing="false" onAction="#generateActivitesPDF" prefHeight="37.0" prefWidth="145.0" text="PDF" />
+                </VBox>
+                <ScrollPane layoutX="10" layoutY="10" prefHeight="570.0" prefWidth="628.0">
+                    <TilePane fx:id="ActTilePane" alignment="TOP_CENTER" hgap="10" prefColumns="3" prefHeight="555.0" prefWidth="590" styleClass="tile-pane" stylesheets="@/css/cssForTile.css" vgap="10">
+                        <children>
+                            <!-- Prototype card for visual reference in FXML -->
+                        </children>
+                        <padding>
+                            <Insets bottom="10" left="10" right="10" top="10" />
+                        </padding>
+                    </TilePane>
+                </ScrollPane>
+
+
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

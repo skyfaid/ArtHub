@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="553.0" prefWidth="798.0" stylesheets="@../stylesarij.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Oeuvres.Admin">
+   <stylesheets> <URL value="@/images/stylesArij.css" /></stylesheets>
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="11.0" layoutY="201.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="775.0" spacing="10.0" styleClass="hbox-style" stylesheets="@../stylesarij.css">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="30.0" />
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="78.0" styleClass="labelarij" stylesheets="@../stylesarij.css" text="ID Oeuvre" />
+                  <Pane layoutX="139.0" layoutY="21.0" prefHeight="200.0" prefWidth="30.0" />
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="95.0" styleClass="labelarij" text="Date Vente " />
+                  <Pane layoutX="303.0" layoutY="21.0" prefHeight="200.0" prefWidth="30.0" />
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="77.0" styleClass="labelarij" text="Prix Oeuvre">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Pane layoutX="447.0" layoutY="21.0" prefHeight="200.0" prefWidth="30.0" />
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="102.0" styleClass="labelarij" text="Mode Paiment ">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Pane layoutX="553.0" layoutY="21.0" prefHeight="200.0" prefWidth="30.0" />
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="72.0" styleClass="labelarij" text="Quantité">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Pane layoutX="652.0" layoutY="21.0" prefHeight="200.0" prefWidth="20.0" />
+                  <Pane layoutX="755.0" layoutY="21.0" prefHeight="200.0" prefWidth="24.0" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <VBox fx:id="pane" prefHeight="312.0" prefWidth="775.0" spacing="10.0" styleClass="vbox-style" stylesheets="@../stylesarij.css" />
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="8.0" prefHeight="53.0" prefWidth="310.0" styleClass="labelarij" stylesheets="@../stylesarij.css" text="   Gestion des ventes ">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/pieces-de-monnaie.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <HBox layoutX="145.0" layoutY="74.0" prefHeight="53.0" prefWidth="507.0" spacing="30.0">
+         <children>
+            <VBox prefHeight="87.0" prefWidth="193.0" styleClass="card" stylesheets="@../stylesarij.css">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="170.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="119.0" text="Ventes" />
+                        <Pane prefHeight="29.0" prefWidth="11.0" />
+                        <ImageView fitHeight="25.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/revenu.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Label fx:id="totalvente" prefHeight="205.0" prefWidth="153.0" text="      52524">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox />
+            <VBox />
+            <VBox layoutX="40.0" layoutY="10.0" prefHeight="86.0" prefWidth="186.0" styleClass="card" stylesheets="@../stylesarij.css">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="170.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="120.0" text="Totale Prix Ventes" />
+                        <Pane prefHeight="17.0" prefWidth="25.0" />
+                        <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/facture.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Label fx:id="totaleprixvente" prefHeight="211.0" prefWidth="146.0" text="      52524">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="416.0" layoutY="13.0" prefHeight="36.0" prefWidth="247.0" spacing="5.0">
+         <children>
+            <TextField fx:id="searchvente" prefHeight="32.0" prefWidth="233.0" promptText="Search ..." />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

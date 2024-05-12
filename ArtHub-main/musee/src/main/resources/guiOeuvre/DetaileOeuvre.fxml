@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="499.0" prefWidth="405.0" spacing="10.0" styleClass="vbox-style" stylesheets="@../stylesarij.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Oeuvres.DetaileOeuvre">
+   <children>
+      <ImageView fx:id="imageCard" fitHeight="228.0" fitWidth="345.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../Downloads/image5.jpg" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" spacing="5.0" styleClass="vbox-style" stylesheets="@../stylesarij.css">
+         <children>
+            <Label fx:id="titreCard" prefHeight="17.0" styleClass="label-title" stylesheets="@../stylesarij.css" text="Titre">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label fx:id="descriptiobCard" prefHeight="17.0" styleClass="labelarij" stylesheets="@../stylesarij.css" text="Description" />
+            <Label fx:id="typecard" prefHeight="17.0" styleClass="labelarij" stylesheets="@../stylesarij.css" text="Type" />
+            <Label fx:id="datecard" prefHeight="17.0" styleClass="labelarij" stylesheets="@../stylesarij.css" text="Date Creation " />
+            <Label fx:id="disponibilitecard" prefHeight="17.0" styleClass="labelarij" stylesheets="@../stylesarij.css" text="Disponibilite" />
+            <Label fx:id="prixcard" prefHeight="17.0" styleClass="labelarij" stylesheets="@../stylesarij.css" text="Prix" textAlignment="CENTER" />
+         </children>
+      </VBox>
+      <Button mnemonicParsing="false" onAction="#addarticle" prefHeight="25.0" prefWidth="180.0" styleClass="button9" stylesheets="@../stylesarij.css" text="ADD TO CART" />
+   </children>
+   <padding>
+      <Insets bottom="10.0" top="10.0" />
+   </padding>
+</VBox>

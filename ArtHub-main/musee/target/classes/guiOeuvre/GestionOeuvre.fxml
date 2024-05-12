@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="513.0" prefWidth="760.0" styleClass="vbox9" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Oeuvres.GestionOeuvre">
+   <children>
+      <VBox layoutX="10.0" layoutY="20.0" prefHeight="610.0" prefWidth="760.0" spacing="9.0" styleClass="vbox-style" stylesheets="@../stylesarij.css">
+         <children>
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" prefHeight="80.0" prefWidth="250.0" styleClass="label1" stylesheets="@../stylesarij.css" text="Ajouter Oeuvres ">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="simple-text-style" text="Titre">
+               <VBox.margin>
+                  <Insets left="250.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="32.0" prefWidth="176.0" styleClass="hbox9" stylesheets="@../styles.css">
+               <VBox.margin>
+                  <Insets left="230.0" right="220.0" />
+               </VBox.margin>
+               <children>
+                  <TextField fx:id="titre" alignment="CENTER" prefHeight="20.0" prefWidth="300.0" styleClass="text-field" stylesheets="@../stylesarij.css">
+                     <HBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </HBox.margin></TextField>
+               </children>
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="simple-text-style" text="Description">
+               <VBox.margin>
+                  <Insets left="250.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER">
+               <VBox.margin>
+                  <Insets left="230.0" right="220.0" />
+               </VBox.margin>
+               <children>
+                  <TextField fx:id="description" styleClass="text-field" stylesheets="@../stylesarij.css">
+                     <HBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </HBox.margin></TextField>
+               </children>
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="simple-text-style" text="Disponilite">
+               <VBox.margin>
+                  <Insets left="250.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER">
+               <VBox.margin>
+                  <Insets left="230.0" right="220.0" />
+               </VBox.margin>
+               <children>
+                  <TextField fx:id="disponibilite" styleClass="text-field" stylesheets="@../stylesarij.css">
+                     <HBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </HBox.margin></TextField>
+               </children>
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="simple-text-style" text="Prix">
+               <VBox.margin>
+                  <Insets left="250.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="32.0" prefWidth="239.0">
+               <VBox.margin>
+                  <Insets left="230.0" right="220.0" />
+               </VBox.margin>
+               <children>
+                  <TextField fx:id="prix" prefHeight="32.0" prefWidth="235.0" styleClass="text-field" stylesheets="@../stylesarij.css">
+                     <HBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </HBox.margin></TextField>
+               </children>
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="simple-text-style" text="Date">
+               <VBox.margin>
+                  <Insets left="250.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="25.0" prefWidth="241.0" spacing="10.0" styleClass="hbox9">
+               <VBox.margin>
+                  <Insets left="230.0" right="220.0" />
+               </VBox.margin>
+               <children>
+                  <DatePicker fx:id="date" prefHeight="25.0" prefWidth="205.0" stylesheets="@../stylesarij.css">
+                     <HBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </HBox.margin></DatePicker>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="simple-text-style" text="image">
+               <VBox.margin>
+                  <Insets left="250.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="19.0" prefWidth="515.0" spacing="10.0" styleClass="hbox9">
+               <children>
+                  <TextField fx:id="image" alignment="CENTER" prefHeight="35.0" prefWidth="210.0" styleClass="text-field" stylesheets="@../stylesarij.css" />
+                  <Button fx:id="chargerimage" alignment="CENTER" mnemonicParsing="false" onAction="#chargerimage" prefHeight="5.0" prefWidth="80.0" styleClass="buttonsave" stylesheets="@../stylesarij.css" text="add file" />
+               </children>
+               <VBox.margin>
+                  <Insets left="175.0" right="70.0" />
+               </VBox.margin>
+            </HBox>
+            <Text layoutX="40.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="simple-text-style" text="Type">
+               <VBox.margin>
+                  <Insets left="250.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER">
+               <VBox.margin>
+                  <Insets left="230.0" right="220.0" top="2.0" />
+               </VBox.margin>
+               <children>
+                  <TextField fx:id="type" styleClass="text-field" stylesheets="@../stylesarij.css">
+                     <HBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </HBox.margin></TextField>
+               </children>
+            </HBox>
+            <ButtonBar prefHeight="27.0" prefWidth="268.0">
+               <buttons>
+                  <Button fx:id="btnSave" layoutX="276.0" layoutY="18.0" mnemonicParsing="false" onAction="#createOeuvre" prefHeight="27.0" prefWidth="102.0" styleClass="buttonsave" stylesheets="@../stylesarij.css" text="Save" />
+               </buttons>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="200.0" right="100.0" />
+               </VBox.margin>
+            </ButtonBar>
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+</VBox>

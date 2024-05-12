@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Oeuvres.OeuvresClient">
+   <children>
+      <VBox prefHeight="580.0" prefWidth="1065.0" spacing="15.0">
+         <children>
+            <Label prefHeight="36.0" prefWidth="240.0" styleClass="label-blanc" stylesheets="@../stylesarij.css" text=" Les Oeuvres">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="30.0" top="30.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="66.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/thm_Dame-mit-Faecher.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="702.0" spacing="5.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="133.0" styleClass="labelarij" stylesheets="@../stylesarij.css" text="Chercher Oeuvre" />
+                  <TextField fx:id="searchClient" prefHeight="25.0" prefWidth="188.0" promptText="Search .." stylesheets="@../stylesarij.css" />
+               </children>
+               <VBox.margin>
+                  <Insets left="35.0" right="350.0" />
+               </VBox.margin>
+            </HBox>
+             <ScrollPane prefHeight="416.0" prefWidth="1040.0">
+                 <content>
+                     <GridPane fx:id="cardclient" alignment="CENTER" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+                         <!-- ImageView for displaying images -->
+                         <ImageView fx:id="imageView" fitHeight="282.0" fitWidth="245.0">
+                             <VBox.margin>
+                                 <Insets />
+                             </VBox.margin>
+                         </ImageView>
+                         <columnConstraints>
+                             <ColumnConstraints />
+                         </columnConstraints>
+                         <rowConstraints>
+                             <RowConstraints />
+                         </rowConstraints>
+                         <padding>
+                             <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+                         </padding>
+                     </GridPane>
+                 </content>
+                 <VBox.margin>
+                     <Insets />
+                 </VBox.margin>
+             </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
