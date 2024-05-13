@@ -35,6 +35,8 @@ public class AfficherReclamation {
     @FXML
     private TableColumn<Reclamation, String> columnDescription;
     @FXML
+    private TableColumn<Reclamation, String> columnPhoneNumber;
+    @FXML
     private TableColumn<Reclamation, String> columnProductPNG;
     @FXML
     private TableColumn<Reclamation, String> columnStatus;
@@ -73,6 +75,7 @@ public class AfficherReclamation {
         columnDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         columnStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
         columnDateSubmitted.setCellValueFactory(new PropertyValueFactory<>("dateSubmitted"));
+        columnPhoneNumber.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
     }
 
     private void loadReclamationData() {

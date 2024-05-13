@@ -18,7 +18,7 @@ public class ServiceSolution {
     private Solution mapResultSetToSolution(ResultSet resultSet) throws SQLException {
         Solution solution = new Solution();
         solution.setSolutionID(resultSet.getInt("SolutionID"));
-        solution.setReclamationID(resultSet.getInt("ReclamationID"));
+        solution.setReclamationID(resultSet.getInt("reclamation_id"));
         solution.setUtilisateur_id(resultSet.getInt("utilisateur_id"));
         solution.setStatus(resultSet.getString("Status"));
         solution.setRefundAmount(resultSet.getFloat("RefundAmount"));
@@ -51,7 +51,7 @@ public class ServiceSolution {
     }
 
     public void ajouter(Solution solution) {
-        String sql = "INSERT INTO Solution (ReclamationID, utilisateur_id, Status, AdminFeedback, RefundAmount, DateResolved) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Solution (reclamation_id, utilisateur_id, Status, AdminFeedback, RefundAmount, DateResolved) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             preparedStatement.setInt(1, solution.getReclamationID());
             preparedStatement.setInt(2, solution.getUtilisateur_id());
@@ -118,10 +118,10 @@ public class ServiceSolution {
     public List<Solution> getAllSolutions() throws SQLException {
         List<Solution> solutions = new ArrayList<>();
         // Update this SQL query to join with the `reclamation` and `oeuvre` tables and select the `oeuvreId`
-        String sql = "SELECT sol.*, rec.id as reclamationId, oeuvre.id as oeuvreId " +
+        String sql = "SELECT sol.*, rec.oeuvre_id  as reclamationId, oeuvre.id as oeuvreId " +
                 "FROM solution sol " +
-                "JOIN reclamation rec ON sol.ReclamationID = rec.ReclamationID " +
-                "JOIN oeuvre ON rec.id = oeuvre.id"; // Adjust this line based on your actual table and column names
+                "JOIN reclamation rec ON sol.reclamation_id = rec.ReclamationID " +
+                "JOIN oeuvre ON rec.oeuvre_id = oeuvre.id"; // Adjust this line based on your actual table and column names
 
         try (Statement statement = connection.createStatement(); ResultSet resultSet = statement.executeQuery(sql)) {
             while (resultSet.next()) {

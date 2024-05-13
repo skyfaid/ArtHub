@@ -1,111 +1,111 @@
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\PopUpUpdate2.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Articles\ArticleItemController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\Panier.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\Item.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\DeleteActivite.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\utils\UserUpdateListener.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\EditParticipantController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\AjouterEvenementController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\UserInterfaceController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\utils\DuplicateEventException.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\PanierClient.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\utils\MotDePasseUtilitaire.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\sucess.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\Serverclass.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\Evenement.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\Card.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\utils\SessionManager.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\ForgotPasswordController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\Article.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\ListEventsFrontController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\HboxForm.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\utils\MyDataBase.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\Refreshable.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\EditInterfaceController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\AdminInterfaceController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\UserActivity.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\GestionPanier.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\utils\FieldPopulator.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceEvenement.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\NewPasswordController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\UserFormDisplay.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\OeuvreService.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\Oeuvre.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\LoginController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\ResultEnigme.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\Oeuvres.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Reclamations\Client.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Articles\ArticlesController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\AjouterFormation.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\ICategorie.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\Reclamation.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\PaymentController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\Clientclass.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceReclamation.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\utils\EmailService.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceCrud.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\FormationService.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\ListEventsBackController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\UserItemController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\PuzzlePiece.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceParticipation.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\QuizController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceArticle.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Reclamations\AfficherReclamation.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\PuzzleController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Reclamations\AjouterSolution.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\utils\ValidationUtils.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Reclamations\AjouterReclamation.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\Formations.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\Notification.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\IOeuvre.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\Utilisateur.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceParticipant.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\Participant.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\DetaileOeuvre.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\ListParticipantsController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\ParticipantService.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\Activite.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\vente.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\categorie.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\GestionOeuvre.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\test\MainFX.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\utils\UserConnected.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\CardClient.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\ActivateAccountController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\HomeeAdminController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceActivite.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\ModifyActivite.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\OeuvresClient.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Reclamations\Server.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Reclamations\AfficherSolution.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\AfficherActivite.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\Admin.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\test\Main.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\CodeVerificationController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\UpdateAccountController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\Solution.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\HomeController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\PaymentProcessor.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\Enigme.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\afficherUsersController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\MapViewController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\VenteService.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\Participants.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceSolution.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\AjouterParticipantsUser.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\IVente.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\UserForm.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\entities\Participation.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\WelcomeActivityController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\HomeAdminController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Reclamations\AfficherSolutionUser.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\AjouterParticipants.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\AjouterActivite.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\utils\GeocodingService.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\SignupController.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\CategorieService.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\PopUpUpdate.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\utils\Validation.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceUtilisateur.java
-C:\Users\wajdi bouallegui\Desktop\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\FormationHbox.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\ActivateAccountController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\Card.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Reclamations\AjouterReclamation.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\DetaileOeuvre.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\sucess.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\ModifyActivite.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\PaymentProcessor.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\utils\SessionManager.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\OeuvreService.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\ListEventsFrontController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\PanierClient.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\EditParticipantController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\UserForm.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceCrud.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\ICategorie.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\utils\UserUpdateListener.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Reclamations\AjouterSolution.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\Notification.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\CardClient.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\GestionOeuvre.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\AjouterEvenementController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\PuzzlePiece.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\Activite.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceParticipant.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\MapViewController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\AjouterActivite.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\LoginController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\Clientclass.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\IOeuvre.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\HomeController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\test\MainFX.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\utils\EmailService.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\utils\Validation.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\FormationService.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\Panier.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\IVente.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\PaymentController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\categorie.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\Serverclass.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\Item.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\AjouterParticipants.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\DeleteActivite.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\ResultEnigme.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\Oeuvre.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\Refreshable.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\utils\ValidationUtils.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\PopUpUpdate2.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Reclamations\AfficherSolutionUser.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceEvenement.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\Formations.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Articles\ArticleItemController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Reclamations\Server.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\ListEventsBackController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\ListParticipantsController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\QuizController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\AdminInterfaceController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Reclamations\AfficherReclamation.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\Utilisateur.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\utils\DuplicateEventException.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\HomeeAdminController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\CategorieService.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\ForgotPasswordController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\vente.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\utils\GeocodingService.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\Participant.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\Oeuvres.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceReclamation.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\AfficherActivite.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceActivite.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceArticle.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\WelcomeActivityController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\FormationHbox.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Articles\ArticlesController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\AjouterFormation.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\afficherUsersController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\UserInterfaceController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\UpdateAccountController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\utils\MyDataBase.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\Enigme.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\UserActivity.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Reclamations\AfficherSolution.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\PopUpUpdate.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\HomeAdminController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\UserItemController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\Solution.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\Participation.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\utils\MotDePasseUtilitaire.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\Evenement.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Events\EditInterfaceController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\NewPasswordController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\OeuvresClient.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceParticipation.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Reclamations\Client.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\Reclamation.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\utils\UserConnected.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\GestionPanier.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\UserFormDisplay.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\AjouterParticipantsUser.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Oeuvres\Admin.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Formations\HboxForm.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\CodeVerificationController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\test\Main.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Users\SignupController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceSolution.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\Article.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\utils\FieldPopulator.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\ServiceUtilisateur.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\VenteService.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\entities\Participants.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\controllers\Activities\PuzzleController.java
+C:\Users\MSI\Documents\GitHub\ArtHub\ArtHub-main\musee\src\main\java\services\ParticipantService.java

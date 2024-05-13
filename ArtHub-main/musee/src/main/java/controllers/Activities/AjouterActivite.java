@@ -372,7 +372,7 @@ public class AjouterActivite {
             try {
                 String newImagePath = copyFileToImagesFolder(selectedFile);
                 if (newImagePath != null) {
-                    imageURL = "/actimage/" + newImagePath;
+                    imageURL = "/images/" + newImagePath;
                 } else {
                     // Handle the case where newImagePath is null
                 }
@@ -385,7 +385,7 @@ public class AjouterActivite {
 
     private String copyFileToImagesFolder(File sourceFile) throws IOException {
         // Define the target directory and construct the new file path
-        File destDir = new File("C:\\Users\\arij\\Desktop\\backup\\ArtHub-main\\musee\\src\\main\\resources\\actimage");
+        File destDir = new File("C:\\Users\\MSI\\Documents\\GitHub\\ArtHub\\ArtHub-main\\musee\\src\\main\\resources\\images");
         File destFile = new File(destDir, sourceFile.getName());
 
         // Copy file to the new location (This is just an example method call)
