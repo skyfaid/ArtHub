@@ -128,7 +128,7 @@ public class AjouterSolution {
             try {
                 Utilisateur user = new ServiceUtilisateur().recupererById(reclamation.getUtilisateur_id());
                 String userEmail = user.getEmail();
-                EmailService.sendEmail("smtp.office365.com", "wajdi.bouallegui@esprit.tn", "W@JDATAskills123", "wajdi.bouallegui@esprit.tn", "raslenferchihi@gmail.com", "Solution to your reclamation", "Your reclamation status is: " + statusComboBox.getValue());
+                EmailService.sendEmail("smtp.office365.com", "wajdi.bouallegui@esprit.tn", "W@JDATAskills123", "wajdi.bouallegui@esprit.tn", userEmail, "Solution to your reclamation", "Your reclamation status is: " + statusComboBox.getValue());
             } catch (SQLException e) {
                 e.printStackTrace();
                 // Handle SQL errors (e.g., user not found)

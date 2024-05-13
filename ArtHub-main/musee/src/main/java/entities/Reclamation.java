@@ -10,6 +10,9 @@ public class Reclamation {
     private String productPNG;
     private String Status;
     private LocalDateTime DateSubmitted;
+    private String phoneNumber ;
+
+
 
     // Default constructor
     public Reclamation() {
@@ -17,7 +20,7 @@ public class Reclamation {
     }
 
 
-    public Reclamation(int ReclamationID, int utilisateur_id, int id, String Description, String productPNG, String Status, LocalDateTime DateSubmitted) {
+    public Reclamation(int ReclamationID, int utilisateur_id, int id, String Description, String productPNG, String Status, LocalDateTime DateSubmitted , String phoneNumber) {
         this.ReclamationID = ReclamationID;
         this.utilisateur_id = utilisateur_id;
         this.id = id;
@@ -25,6 +28,7 @@ public class Reclamation {
         this.productPNG = productPNG;
         this.Status = Status;
         this.DateSubmitted = DateSubmitted;
+        this.phoneNumber = phoneNumber;
     }
 
 
@@ -63,6 +67,10 @@ public class Reclamation {
     public String getProductPNG() {
         return productPNG;
     }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
 
     public void setProductPNG(String productPNG) {
         this.productPNG = productPNG;
@@ -83,6 +91,9 @@ public class Reclamation {
     public void setDateSubmitted(LocalDateTime DateSubmitted) {
         this.DateSubmitted = DateSubmitted;
     }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
 
     @Override
@@ -94,7 +105,10 @@ public class Reclamation {
                 ", Description='" + Description + '\'' +
                 ", productPNG='" + productPNG + '\'' +
                 ", Status='" + Status + '\'' +
-                ", DateSubmitted=" + DateSubmitted +
+                ", DateSubmitted=" + DateSubmitted + '\'' +
+                ", PhoneNumber='" + phoneNumber + '\'' +
+
+
                 '}';
     }
 }

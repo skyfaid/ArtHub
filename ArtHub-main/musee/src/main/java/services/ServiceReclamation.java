@@ -16,7 +16,7 @@ public class ServiceReclamation {
     }
 
     public void ajouter(Reclamation reclamation) throws SQLException {
-        String sql = "INSERT INTO reclamation (utilisateur_id, id, Description, productPNG, Status, DateSubmitted) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO reclamation (utilisateur_id, oeuvre_id, Description, productPNG, Status, DateSubmitted ,phoneNumber) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setInt(1, reclamation.getUtilisateur_id());
             preparedStatement.setInt(2, reclamation.getId());
@@ -35,6 +35,7 @@ public class ServiceReclamation {
                 // If DateSubmitted is null, use the current LocalDateTime
                 preparedStatement.setTimestamp(6, Timestamp.valueOf(LocalDateTime.now()));
             }
+            preparedStatement.setString(7, reclamation.getPhoneNumber());
             preparedStatement.executeUpdate();
         }
     }
@@ -49,8 +50,9 @@ public class ServiceReclamation {
                 Reclamation reclamation = new Reclamation();
                 reclamation.setReclamationID(resultSet.getInt("ReclamationID"));
                 reclamation.setUtilisateur_id(resultSet.getInt("utilisateur_id"));
-                reclamation.setId(resultSet.getInt("id"));
+                reclamation.setId(resultSet.getInt("oeuvre_id"));
                 reclamation.setDescription(resultSet.getString("Description"));
+                reclamation.setPhoneNumber(resultSet.getString("phoneNumber"));
                 reclamation.setProductPNG(resultSet.getString("productPNG"));
                 reclamation.setStatus(resultSet.getString("Status"));
                 reclamation.setDateSubmitted(resultSet.getTimestamp("DateSubmitted").toLocalDateTime());
@@ -62,7 +64,7 @@ public class ServiceReclamation {
     }
 
     public void modifier(int ReclamationID, Reclamation reclamation) throws SQLException {
-        String sql = "UPDATE reclamation SET utilisateur_id = ?, id = ?, Description = ?, productPNG = ?, Status = ?, DateSubmitted = ? WHERE ReclamationID = ?";
+        String sql = "UPDATE reclamation SET utilisateur_id = ?, oeuvre_id = ?, Description = ?, productPNG = ?, Status = ?, DateSubmitted = ? WHERE ReclamationID = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setInt(1, reclamation.getUtilisateur_id());
             preparedStatement.setInt(2, reclamation.getId());
@@ -100,7 +102,7 @@ public class ServiceReclamation {
 
     public void supprimer(int ReclamationID) throws SQLException {
         // First, delete any associated solutions
-        deleteAssociatedSolutions(ReclamationID);
+       // deleteAssociatedSolutions(ReclamationID);
 
         // Then, delete the reclamation itself
         String sql = "DELETE FROM reclamation WHERE ReclamationID = ?";

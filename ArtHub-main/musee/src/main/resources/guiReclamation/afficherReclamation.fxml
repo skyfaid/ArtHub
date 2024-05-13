@@ -9,26 +9,28 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="400.0"  prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Reclamations.AfficherReclamation">    <VBox layoutX="98.0" layoutY="50" prefHeight="480.0" prefWidth="554.0" spacing="10.0">
-        <TableView fx:id="tableViewReclamations" VBox.vgrow="ALWAYS" style="-fx-background-color: FFE082; -fx-base: FFE082;">
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Reclamations.AfficherReclamation">    <VBox layoutX="98.0" layoutY="50" prefHeight="480.0" prefWidth="639.0" spacing="10.0">
+        <TableView fx:id="tableViewReclamations" prefHeight="393.0" prefWidth="488.0" style="-fx-background-color: FFE082; -fx-base: FFE082;" VBox.vgrow="ALWAYS">
             <columns>
                 <TableColumn fx:id="columnReference" prefWidth="70.40000915527344" text="Reference" />
                 <TableColumn fx:id="columnDescription" prefWidth="155.20001220703125" text="Description" />
-                <TableColumn fx:id="columnStatus" prefWidth="84.0" text="Status" />
+                <TableColumn fx:id="columnPhoneNumber" prefWidth="96.0" text="PhoneNumber" />
+
+                <TableColumn fx:id="columnStatus" prefWidth="72.0" text="Status" />
                 <TableColumn fx:id="columnDateSubmitted" prefWidth="141.5999755859375" text="Date Submitted" />
             </columns>
          <VBox.margin>
             <Insets left="100.0" />
          </VBox.margin>
         </TableView>
-            <Button fx:id="modify" onAction="#modifyReclamation" prefHeight="36.0" prefWidth="454.0" style="-fx-background-color: #1DE9B6;" text="Modify">
+            <Button fx:id="modify" onAction="#modifyReclamation" prefHeight="34.0" prefWidth="542.0" style="-fx-background-color: #1DE9B6;" text="Modify">
          <VBox.margin>
             <Insets left="100.0" />
          </VBox.margin>
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font></Button>
-            <Button fx:id="supprimer" onAction="#deleteReclamation" prefHeight="34.0" prefWidth="457.0" style="-fx-background-color: BF360C;" text="Delete" textFill="WHITE">
+            <Button fx:id="supprimer" onAction="#deleteReclamation" prefHeight="34.0" prefWidth="543.0" style="-fx-background-color: BF360C;" text="Delete" textFill="WHITE">
          <VBox.margin>
             <Insets left="100.0" />
          </VBox.margin>
@@ -40,4 +42,3 @@
     </VBox>
     <ImageView fx:id="productImageView" fitHeight="300" fitWidth="300" layoutX="700" layoutY="120" preserveRatio="true" />
 </AnchorPane>
-

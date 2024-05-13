@@ -14,11 +14,13 @@ import javafx.stage.Stage;
 import services.ServiceReclamation;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-
+import utils.UserConnected;
 
 
 public class AjouterReclamation {
@@ -28,7 +30,7 @@ public class AjouterReclamation {
     @FXML
     private AnchorPane contentPane;
     @FXML
-    private TextField oeuvreid;
+    private TextField oeuvreid,phoneField;
     @FXML
     private TextField description;
     @FXML
@@ -38,7 +40,8 @@ public class AjouterReclamation {
     private Button viewReclamation;
 
     private String productImagePath;
-    private static final String pathPhoto = "file:///C:/Users/MSI/IdeaProjects/ArtHub/musee/src/main/resources/images/";
+    private String imageURL = "";
+    private static final String pathPhoto = "C:\\Users\\MSI\\Documents\\GitHub\\ArtHub\\ArtHub-main\\musee\\src\\main\\resources\\images";
     private Serverclass server;
 
     private final ServiceReclamation serviceReclamation = new ServiceReclamation();
@@ -117,10 +120,12 @@ public class AjouterReclamation {
             Reclamation reclamation = new Reclamation();
             reclamation.setId(Integer.parseInt(oeuvreid.getText()));
             reclamation.setDescription(description.getText());
-            reclamation.setUtilisateur_id(1);
+            reclamation.setPhoneNumber(phoneField.getText());
+
+            reclamation.setUtilisateur_id(UserConnected.getUser().getUtilisateurId());
             reclamation.setStatus("pending");
             reclamation.setDateSubmitted(LocalDateTime.now());
-            reclamation.setProductPNG( productImagePath);
+            reclamation.setProductPNG( imageURL);
 
             serviceReclamation.ajouter(reclamation);
 
@@ -143,15 +148,32 @@ public class AjouterReclamation {
     @FXML
     public void imageupload(ActionEvent actionEvent) {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", ".jpg", ".png", ".gif", ".bmp"));
-        File file = fileChooser.showOpenDialog(null);
-        if (file != null) {
-            // Convert the file path to a string that can be used with Image
-            productImagePath = file.toURI().toString();
-            // Update the ImageView in your UI, if necessary.
-            // If you have an ImageView to show the image immediately after upload, do it here
-            // e.g., productImageView.setImage(new Image(productImagePath));
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Fichiers image", "*.png", "*.jpg", "*.jpeg");
+        fileChooser.getExtensionFilters().add(extFilter);
+        File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null) {
+            try {
+                String newImagePath = copyFileToImagesFolder(selectedFile);
+                if (newImagePath != null) {
+                    imageURL = "/images/" + newImagePath;
+                } else {
+                    // Handle the case where newImagePath is null
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+    }
+    private String copyFileToImagesFolder(File sourceFile) throws IOException {
+        // Define the target directory and construct the new file path
+        File destDir = new File("C:\\Users\\MSI\\Documents\\GitHub\\ArtHub\\ArtHub-main\\musee\\src\\main\\resources\\images");
+        File destFile = new File(destDir, sourceFile.getName());
+
+        // Copy file to the new location (This is just an example method call)
+        Files.copy(sourceFile.toPath(), destFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+        // Return the absolute path as a String
+        return destFile.getName();
     }
     @FXML
     private void viewReclamation(ActionEvent event) {
