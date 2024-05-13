@@ -24,11 +24,13 @@ public class FormationHbox {
     private VBox ListeVbox;
     Formations formations=new Formations();
     FormationService fs=new FormationService();
-    public void initialize() {
-        afficher.setVisible(true);
-        ajouter.setVisible(false);
-        // Let's assume Formation is a class that holds the details of each formation
+    HboxForm Hf=new HboxForm();
+    public void getall(){
+        if (!ListeVbox.getChildren().isEmpty()) {
+            ListeVbox.getChildren().remove(0, ListeVbox.getChildren().size());
+        }
         try {
+
             List<Formations> formations = fs.recuperer(); // Implement this method to get data
 
             for (Formations formation : formations) {
@@ -38,11 +40,11 @@ public class FormationHbox {
                     loader.setLocation(getClass().getResource("/guiFormation/HboxForm.fxml"));
                     // Now, if you need to set data specific to each formation, you can access the HBox's children
                     // For example, to set the label text
-                        VBox hbox = loader.load();
-                        HboxForm Hf = loader.getController();
+                    VBox hbox = loader.load();
+                    HboxForm Hf = loader.getController();
 
-                        Hf.setFormation(formation);
-                        ListeVbox.getChildren().add(hbox);
+                    Hf.setFormation(formation);
+                    ListeVbox.getChildren().add(hbox);
 
 
                 } catch (Exception e) {
@@ -53,6 +55,13 @@ public class FormationHbox {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    public void initialize() {
+        afficher.setVisible(true);
+        ajouter.setVisible(true);
+        // Let's assume Formation is a class that holds the details of each formation
+       getall();
+       Hf.setFormationHbox(this);
 
     }
 
@@ -72,6 +81,25 @@ public class FormationHbox {
             throw new RuntimeException();
         }
     }
+
+    @FXML
+    void particpant(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiFormation/AjoutParticipant.fxml"));
+            AnchorPane root = loader.load();
+            afficher.getChildren().clear();
+            ajouter.getChildren().add(root);
+            afficher.setVisible(false);
+            ajouter.setVisible(true);
+
+            //ListeVbox.getScene().setRoot(root);
+        } catch (IOException e) {
+            throw new RuntimeException();
+        }
+
+    }
+
 
 
 }
