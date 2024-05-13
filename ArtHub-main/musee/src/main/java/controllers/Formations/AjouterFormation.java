@@ -98,13 +98,6 @@ public class AjouterFormation {
             a.setTitle("Error");
             a.setContentText("");
             a.showAndWait();*/
-           /* try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/can.fxml"));
-                Parent root = loader.load();
-                Nbr_ParticipantTF.getScene().setRoot(root);
-            } catch (IOException e) {
-                throw new RuntimeException();
-            }*/
 
         }
         catch (SQLException e){
