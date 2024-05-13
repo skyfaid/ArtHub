@@ -16,7 +16,7 @@ public class MainFX extends Application {
     }
     @Override
     public void start(Stage stage) throws Exception {
-       // System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+
       //  EmailService.sendEmail("smtp.office365.com","wajdi.bouallegui@esprit.tn","W@JDATAskills123","wajdi.bouallegui@esprit.tn","wajdi.bouallegui@gmail.com","hello","hi");
        stage.initStyle(StageStyle.UNDECORATED);
         Image icon = new Image("/images/logo.png");
