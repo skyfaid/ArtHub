@@ -7,27 +7,28 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="990" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 5; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Formations.FormationHbox">
    <children>
-      <VBox fx:id="ajouter"></VBox>
-      <VBox fx:id="afficher" layoutX="20"  layoutY="50"  prefWidth="930"  prefHeight="550">
-      <ScrollPane layoutX="20"  layoutY="50"  prefWidth="930" prefHeight="550"  >
-         <content>
-            <VBox fx:id="ListeVbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550" prefWidth="930" spacing="10.0" stylesheets="@/StyleSaif.css">
-               <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#add" prefHeight="35.0" prefWidth="947.0" styleClass="button9" stylesheets="@/StyleSaif.css" text="nouvelle formation" textFill="#e7e3d0">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Button>
-               </children>
-            </VBox>
-         </content>
-         <stylesheets>
-            <URL value="@/StyleSaif.css" />
-         </stylesheets>
-      </ScrollPane>
+      <VBox fx:id="ajouter" />
+      <VBox fx:id="afficher" layoutX="20" layoutY="50" prefHeight="550" prefWidth="930">
+         <Button alignment="CENTER" mnemonicParsing="false" onAction="#add" prefHeight="35.0" prefWidth="947.0" styleClass="button9" stylesheets="@/StyleSaif.css" text="nouvelle formation" textFill="#e7e3d0">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Button>
+         <Button mnemonicParsing="false" onAction="#particpant" style="-fx-background-color: #16A6EA;" text="Participant">
+            <font>
+               <Font name="System Bold Italic" size="12.0" />
+            </font>
+         </Button>
+         <ScrollPane layoutX="20" layoutY="50" prefHeight="550" prefWidth="930">
+            <content>
+               <VBox fx:id="ListeVbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550" prefWidth="930" spacing="10.0" stylesheets="@/StyleSaif.css" />
+            </content>
+            <stylesheets>
+               <URL value="@/StyleSaif.css" />
+            </stylesheets>
+         </ScrollPane>
       </VBox>
    </children>
 </AnchorPane>

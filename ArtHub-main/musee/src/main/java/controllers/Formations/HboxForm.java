@@ -1,105 +1,110 @@
 package controllers.Formations;
 
+import controllers.AdminInterfaceController;
 import entities.Formations;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import services.FormationService;
+import utils.UserConnected;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
-public class FormationHbox {
-    public VBox ajouter;
-    public VBox afficher;
+public class HboxForm {
     @FXML
-    private ImageView imageView;
+
+    private Label DateDebutHcol;
 
     @FXML
-    private VBox ListeVbox;
-    Formations formations=new Formations();
+    private Label DateFinHcol;
+
+    @FXML
+    private VBox FormationHbox;
+
+    @FXML
+    private Label IdParticipantHCol;
+
+    @FXML
+    private Label LienHCol;
+
+    @FXML
+    private Label NbrParticpantHCol;
+    Formations formations = new Formations();
+
     FormationService fs=new FormationService();
-    HboxForm Hf=new HboxForm();
-    public void getall(){
-        if (!ListeVbox.getChildren().isEmpty()) {
-            ListeVbox.getChildren().remove(0, ListeVbox.getChildren().size());
-        }
-        try {
+    AjouterFormation af = new AjouterFormation();
+    private static FormationHbox formationHbox;
 
-            List<Formations> formations = fs.recuperer(); // Implement this method to get data
-
-            for (Formations formation : formations) {
-                try {
-                    // Load the HBox from FXML
-                    FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getResource("/guiFormation/HboxForm.fxml"));
-                    // Now, if you need to set data specific to each formation, you can access the HBox's children
-                    // For example, to set the label text
-                    VBox hbox = loader.load();
-                    HboxForm Hf = loader.getController();
-
-                    Hf.setFormation(formation);
-                    ListeVbox.getChildren().add(hbox);
-
-
-                } catch (Exception e) {
-                    e.printStackTrace(); // Handle exception as needed
-                }
-            }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public void setFormationHbox(FormationHbox fh) {
+        HboxForm.formationHbox = fh;
     }
-    public void initialize() {
-        afficher.setVisible(true);
-        ajouter.setVisible(true);
-        // Let's assume Formation is a class that holds the details of each formation
-       getall();
-       Hf.setFormationHbox(this);
+    public void setFormation(Formations f)
+    {
+        formations = f;
+        IdParticipantHCol.setText(String.valueOf(f.getId()));
+        NbrParticpantHCol.setText(String.valueOf(f.getNbr_participants()));
+        LienHCol.setText(f.getLien());
+        DateDebutHcol.setText(f.getDate_debut());
+        DateFinHcol.setText(f.getDate_fin());
+    }
+    @FXML
+    void AjouterFormation(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiFormations/AjoutParticipant.fxml"));
+            Parent root = loader.load();
+            DateDebutHcol.getScene().setRoot(root);
+        } catch (IOException e) {
+            throw new RuntimeException();
+        }
 
     }
 
     @FXML
-    void add(ActionEvent event) {
+    void ModifierFormation(ActionEvent event) {
+      /*  Formations formationsPrime = new Formations();
+        setFormation(af.Modifier(event));*/
         try {
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiFormation/AjouterFormation.fxml"));
-            AnchorPane root = loader.load();
-            afficher.getChildren().clear();
-            ajouter.getChildren().add(root);
-            afficher.setVisible(false);
-            ajouter.setVisible(true);
+            Parent root = loader.load(); // Load the FXML content
 
-            //ListeVbox.getScene().setRoot(root);
+            // Create a new stage for the popup
+            Stage stage = new Stage();
+            stage.setTitle("Modifier Formation"); // Set the title of the new stage
+            stage.setScene(new Scene(root)); // Set the scene for the stage with the loaded FXML
+            stage.initModality(Modality.APPLICATION_MODAL); // Set the window to be modal
+            stage.initOwner(DateDebutHcol.getScene().getWindow()); // Set the owner window
+
+            // Show the new stage and wait for it to be closed
+            stage.showAndWait();
+
+
+
+            //DateDebutHcol.getScene().setRoot(root);
         } catch (IOException e) {
             throw new RuntimeException();
         }
     }
+
+
 
     @FXML
-    void particpant(ActionEvent event) {
+    void SupprimerFormation(ActionEvent event) {
         try {
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/guiFormation/AjoutParticipant.fxml"));
-            AnchorPane root = loader.load();
-            afficher.getChildren().clear();
-            ajouter.getChildren().add(root);
-            afficher.setVisible(false);
-            ajouter.setVisible(true);
-
-            //ListeVbox.getScene().setRoot(root);
-        } catch (IOException e) {
-            throw new RuntimeException();
+            fs.supprimer(formations.getId());
+            try {
+                formationHbox.getall();
+            } catch (Exception e) {
+                throw new RuntimeException();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle exception
         }
-
     }
-
-
-
 }

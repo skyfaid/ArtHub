@@ -11,24 +11,24 @@
    <children>
       <VBox fx:id="ajouter" />
       <VBox fx:id="afficher" layoutX="20" layoutY="50" prefHeight="550" prefWidth="930">
-      <Button alignment="CENTER" mnemonicParsing="false" onAction="#add" prefHeight="35.0" prefWidth="947.0" styleClass="button9" stylesheets="@/StyleSaif.css" text="nouvelle formation" textFill="#e7e3d0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
+         <Button alignment="CENTER" mnemonicParsing="false" onAction="#add" prefHeight="35.0" prefWidth="947.0" styleClass="button9" stylesheets="@/StyleSaif.css" text="nouvelle formation" textFill="#e7e3d0">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Button>
          <Button mnemonicParsing="false" onAction="#particpant" style="-fx-background-color: #16A6EA;" text="Participant">
             <font>
                <Font name="System Bold Italic" size="12.0" />
             </font>
          </Button>
-      <ScrollPane layoutX="20" layoutY="50" prefHeight="550" prefWidth="930">
-         <content>
-            <VBox fx:id="ListeVbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550" prefWidth="930" spacing="10.0" stylesheets="@/StyleSaif.css" />
-         </content>
-         <stylesheets>
-            <URL value="@/StyleSaif.css" />
-         </stylesheets>
-      </ScrollPane>
+         <ScrollPane layoutX="20" layoutY="50" prefHeight="550" prefWidth="930">
+            <content>
+               <VBox fx:id="ListeVbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550" prefWidth="930" spacing="10.0" stylesheets="@/StyleSaif.css" />
+            </content>
+            <stylesheets>
+               <URL value="@/StyleSaif.css" />
+            </stylesheets>
+         </ScrollPane>
       </VBox>
    </children>
 </AnchorPane>

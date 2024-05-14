@@ -6,20 +6,26 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="413.0" prefWidth="673.0" style="-fx-background-color: #abdbe3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Formations.AjouterParticipants">
+<AnchorPane prefHeight="570.0" prefWidth="1080.0" style="-fx-background-image: url('/images/sayfbackground.png'); -fx-padding: 20; -fx-border-radius: 20; -fx-background-radius: 20; -fx-background-size: cover; -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Formations.AjouterParticipants">
    <children>
       <TextField fx:id="NbrFormationsTF" layoutX="41.0" layoutY="139.0" promptText="NbrFormations" styleClass="text-field2" stylesheets="@/StyleSaif.css" />
       <DatePicker fx:id="Date_Inscri_TF" layoutX="41.0" layoutY="213.0" prefHeight="26.0" prefWidth="150.0" promptText="inscription" styleClass="text-field2" stylesheets="@/StyleSaif.css" />
-      <Button layoutX="289.0" layoutY="322.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="26.0" prefWidth="70.0" styleClass="button9" stylesheets="@/StyleSaif.css" text="Ajouter" />
-      <Button layoutX="463.0" layoutY="322.0" mnemonicParsing="false" onAction="#supprimer" styleClass="button9" stylesheets="@/StyleSaif.css" text="supprimer" />
-      <TableView fx:id="ParticipantsTableView" layoutX="240.0" layoutY="36.0" prefHeight="231.0" prefWidth="394.0" style="-fx-background-color: #f6eeec;" stylesheets="@/StyleSaif.css">
+      <Button layoutX="534.0" layoutY="350.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="31.0" prefWidth="86.0" style="-fx-background-color: F1927B;" styleClass="button9" stylesheets="@/StyleSaif.css" text="supprimer">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Button>
+      <TableView fx:id="ParticipantsTableView" layoutX="345.0" layoutY="97.0" prefHeight="231.0" prefWidth="294.0" style="-fx-background-color: #f6eeec;" stylesheets="@/StyleSaif.css">
          <columns>
             <TableColumn fx:id="idCol" prefWidth="46.4000244140625" text="id" />
-            <TableColumn fx:id="DateInscri_Col" prefWidth="104.0001220703125" text="Date_Inscription" />
-            <TableColumn fx:id="NbrFormationsCol" prefWidth="104.800048828125" text="NbrFormations" />
+            <TableColumn fx:id="DateInscri_Col" prefWidth="128.0" text="Date_Inscription" />
+            <TableColumn fx:id="NbrFormationsCol" prefWidth="118.39999999999998" text="NbrFormations" />
          </columns>
       </TableView>
-      <Button layoutX="378.0" layoutY="322.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="26.0" prefWidth="70.0" styleClass="button9" stylesheets="@/StyleSaif.css" text="Modifier" />
+      <Button layoutX="361.0" layoutY="350.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="11.0" prefWidth="86.0" style="-fx-background-color: E2AD4F;" styleClass="button9" stylesheets="@/StyleSaif.css" text="Modifier">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font></Button>
    </children>
 </AnchorPane>
